@@ -21,7 +21,7 @@ namespace gui
 
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            gestorForm.VolverAlLogin();
+            
         }
     }
 }

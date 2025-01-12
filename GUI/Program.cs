@@ -18,7 +18,8 @@ namespace gui
             Application.SetCompatibleTextRenderingDefault(false);
             var controlador = new GestorForm();
             controlador.Iniciar();
-            Application.Run();
+            //Application.Run();
+            
         }
     }
 }

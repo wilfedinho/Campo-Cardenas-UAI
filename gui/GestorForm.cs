@@ -16,35 +16,28 @@ namespace gui
         }
         private void MostrarLoginForm()
         {
-            FormActual?.Dispose();
-            FormActual = null;
-            FormActual = new FormLogin(this);
-            FormActual.Show();
-        }
-        public void LoginExitoso()
-        {
-            MostrarMenuForm();
+            using(FormLogin login = new FormLogin(this)) //Implementar Singleton
+            {
+                login.ShowDialog();                      //ESTA LINEA DE CODIGO SIGUE EJECUTANDOSE MIENTRAS EL FORM ESTÉ ACTIVO
+                if(login.DevolverEstadoLogin() == false)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    MostrarMenuForm();
+                }
+            }
         }
         public void MostrarMenuForm()
         {
             using (FormMenu menu = new FormMenu(this))
             {
-                this.FormActual?.Close();
+                
                 menu.ShowDialog();
-
+                menu.Dispose();
             }
             MostrarLoginForm();
         }
-        public void VolverAlLogin()
-        {
-            MostrarLoginForm();
-        }
-        public void CerrarAplicacion()
-        {
-            FormActual?.Dispose();
-            FormActual = null;
-            Application.Exit();
-        }
-
     }
 }
