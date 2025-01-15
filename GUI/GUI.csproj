@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Estado.cs" />
+    <Compile Include="EstadoCerrarAplicacion.cs" />
+    <Compile Include="EstadoError.cs" />
+    <Compile Include="EstadoIniciarSesion.cs" />
+    <Compile Include="EstadoMenu.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>

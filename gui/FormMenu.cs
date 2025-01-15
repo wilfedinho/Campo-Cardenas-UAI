@@ -12,16 +12,17 @@ namespace gui
 {
     public partial class FormMenu : Form
     {
-        private readonly GestorForm gestorForm;
-        public FormMenu(GestorForm NgestorForm)
+        
+        public FormMenu()
         {
             InitializeComponent();
-            gestorForm = NgestorForm;
+            
         }
 
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            this.Hide();
+            GestorForm.gestorFormSG.MostrarFormulario();
         }
     }
 }

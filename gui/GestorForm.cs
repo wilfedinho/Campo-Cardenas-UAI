@@ -9,7 +9,31 @@ namespace gui
 {
     public class GestorForm
     {
-        private Form FormActual;
+        private static GestorForm instance;
+        private Estado estadoGestor = new EstadoIniciarSesion();
+        public static GestorForm gestorFormSG
+        {
+            get
+            {
+                if (instance == null) 
+                {
+                    instance = new GestorForm(); 
+                }
+                return instance;
+            }
+        }
+        public void MostrarFormulario()
+        {
+            estadoGestor.EjecutarEstado();
+            
+        }
+        public void DefinirEstado(Estado estadoNuevo)
+        {
+            estadoGestor = estadoNuevo;
+        }
+
+
+       /* private Form FormActual;
         public void Iniciar()
         {
             MostrarLoginForm();
@@ -38,6 +62,6 @@ namespace gui
                 menu.Dispose();
             }
             MostrarLoginForm();
-        }
+        }*/
     }
 }

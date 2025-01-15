@@ -12,18 +12,21 @@ namespace gui
 {
     public partial class FormLogin : Form
     {
-        private readonly GestorForm gestorForm;
+        
         private bool IsLogueado;
-        public FormLogin(GestorForm NgestorForm)
+        public FormLogin()
         {
             InitializeComponent();
-            gestorForm = NgestorForm;
+            
         }
 
         private void BT_LOGIN_Click(object sender, EventArgs e)
         {
             IsLogueado = true;
-            this.Close();
+            this.Hide();
+            GestorForm.gestorFormSG.MostrarFormulario();
+            
+            
             
         }
 
@@ -37,5 +40,6 @@ namespace gui
         {
             return IsLogueado;
         }
+
     }
 }

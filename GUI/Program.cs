@@ -16,8 +16,7 @@ namespace gui
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var controlador = new GestorForm();
-            controlador.Iniciar();
+            GestorForm.gestorFormSG.MostrarFormulario();
             //Application.Run();
             
         }
