@@ -11,17 +11,13 @@ namespace gui
         FormLogin login;
         public override void CerrarEstado()
         {
-            login?.Close();
             login?.Dispose();
-            login = null;
         }
 
         public override void EjecutarEstado()
         {
-            using (login = new FormLogin())
-            {
-                login.ShowDialog();
-            }
+            login = new FormLogin();
+            login.ShowDialog();
         }
     }
 }

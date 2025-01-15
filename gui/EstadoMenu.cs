@@ -11,17 +11,13 @@ namespace gui
         FormMenu menu;
         public override void CerrarEstado()
         {
-            menu?.Close();
             menu?.Dispose();
-            menu = null;
         }
 
         public override void EjecutarEstado()
         {
-            using (menu = new FormMenu())
-            {
-              menu.ShowDialog();
-            }
+            menu = new FormMenu();
+            menu.ShowDialog();
         }
     }
 }
