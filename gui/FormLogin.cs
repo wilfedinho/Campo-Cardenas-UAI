@@ -17,29 +17,18 @@ namespace gui
         public FormLogin()
         {
             InitializeComponent();
-            
         }
 
         private void BT_LOGIN_Click(object sender, EventArgs e)
         {
             IsLogueado = true;
-            this.Hide();
-            GestorForm.gestorFormSG.MostrarFormulario();
-            
-            
-            
+            GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
         }
 
         private void BT_CERRARAPP_Click(object sender, EventArgs e)
         {
             IsLogueado = false;
-            this.Close();
-         
+            GestorForm.gestorFormSG.DefinirEstado(new EstadoCerrarAplicacion());
         }
-        public bool DevolverEstadoLogin()
-        {
-            return IsLogueado;
-        }
-
     }
 }

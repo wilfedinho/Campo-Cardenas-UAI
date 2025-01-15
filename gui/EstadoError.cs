@@ -8,7 +8,7 @@ namespace gui
 {
     public class EstadoError : Estado
     {
-        public override void CambiarEstado()
+        public override void CerrarEstado()
         {
             throw new NotImplementedException();
         }

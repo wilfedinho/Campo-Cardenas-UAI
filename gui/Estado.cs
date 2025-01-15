@@ -9,7 +9,7 @@ namespace gui
 {
     public abstract class Estado
     {
-        public abstract void CambiarEstado();
+        public abstract void CerrarEstado(); // Flujo Principal
 
         public abstract void EjecutarEstado();
     }

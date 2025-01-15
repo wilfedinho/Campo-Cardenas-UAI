@@ -8,21 +8,20 @@ namespace gui
 {
     internal class EstadoMenu : Estado
     {
-        public override void CambiarEstado()
+        FormMenu menu;
+        public override void CerrarEstado()
         {
-            GestorForm.gestorFormSG.DefinirEstado(new EstadoIniciarSesion());
+            menu?.Close();
+            menu?.Dispose();
+            menu = null;
         }
 
         public override void EjecutarEstado()
         {
-            CambiarEstado();
-            using (FormMenu menu = new FormMenu())
+            using (menu = new FormMenu())
             {
-
-                menu.ShowDialog();
-                //menu.Dispose();
+              menu.ShowDialog();
             }
-            
         }
     }
 }

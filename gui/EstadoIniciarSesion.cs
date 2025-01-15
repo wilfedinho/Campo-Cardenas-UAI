@@ -8,20 +8,20 @@ namespace gui
 {
     internal class EstadoIniciarSesion : Estado
     {
-        public override void CambiarEstado()
+        FormLogin login;
+        public override void CerrarEstado()
         {
-            GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
+            login?.Close();
+            login?.Dispose();
+            login = null;
         }
 
         public override void EjecutarEstado()
         {
-            CambiarEstado();
-            using (FormLogin login = new FormLogin()) 
+            using (login = new FormLogin())
             {
-                login.ShowDialog(); //ESTA LINEA DE CODIGO SIGUE EJECUTANDOSE MIENTRAS EL FORM ESTÉ ACTIVO
-                //login.Dispose();
+                login.ShowDialog();
             }
-            
         }
     }
 }

@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace gui
 {
     internal class EstadoCerrarAplicacion : Estado
     {
-        public override void CambiarEstado()
+        public override void CerrarEstado()
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void EjecutarEstado()
         {
-            throw new NotImplementedException();
+            Environment.Exit(0);
         }
     }
 }

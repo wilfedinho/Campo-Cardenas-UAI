@@ -22,46 +22,11 @@ namespace gui
                 return instance;
             }
         }
-        public void MostrarFormulario()
-        {
-            estadoGestor.EjecutarEstado();
-            
-        }
         public void DefinirEstado(Estado estadoNuevo)
         {
+            estadoGestor?.CerrarEstado();
             estadoGestor = estadoNuevo;
+            estadoGestor.EjecutarEstado();
         }
-
-
-       /* private Form FormActual;
-        public void Iniciar()
-        {
-            MostrarLoginForm();
-        }
-        private void MostrarLoginForm()
-        {
-            using(FormLogin login = new FormLogin(this)) //Implementar Singleton
-            {
-                login.ShowDialog();                      //ESTA LINEA DE CODIGO SIGUE EJECUTANDOSE MIENTRAS EL FORM ESTÉ ACTIVO
-                if(login.DevolverEstadoLogin() == false)
-                {
-                    Environment.Exit(0);
-                }
-                else
-                {
-                    MostrarMenuForm();
-                }
-            }
-        }
-        public void MostrarMenuForm()
-        {
-            using (FormMenu menu = new FormMenu(this))
-            {
-                
-                menu.ShowDialog();
-                menu.Dispose();
-            }
-            MostrarLoginForm();
-        }*/
     }
 }
