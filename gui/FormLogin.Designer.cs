@@ -30,6 +30,7 @@
         {
             this.BT_LOGIN = new System.Windows.Forms.Button();
             this.BT_CERRARAPP = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BT_LOGIN
@@ -52,11 +53,22 @@
             this.BT_CERRARAPP.UseVisualStyleBackColor = true;
             this.BT_CERRARAPP.Click += new System.EventHandler(this.BT_CERRARAPP_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(583, 328);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(171, 40);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Provocar Error";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 395);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BT_CERRARAPP);
             this.Controls.Add(this.BT_LOGIN);
             this.Name = "FormLogin";
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.Button BT_LOGIN;
         private System.Windows.Forms.Button BT_CERRARAPP;
+        private System.Windows.Forms.Button button1;
     }
 }
 

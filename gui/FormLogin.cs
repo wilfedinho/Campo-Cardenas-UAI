@@ -30,5 +30,10 @@ namespace gui
             IsLogueado = false;
             GestorForm.gestorFormSG.DefinirEstado(new EstadoCerrarAplicacion());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GestorForm.gestorFormSG.DefinirEstado(new EstadoError());
+        }
     }
 }

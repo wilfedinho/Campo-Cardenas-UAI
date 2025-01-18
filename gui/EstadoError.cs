@@ -8,14 +8,16 @@ namespace gui
 {
     public class EstadoError : Estado
     {
+        FormError Error;
         public override void CerrarEstado()
         {
-            throw new NotImplementedException();
+            Error?.Dispose();
         }
 
         public override void EjecutarEstado()
         {
-            throw new NotImplementedException();
+            Error = new FormError();
+            Error.ShowDialog();
         }
     }
 }

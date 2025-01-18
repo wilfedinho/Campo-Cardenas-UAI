@@ -51,6 +51,12 @@
     <Compile Include="EstadoError.cs" />
     <Compile Include="EstadoIniciarSesion.cs" />
     <Compile Include="EstadoMenu.cs" />
+    <Compile Include="FormError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormError.Designer.cs">
+      <DependentUpon>FormError.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormError.resx">
+      <DependentUpon>FormError.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
