@@ -33,7 +33,7 @@ namespace BLL
             UsuarioORM.GestorUsuarioORM.Baja(UsuarioBaja);
         }
 
-        public void Modifar(Usuario UsuarioModificado)
+        public void Modificar(Usuario UsuarioModificado)
         {
             UsuarioORM.GestorUsuarioORM.Modificar(UsuarioModificado);
         }

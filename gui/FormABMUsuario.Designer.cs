@@ -32,6 +32,13 @@
             this.BT_BAJA_USUARIO = new System.Windows.Forms.Button();
             this.BT_MODIFICAR_USUARIO = new System.Windows.Forms.Button();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
+            this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ROL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ISBLOQUEADO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BT_DESBLOQUEAR_USUARIO = new System.Windows.Forms.Button();
             this.BT_CANCELAR = new System.Windows.Forms.Button();
             this.BT_APLICAR = new System.Windows.Forms.Button();
@@ -46,13 +53,6 @@
             this.LABEL_EMAIL_ABM_USUARIO = new System.Windows.Forms.Label();
             this.LABEL_ROL_ABM_USUARIO = new System.Windows.Forms.Label();
             this.CB_ROL = new System.Windows.Forms.ComboBox();
-            this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ROL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ISBLOQUEADO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,8 +103,52 @@
             this.dgvUsuario.Location = new System.Drawing.Point(25, 33);
             this.dgvUsuario.Name = "dgvUsuario";
             this.dgvUsuario.ReadOnly = true;
+            this.dgvUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuario.Size = new System.Drawing.Size(927, 238);
             this.dgvUsuario.TabIndex = 3;
+            this.dgvUsuario.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsuario_CellMouseClick);
+            // 
+            // ID_USUARIO
+            // 
+            this.ID_USUARIO.HeaderText = "ID";
+            this.ID_USUARIO.Name = "ID_USUARIO";
+            this.ID_USUARIO.ReadOnly = true;
+            // 
+            // NOMBRE_USUARIO
+            // 
+            this.NOMBRE_USUARIO.HeaderText = "Nombre";
+            this.NOMBRE_USUARIO.Name = "NOMBRE_USUARIO";
+            this.NOMBRE_USUARIO.ReadOnly = true;
+            // 
+            // APELLIDO_USUARIO
+            // 
+            this.APELLIDO_USUARIO.HeaderText = "Apellido";
+            this.APELLIDO_USUARIO.Name = "APELLIDO_USUARIO";
+            this.APELLIDO_USUARIO.ReadOnly = true;
+            // 
+            // DNI_USUARIO
+            // 
+            this.DNI_USUARIO.HeaderText = "DNI";
+            this.DNI_USUARIO.Name = "DNI_USUARIO";
+            this.DNI_USUARIO.ReadOnly = true;
+            // 
+            // EMAIL_USUARIO
+            // 
+            this.EMAIL_USUARIO.HeaderText = "Email";
+            this.EMAIL_USUARIO.Name = "EMAIL_USUARIO";
+            this.EMAIL_USUARIO.ReadOnly = true;
+            // 
+            // ROL_USUARIO
+            // 
+            this.ROL_USUARIO.HeaderText = "Rol";
+            this.ROL_USUARIO.Name = "ROL_USUARIO";
+            this.ROL_USUARIO.ReadOnly = true;
+            // 
+            // ISBLOQUEADO_USUARIO
+            // 
+            this.ISBLOQUEADO_USUARIO.HeaderText = "Bloqueado";
+            this.ISBLOQUEADO_USUARIO.Name = "ISBLOQUEADO_USUARIO";
+            this.ISBLOQUEADO_USUARIO.ReadOnly = true;
             // 
             // BT_DESBLOQUEAR_USUARIO
             // 
@@ -223,52 +267,13 @@
             // CB_ROL
             // 
             this.CB_ROL.FormattingEnabled = true;
+            this.CB_ROL.Items.AddRange(new object[] {
+            "Admin",
+            "Normal"});
             this.CB_ROL.Location = new System.Drawing.Point(140, 440);
             this.CB_ROL.Name = "CB_ROL";
             this.CB_ROL.Size = new System.Drawing.Size(194, 21);
             this.CB_ROL.TabIndex = 56;
-            // 
-            // ID_USUARIO
-            // 
-            this.ID_USUARIO.HeaderText = "ID";
-            this.ID_USUARIO.Name = "ID_USUARIO";
-            this.ID_USUARIO.ReadOnly = true;
-            // 
-            // NOMBRE_USUARIO
-            // 
-            this.NOMBRE_USUARIO.HeaderText = "Nombre";
-            this.NOMBRE_USUARIO.Name = "NOMBRE_USUARIO";
-            this.NOMBRE_USUARIO.ReadOnly = true;
-            // 
-            // APELLIDO_USUARIO
-            // 
-            this.APELLIDO_USUARIO.HeaderText = "Apellido";
-            this.APELLIDO_USUARIO.Name = "APELLIDO_USUARIO";
-            this.APELLIDO_USUARIO.ReadOnly = true;
-            // 
-            // DNI_USUARIO
-            // 
-            this.DNI_USUARIO.HeaderText = "DNI";
-            this.DNI_USUARIO.Name = "DNI_USUARIO";
-            this.DNI_USUARIO.ReadOnly = true;
-            // 
-            // EMAIL_USUARIO
-            // 
-            this.EMAIL_USUARIO.HeaderText = "Email";
-            this.EMAIL_USUARIO.Name = "EMAIL_USUARIO";
-            this.EMAIL_USUARIO.ReadOnly = true;
-            // 
-            // ROL_USUARIO
-            // 
-            this.ROL_USUARIO.HeaderText = "Rol";
-            this.ROL_USUARIO.Name = "ROL_USUARIO";
-            this.ROL_USUARIO.ReadOnly = true;
-            // 
-            // ISBLOQUEADO_USUARIO
-            // 
-            this.ISBLOQUEADO_USUARIO.HeaderText = "Bloqueado";
-            this.ISBLOQUEADO_USUARIO.Name = "ISBLOQUEADO_USUARIO";
-            this.ISBLOQUEADO_USUARIO.ReadOnly = true;
             // 
             // FormABMUsuario
             // 

@@ -10,7 +10,7 @@ namespace SERVICIOS
     {
         void Alta(T Entidad);
         void Baja(T Entidad);
-        void Modifar(T Entidad);
+        void Modificar(T Entidad);
 
     }
 }
