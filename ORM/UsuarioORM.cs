@@ -26,8 +26,8 @@ namespace ORM
         }
         public void Alta(Usuario UsuarioAlta)
         {
-            // GestorBaseDeDatos.GestorBaseDeDatosSG.DevolverTabla("Usuario").Rows.Add(new object[] { UsuarioAlta.ID_Usuario, UsuarioAlta.Nombre, UsuarioAlta.Apellido, UsuarioAlta.DNI, UsuarioAlta.Contraseña, UsuarioAlta.Email, UsuarioAlta.Rol, UsuarioAlta.Intentos, UsuarioAlta.IsBloqueado});
             DataRow nuevaFila = GestorBaseDeDatos.GestorBaseDeDatosSG.DevolverTabla("Usuario").NewRow();
+            nuevaFila["ID"] = UsuarioAlta.ID_Usuario;
             nuevaFila["Nombre"] = UsuarioAlta.Nombre;
             nuevaFila["Apellido"] = UsuarioAlta.Apellido;
             nuevaFila["DNI"] = UsuarioAlta.DNI;
@@ -61,7 +61,6 @@ namespace ORM
             };
             ActualizarGeneral();
         }
-
         public List<Usuario> DevolverLosUsuariosPorConsulta(string query = "")
         {
             List<Usuario> ListaUsuario = new List<Usuario>();
@@ -108,12 +107,5 @@ namespace ORM
         {
             GestorBaseDeDatos.GestorBaseDeDatosSG.ActualizarGeneral();
         }
-
-
-
     }
-
-
-
-
 }

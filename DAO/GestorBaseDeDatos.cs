@@ -31,7 +31,6 @@ namespace DAO
         {
                 BaseDeDatosEnMemoria = new DataSet();
                 cone = new SqlConnection("Data Source=.;Initial Catalog=BD_PROYECTO_2025;Integrated Security=True");
-            cone.Open();
                 string query = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'";
                 SqlDataAdapter Adaptador = new SqlDataAdapter(query, cone);
                 DataTable TablaNombreDeLasTablas = new DataTable();
@@ -58,8 +57,6 @@ namespace DAO
                     }
                     DiccionarioDeAdaptadores.Add((Row["TABLE_NAME"] as string), adapter);
                 }
-            cone.Close();
-            
         }
         public DataTable DevolverTabla(string NombreTabla)
         {
@@ -67,17 +64,19 @@ namespace DAO
         }
         public void ActualizarGeneral()
         {
-            cone.Open();
            foreach (KeyValuePair<string, SqlDataAdapter> ClaveValor in DiccionarioDeAdaptadores)
            {
-                    ClaveValor.Value.SelectCommand.Connection = cone;
-                    ClaveValor.Value.Update(BaseDeDatosEnMemoria, ClaveValor.Key);
+              ClaveValor.Value.SelectCommand.Connection = cone;
+              ClaveValor.Value.Update(BaseDeDatosEnMemoria, ClaveValor.Key);
+              BaseDeDatosEnMemoria.Tables[ClaveValor.Key].Clear();
+              DiccionarioDeAdaptadores[ClaveValor.Key].Fill(BaseDeDatosEnMemoria, ClaveValor.Key);  
            }
-            cone.Close();
         }
         public void ActualizarPorTabla(string NombreTabla)
         {
             DiccionarioDeAdaptadores[NombreTabla].Update(BaseDeDatosEnMemoria, NombreTabla);
+            BaseDeDatosEnMemoria.Tables[NombreTabla].Clear();
+            DiccionarioDeAdaptadores[NombreTabla].Fill(BaseDeDatosEnMemoria, NombreTabla);
         }
         public void RechazarGeneral()
         {

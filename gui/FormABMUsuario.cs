@@ -32,7 +32,7 @@ namespace gui
 
         private void BT_ALTA_USUARIO_Click(object sender, EventArgs e)
         {
-
+            int id = 
         }
 
         private void BT_BAJA_USUARIO_Click(object sender, EventArgs e)
