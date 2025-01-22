@@ -24,8 +24,6 @@ namespace DAO
         }
         private DataSet BaseDeDatosEnMemoria;
         private SqlConnection cone;
-
-
         private Dictionary<string, SqlDataAdapter> DiccionarioDeAdaptadores = new Dictionary<string, SqlDataAdapter>();
         public GestorBaseDeDatos()
         {

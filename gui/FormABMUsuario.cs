@@ -18,6 +18,8 @@ namespace gui
         {
             InitializeComponent();
             MostrarUsuarioPorConsulta();
+            BT_CANCELAR.Enabled = false;
+            BT_APLICAR.Enabled = false;
         }
 
         public void MostrarUsuarioPorConsulta(string query = "")
@@ -47,7 +49,6 @@ namespace gui
               }
             }  
         }
-
         private void BT_ALTA_USUARIO_Click(object sender, EventArgs e)
         {
             string nombre = TB_NOMBRE.Text;
@@ -56,32 +57,35 @@ namespace gui
             string contraseña = dni + apellido;
             string email = TB_EMAIL.Text;
             string rol = CB_ROL.SelectedItem.ToString();
-            int intentos = 0;
-            bool isBloqueado = false;
-            Usuario usuario = new Usuario(0,nombre,apellido,dni,contraseña,email,rol);
-            UsuarioBLL.GestorUsuarioBLLSG.Alta(usuario);
-            MostrarUsuarioPorConsulta();
-            VaciarTextBox(this);
+            if(UsuarioBLL.GestorUsuarioBLLSG.VerificarDNI(dni) == true && UsuarioBLL.GestorUsuarioBLLSG.VerificarDNIDuplicado(dni) == false)
+            {
+              Usuario usuario = new Usuario(0,nombre,apellido,dni,contraseña,email,rol);
+              UsuarioBLL.GestorUsuarioBLLSG.Alta(usuario);
+              MostrarUsuarioPorConsulta();
+              VaciarTextBox(this);
+            }
+            else
+            {
+                VaciarTextBox(this);
+                MessageBox.Show("Valores Ingresados para el DNI Incorrectos!!");
+            }
         }
-
         private void BT_BAJA_USUARIO_Click(object sender, EventArgs e)
         {
             Usuario UsuarioEliminar = UsuarioBLL.GestorUsuarioBLLSG.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
             UsuarioBLL.GestorUsuarioBLLSG.Baja(UsuarioEliminar);
             MostrarUsuarioPorConsulta();
+            VaciarTextBox(this);
         }
-
         private void BT_USUARIO_MODIFICAR_Click(object sender, EventArgs e)
         {
-            Usuario UsuarioModificar = UsuarioBLL.GestorUsuarioBLLSG.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
-            UsuarioModificar.Nombre = TB_NOMBRE.Text;
-            UsuarioModificar.Apellido = TB_APELLIDO.Text;
-            UsuarioModificar.DNI = TB_DNI.Text;
-            UsuarioModificar.Email = TB_EMAIL.Text;
-            UsuarioModificar.Rol = CB_ROL.SelectedItem.ToString();
-            UsuarioBLL.GestorUsuarioBLLSG.Modificar(UsuarioModificar);
-            MostrarUsuarioPorConsulta();
-            VaciarTextBox(this);
+            BT_ALTA_USUARIO.Enabled = false;
+            BT_BAJA_USUARIO.Enabled = false;
+            BT_MODIFICAR_USUARIO.Enabled = false;
+            BT_DESBLOQUEAR_USUARIO.Enabled = false;
+            BT_SALIR.Enabled = false;
+            BT_APLICAR.Enabled = true;
+            BT_CANCELAR.Enabled = true;
         }
         private void dgvUsuario_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -90,6 +94,28 @@ namespace gui
             TB_DNI.Text = dgvUsuario.SelectedRows[0].Cells[3].Value.ToString();
             TB_EMAIL.Text = dgvUsuario.SelectedRows[0].Cells[4].Value.ToString();
             CB_ROL.SelectedItem = dgvUsuario.SelectedRows[0].Cells[5].Value.ToString();
+        }
+        private void BT_APLICAR_Click(object sender, EventArgs e)
+        {
+            Usuario UsuarioModificar = UsuarioBLL.GestorUsuarioBLLSG.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
+            UsuarioModificar.Nombre = TB_NOMBRE.Text;
+            UsuarioModificar.Apellido = TB_APELLIDO.Text;
+            UsuarioModificar.Email = TB_EMAIL.Text;
+            UsuarioModificar.Rol = CB_ROL.SelectedItem.ToString();
+            UsuarioBLL.GestorUsuarioBLLSG.Modificar(UsuarioModificar);
+            MostrarUsuarioPorConsulta();
+            VaciarTextBox(this);
+        }
+        private void BT_CANCELAR_Click(object sender, EventArgs e)
+        {
+            BT_ALTA_USUARIO.Enabled = true;
+            BT_BAJA_USUARIO.Enabled = true;
+            BT_MODIFICAR_USUARIO.Enabled = true;
+            BT_DESBLOQUEAR_USUARIO.Enabled = true;
+            BT_SALIR.Enabled = true;
+            BT_APLICAR.Enabled = false;
+            BT_CANCELAR.Enabled = false;
+            VaciarTextBox(this);
         }
     }
 }

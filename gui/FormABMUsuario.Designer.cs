@@ -167,6 +167,7 @@
             this.BT_CANCELAR.TabIndex = 5;
             this.BT_CANCELAR.Text = "Cancelar";
             this.BT_CANCELAR.UseVisualStyleBackColor = true;
+            this.BT_CANCELAR.Click += new System.EventHandler(this.BT_CANCELAR_Click);
             // 
             // BT_APLICAR
             // 
@@ -176,6 +177,7 @@
             this.BT_APLICAR.TabIndex = 6;
             this.BT_APLICAR.Text = "Aplicar";
             this.BT_APLICAR.UseVisualStyleBackColor = true;
+            this.BT_APLICAR.Click += new System.EventHandler(this.BT_APLICAR_Click);
             // 
             // BT_SALIR
             // 
