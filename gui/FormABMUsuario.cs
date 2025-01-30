@@ -65,7 +65,7 @@ namespace gui
             string contraseña = dni + apellido;
             string email = TB_EMAIL.Text;
             string rol = CB_ROL.SelectedItem.ToString();
-            if(UsuarioBLL.GestorUsuarioBLLSG.VerificarDNI(dni) == true && UsuarioBLL.GestorUsuarioBLLSG.VerificarDNIDuplicado(dni) == false && UsuarioBLL.GestorUsuarioBLLSG.VerificarEmail(email) == true)
+            if(UsuarioBLL.GestorUsuarioBLLSG.VerificarDNI(dni) == true && UsuarioBLL.GestorUsuarioBLLSG.VerificarDNIDuplicado(dni) == false && UsuarioBLL.GestorUsuarioBLLSG.VerificarEmail(email) == true && UsuarioBLL.GestorUsuarioBLLSG.VerificarEmailDuplicado(email) == false)
             {
               Usuario usuario = new Usuario(0,nombre,apellido,dni,contraseña,email,rol);
               UsuarioBLL.GestorUsuarioBLLSG.Alta(usuario);

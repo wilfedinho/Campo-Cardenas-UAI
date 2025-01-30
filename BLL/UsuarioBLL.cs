@@ -42,7 +42,20 @@ namespace BLL
         public bool VerificarDNIDuplicado(string DNI)
         {
             Usuario usuario = DevolverUsuariosPorConsulta().Find(x => x.DNI == DNI);
-            //Si el usuario Posee un DNI Duplicado devovlerá True
+            //Si el usuario Posee un DNI Duplicado devolverá True
+            if (usuario != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool VerificarEmailDuplicado(string Email)
+        {
+            Usuario usuario = DevolverUsuariosPorConsulta().Find(x => x.Email == Email);
+            //Si el usuario Posee un Email Duplicado devolverá True
             if (usuario != null)
             {
                 return true;
@@ -68,6 +81,7 @@ namespace BLL
         }
         public void Alta(Usuario UsuarioAlta)
         {
+            UsuarioAlta.Contraseña = Encriptador.GestorEncriptador.Hashear(UsuarioAlta.Contraseña);
             UsuarioORM.GestorUsuarioORM.Alta(UsuarioAlta);  
         }
 
@@ -78,6 +92,7 @@ namespace BLL
 
         public void Modificar(Usuario UsuarioModificado)
         {
+            UsuarioModificado.Contraseña = Encriptador.GestorEncriptador.Hashear(UsuarioModificado.Contraseña);
             UsuarioORM.GestorUsuarioORM.Modificar(UsuarioModificado);
         }
         public List<Usuario> DevolverUsuariosPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "")
