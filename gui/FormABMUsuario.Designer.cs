@@ -53,6 +53,7 @@
             this.LABEL_EMAIL_ABM_USUARIO = new System.Windows.Forms.Label();
             this.LABEL_ROL_ABM_USUARIO = new System.Windows.Forms.Label();
             this.CB_ROL = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,6 +159,7 @@
             this.BT_DESBLOQUEAR_USUARIO.TabIndex = 4;
             this.BT_DESBLOQUEAR_USUARIO.Text = "Desbloquear";
             this.BT_DESBLOQUEAR_USUARIO.UseVisualStyleBackColor = true;
+            this.BT_DESBLOQUEAR_USUARIO.Click += new System.EventHandler(this.BT_DESBLOQUEAR_USUARIO_Click);
             // 
             // BT_CANCELAR
             // 
@@ -277,11 +279,24 @@
             this.CB_ROL.Size = new System.Drawing.Size(194, 21);
             this.CB_ROL.TabIndex = 56;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(364, 282);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(243, 30);
+            this.checkBox1.TabIndex = 57;
+            this.checkBox1.Text = "Mostrar Bloqueados";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // FormABMUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 488);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.CB_ROL);
             this.Controls.Add(this.LABEL_ROL_ABM_USUARIO);
             this.Controls.Add(this.LABEL_EMAIL_ABM_USUARIO);
@@ -335,5 +350,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL_USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ROL_USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ISBLOQUEADO_USUARIO;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

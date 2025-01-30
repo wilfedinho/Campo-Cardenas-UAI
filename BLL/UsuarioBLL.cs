@@ -52,6 +52,20 @@ namespace BLL
                 return false;
             }
         }
+        public bool VerificarEmail(string email)
+        {
+            //Devolverá True si el formato de mail ta correcto
+            Regex rgx = new Regex (@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$");
+            if(rgx.IsMatch(email))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
         public void Alta(Usuario UsuarioAlta)
         {
             UsuarioORM.GestorUsuarioORM.Alta(UsuarioAlta);  
@@ -66,9 +80,9 @@ namespace BLL
         {
             UsuarioORM.GestorUsuarioORM.Modificar(UsuarioModificado);
         }
-        public List<Usuario> DevolverUsuariosPorConsulta(string query = "")
+        public List<Usuario> DevolverUsuariosPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "")
         {
-            return UsuarioORM.GestorUsuarioORM.DevolverLosUsuariosPorConsulta(query);
+            return UsuarioORM.GestorUsuarioORM.DevolverLosUsuariosPorConsulta(tipoConsulta,itemSeleccionado,itemValor);
         }
     }
 }
