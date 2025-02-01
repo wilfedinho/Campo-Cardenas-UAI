@@ -38,9 +38,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(186, 232);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(699, 47);
+            this.label1.Size = new System.Drawing.Size(710, 47);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ERROR CRÍTICO REINCIE LA APLICACIÓN";
+            this.label1.Text = "ERROR CRÍTICO REINICIE LA APLICACIÓN";
             // 
             // FormError
             // 

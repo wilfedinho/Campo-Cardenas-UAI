@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BE;
+using BLL;
+using SERVICIOS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,28 +15,53 @@ namespace gui
 {
     public partial class FormLogin : Form
     {
-        
-        private bool IsLogueado;
+        List<Usuario> ListaUsuario;
         public FormLogin()
         {
             InitializeComponent();
+            ListaUsuario = UsuarioBLL.GestorUsuarioBLLSG.DevolverUsuariosPorConsulta();
         }
 
         private void BT_LOGIN_Click(object sender, EventArgs e)
         {
-            IsLogueado = true;
-            GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
+            Usuario usuarioIniciarSesion = ListaUsuario.Find(x => x.Email == TB_Email.Text);
+            if (usuarioIniciarSesion != null)
+            {
+                if(usuarioIniciarSesion.IsBloqueado == false)
+                {
+                   if(usuarioIniciarSesion.Contraseña == TB_Contrasena.Text)
+                   {
+                      SesionManager.GestorSesion.Login(usuarioIniciarSesion);
+                      GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
+                   }
+                   else
+                   {
+                        
+                        if(usuarioIniciarSesion.Intentos >= 3)
+                        {
+                            usuarioIniciarSesion.IsBloqueado = true;
+                        }
+                        else
+                        {
+                            usuarioIniciarSesion.Intentos += 1;
+                        }
+                        UsuarioBLL.GestorUsuarioBLLSG.Modificar(usuarioIniciarSesion);
+                        MessageBox.Show($"Datos Ingresados Incorrectos!!!");
+                   }
+                }
+                else
+                {
+                  MessageBox.Show($"El Usuario {usuarioIniciarSesion.Nombre} está Bloqueado!!!");
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Datos Ingresados Incorrectos!!!");
+            }
         }
-
-        private void BT_CERRARAPP_Click(object sender, EventArgs e)
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            IsLogueado = false;
             GestorForm.gestorFormSG.DefinirEstado(new EstadoCerrarAplicacion());
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            GestorForm.gestorFormSG.DefinirEstado(new EstadoError());
         }
     }
 }

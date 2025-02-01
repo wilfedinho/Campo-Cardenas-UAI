@@ -81,7 +81,7 @@ namespace BLL
         }
         public void Alta(Usuario UsuarioAlta)
         {
-            UsuarioAlta.Contraseña = Encriptador.GestorEncriptador.Hashear(UsuarioAlta.Contraseña);
+            UsuarioAlta.Contraseña = Cifrador.GestorCifrador.EncriptarIrreversible(UsuarioAlta.Contraseña);
             UsuarioORM.GestorUsuarioORM.Alta(UsuarioAlta);  
         }
 
@@ -92,7 +92,6 @@ namespace BLL
 
         public void Modificar(Usuario UsuarioModificado)
         {
-            UsuarioModificado.Contraseña = Encriptador.GestorEncriptador.Hashear(UsuarioModificado.Contraseña);
             UsuarioORM.GestorUsuarioORM.Modificar(UsuarioModificado);
         }
         public List<Usuario> DevolverUsuariosPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "")

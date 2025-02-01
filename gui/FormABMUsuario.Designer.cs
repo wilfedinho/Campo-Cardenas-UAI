@@ -285,7 +285,7 @@
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(364, 282);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(243, 30);
+            this.checkBox1.Size = new System.Drawing.Size(267, 33);
             this.checkBox1.TabIndex = 57;
             this.checkBox1.Text = "Mostrar Bloqueados";
             this.checkBox1.UseVisualStyleBackColor = true;
