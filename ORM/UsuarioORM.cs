@@ -60,7 +60,7 @@ namespace ORM
             };
             ActualizarGeneral();
         }
-        public List<Usuario> DevolverLosUsuariosPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "")
+        public List<Usuario> DevolverLosUsuariosPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
         {
             List<Usuario> ListaUsuario = new List<Usuario>();
             DataView dv;
@@ -71,7 +71,7 @@ namespace ORM
                     query = $"{itemSeleccionado} = '{itemValor}'";
                     break;
                 case "D-H":
-                    query = $"{itemSeleccionado} >= '{itemValor}' AND {itemSeleccionado} <= '{itemValor}'";
+                    query = $"{itemSeleccionado} >= '{itemValor}' AND {itemSeleccionado} <= '{itemValor2}'";
                     break;
                 case "Incremental":
                     query = $"{itemSeleccionado} LIKE '{itemValor}%'";
