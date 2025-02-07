@@ -24,7 +24,7 @@ namespace gui
 
         private void BT_LOGIN_Click(object sender, EventArgs e)
         {
-            Usuario usuarioIniciarSesion = ListaUsuario.Find(x => x.Email == TB_Email.Text);
+            Usuario usuarioIniciarSesion = ListaUsuario.Find(x => x.Username == TB_Username.Text);
             if (usuarioIniciarSesion != null)
             {
                 if(usuarioIniciarSesion.IsBloqueado == false)

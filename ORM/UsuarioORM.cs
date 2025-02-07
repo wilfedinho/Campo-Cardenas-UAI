@@ -28,6 +28,7 @@ namespace ORM
         {
             DataRow nuevaFila = GestorBaseDeDatos.GestorBaseDeDatosSG.DevolverTabla("Usuario").NewRow();
             nuevaFila["ID"] = UsuarioAlta.ID_Usuario;
+            nuevaFila["Username"] = UsuarioAlta.Username;
             nuevaFila["Nombre"] = UsuarioAlta.Nombre;
             nuevaFila["Apellido"] = UsuarioAlta.Apellido;
             nuevaFila["DNI"] = UsuarioAlta.DNI;
@@ -49,6 +50,7 @@ namespace ORM
             GestorBaseDeDatos.GestorBaseDeDatosSG.DevolverTabla("Usuario").Rows.Find(UsuarioModdificado.ID_Usuario).ItemArray = new object[] 
             {
                 UsuarioModdificado.ID_Usuario,
+                UsuarioModdificado.Username,
                 UsuarioModdificado.Nombre,
                 UsuarioModdificado.Apellido,
                 UsuarioModdificado.DNI,
@@ -81,15 +83,16 @@ namespace ORM
             foreach(DataRowView drv in dv)
             {
               int id = int.Parse(drv[0].ToString());
-              string nombre = drv[1].ToString();
-              string apellido = drv[2].ToString();
-              string dni = drv[3].ToString();
-              string contrasena = drv[4].ToString();
-              string email = drv[5].ToString();
-              string rol = drv[6].ToString(); //Cuando se implemente el patron Composite para los patrones se deberá cambiar el mapeado del rol en si
-              int intentos = int.Parse(drv[7].ToString());
-              bool isbloqueado = bool.Parse(drv[8].ToString());
-              Usuario usuario = new Usuario(id,nombre,apellido,dni,contrasena,email,rol,intentos,isbloqueado);
+              string username = drv[1].ToString();
+              string nombre = drv[2].ToString();
+              string apellido = drv[3].ToString();
+              string dni = drv[4].ToString();
+              string contrasena = drv[5].ToString();
+              string email = drv[6].ToString();
+              string rol = drv[7].ToString(); //Cuando se implemente el patron Composite para los patrones se deberá cambiar el mapeado del rol en si
+              int intentos = int.Parse(drv[8].ToString());
+              bool isbloqueado = bool.Parse(drv[9].ToString());
+              Usuario usuario = new Usuario(id,username, nombre,apellido,dni,contrasena,email,rol,intentos,isbloqueado);
               ListaUsuario.Add(usuario);
             }
             return ListaUsuario;

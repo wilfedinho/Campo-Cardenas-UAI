@@ -39,6 +39,20 @@ namespace BLL
                 return false;
             }
         }
+        public bool VerificarEmail(string email)
+        {
+            //Devolverá True si el formato de mail ta correcto
+            Regex rgx = new Regex (@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$");
+            if(rgx.IsMatch(email))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
         public bool VerificarDNIDuplicado(string DNI)
         {
             Usuario usuario = DevolverUsuariosPorConsulta().Find(x => x.DNI == DNI);
@@ -65,11 +79,11 @@ namespace BLL
                 return false;
             }
         }
-        public bool VerificarEmail(string email)
+        public bool VerificarUsernameDuplicado(string username)
         {
-            //Devolverá True si el formato de mail ta correcto
-            Regex rgx = new Regex (@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$");
-            if(rgx.IsMatch(email))
+            //Si el usuario Posee un Username Duplicado devolverá True
+            Usuario usuario = DevolverUsuariosPorConsulta().Find(x => x.Username == username);
+            if(usuario != null)
             {
                 return true;
             }
@@ -77,7 +91,6 @@ namespace BLL
             {
                 return false;
             }
-            
         }
         public void Alta(Usuario UsuarioAlta)
         {
@@ -94,9 +107,9 @@ namespace BLL
         {
             UsuarioORM.GestorUsuarioORM.Modificar(UsuarioModificado);
         }
-        public List<Usuario> DevolverUsuariosPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "")
+        public List<Usuario> DevolverUsuariosPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
         {
-            return UsuarioORM.GestorUsuarioORM.DevolverLosUsuariosPorConsulta(tipoConsulta,itemSeleccionado,itemValor);
+            return UsuarioORM.GestorUsuarioORM.DevolverLosUsuariosPorConsulta(tipoConsulta,itemSeleccionado,itemValor, itemValor2);
         }
     }
 }

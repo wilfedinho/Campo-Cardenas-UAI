@@ -9,6 +9,7 @@ namespace BE
     public class Usuario
     {
         public int ID_Usuario { get; set; }
+        public string Username { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string DNI { get; set; }
@@ -18,21 +19,10 @@ namespace BE
         public int Intentos { get; set; }
         public bool IsBloqueado { get; set; }
 
-        public Usuario(int nID,string nNombre, string nApellido, string nDNI, string nContraseña, string nEmail, string rOL)
+        public Usuario(int nID, string nUsername, string nNombre, string nApellido, string nDNI, string nContraseña, string nEmail, string rOL, int nIntentos = 0, bool nIsBloqueado = false)
         {
             ID_Usuario = nID;
-            Nombre = nNombre;
-            Apellido = nApellido;
-            DNI = nDNI;
-            Contraseña = nContraseña;
-            Email = nEmail;
-            Rol = rOL;
-            Intentos = 0;
-            IsBloqueado = false;
-        }
-        public Usuario(int nID, string nNombre, string nApellido, string nDNI, string nContraseña, string nEmail, string rOL, int nIntentos, bool nIsBloqueado)
-        {
-            ID_Usuario = nID;
+            Username = nUsername;
             Nombre = nNombre;
             Apellido = nApellido;
             DNI = nDNI;
@@ -42,7 +32,5 @@ namespace BE
             Intentos = nIntentos;
             IsBloqueado = nIsBloqueado;
         }
-
-
     }
 }

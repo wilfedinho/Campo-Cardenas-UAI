@@ -32,13 +32,6 @@
             this.BT_BAJA_USUARIO = new System.Windows.Forms.Button();
             this.BT_MODIFICAR_USUARIO = new System.Windows.Forms.Button();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
-            this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ROL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ISBLOQUEADO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BT_DESBLOQUEAR_USUARIO = new System.Windows.Forms.Button();
             this.BT_CANCELAR = new System.Windows.Forms.Button();
             this.BT_APLICAR = new System.Windows.Forms.Button();
@@ -54,6 +47,16 @@
             this.LABEL_ROL_ABM_USUARIO = new System.Windows.Forms.Label();
             this.CB_ROL = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TB_Usuario = new System.Windows.Forms.TextBox();
+            this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ROL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ISBLOQUEADO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +98,7 @@
             this.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_USUARIO,
+            this.Column1,
             this.NOMBRE_USUARIO,
             this.APELLIDO_USUARIO,
             this.DNI_USUARIO,
@@ -108,48 +112,6 @@
             this.dgvUsuario.Size = new System.Drawing.Size(927, 238);
             this.dgvUsuario.TabIndex = 3;
             this.dgvUsuario.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsuario_CellMouseClick);
-            // 
-            // ID_USUARIO
-            // 
-            this.ID_USUARIO.HeaderText = "ID";
-            this.ID_USUARIO.Name = "ID_USUARIO";
-            this.ID_USUARIO.ReadOnly = true;
-            // 
-            // NOMBRE_USUARIO
-            // 
-            this.NOMBRE_USUARIO.HeaderText = "Nombre";
-            this.NOMBRE_USUARIO.Name = "NOMBRE_USUARIO";
-            this.NOMBRE_USUARIO.ReadOnly = true;
-            // 
-            // APELLIDO_USUARIO
-            // 
-            this.APELLIDO_USUARIO.HeaderText = "Apellido";
-            this.APELLIDO_USUARIO.Name = "APELLIDO_USUARIO";
-            this.APELLIDO_USUARIO.ReadOnly = true;
-            // 
-            // DNI_USUARIO
-            // 
-            this.DNI_USUARIO.HeaderText = "DNI";
-            this.DNI_USUARIO.Name = "DNI_USUARIO";
-            this.DNI_USUARIO.ReadOnly = true;
-            // 
-            // EMAIL_USUARIO
-            // 
-            this.EMAIL_USUARIO.HeaderText = "Email";
-            this.EMAIL_USUARIO.Name = "EMAIL_USUARIO";
-            this.EMAIL_USUARIO.ReadOnly = true;
-            // 
-            // ROL_USUARIO
-            // 
-            this.ROL_USUARIO.HeaderText = "Rol";
-            this.ROL_USUARIO.Name = "ROL_USUARIO";
-            this.ROL_USUARIO.ReadOnly = true;
-            // 
-            // ISBLOQUEADO_USUARIO
-            // 
-            this.ISBLOQUEADO_USUARIO.HeaderText = "Bloqueado";
-            this.ISBLOQUEADO_USUARIO.Name = "ISBLOQUEADO_USUARIO";
-            this.ISBLOQUEADO_USUARIO.ReadOnly = true;
             // 
             // BT_DESBLOQUEAR_USUARIO
             // 
@@ -192,28 +154,28 @@
             // 
             // TB_NOMBRE
             // 
-            this.TB_NOMBRE.Location = new System.Drawing.Point(140, 290);
+            this.TB_NOMBRE.Location = new System.Drawing.Point(140, 311);
             this.TB_NOMBRE.Name = "TB_NOMBRE";
             this.TB_NOMBRE.Size = new System.Drawing.Size(194, 20);
             this.TB_NOMBRE.TabIndex = 47;
             // 
             // TB_APELLIDO
             // 
-            this.TB_APELLIDO.Location = new System.Drawing.Point(140, 327);
+            this.TB_APELLIDO.Location = new System.Drawing.Point(140, 348);
             this.TB_APELLIDO.Name = "TB_APELLIDO";
             this.TB_APELLIDO.Size = new System.Drawing.Size(194, 20);
             this.TB_APELLIDO.TabIndex = 48;
             // 
             // TB_DNI
             // 
-            this.TB_DNI.Location = new System.Drawing.Point(140, 367);
+            this.TB_DNI.Location = new System.Drawing.Point(140, 388);
             this.TB_DNI.Name = "TB_DNI";
             this.TB_DNI.Size = new System.Drawing.Size(194, 20);
             this.TB_DNI.TabIndex = 49;
             // 
             // TB_EMAIL
             // 
-            this.TB_EMAIL.Location = new System.Drawing.Point(140, 401);
+            this.TB_EMAIL.Location = new System.Drawing.Point(140, 422);
             this.TB_EMAIL.Name = "TB_EMAIL";
             this.TB_EMAIL.Size = new System.Drawing.Size(194, 20);
             this.TB_EMAIL.TabIndex = 50;
@@ -222,7 +184,7 @@
             // 
             this.LABEL_NOMBRE_ABM_USUARIO.AutoSize = true;
             this.LABEL_NOMBRE_ABM_USUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_NOMBRE_ABM_USUARIO.Location = new System.Drawing.Point(20, 284);
+            this.LABEL_NOMBRE_ABM_USUARIO.Location = new System.Drawing.Point(20, 305);
             this.LABEL_NOMBRE_ABM_USUARIO.Name = "LABEL_NOMBRE_ABM_USUARIO";
             this.LABEL_NOMBRE_ABM_USUARIO.Size = new System.Drawing.Size(107, 29);
             this.LABEL_NOMBRE_ABM_USUARIO.TabIndex = 51;
@@ -232,7 +194,7 @@
             // 
             this.LABEL_APELLIDO_ABM_USUARIO.AutoSize = true;
             this.LABEL_APELLIDO_ABM_USUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_APELLIDO_ABM_USUARIO.Location = new System.Drawing.Point(20, 320);
+            this.LABEL_APELLIDO_ABM_USUARIO.Location = new System.Drawing.Point(20, 341);
             this.LABEL_APELLIDO_ABM_USUARIO.Name = "LABEL_APELLIDO_ABM_USUARIO";
             this.LABEL_APELLIDO_ABM_USUARIO.Size = new System.Drawing.Size(110, 29);
             this.LABEL_APELLIDO_ABM_USUARIO.TabIndex = 52;
@@ -242,7 +204,7 @@
             // 
             this.LABEL_DNI_ABM_USUARIO.AutoSize = true;
             this.LABEL_DNI_ABM_USUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_DNI_ABM_USUARIO.Location = new System.Drawing.Point(20, 360);
+            this.LABEL_DNI_ABM_USUARIO.Location = new System.Drawing.Point(20, 381);
             this.LABEL_DNI_ABM_USUARIO.Name = "LABEL_DNI_ABM_USUARIO";
             this.LABEL_DNI_ABM_USUARIO.Size = new System.Drawing.Size(57, 29);
             this.LABEL_DNI_ABM_USUARIO.TabIndex = 53;
@@ -252,7 +214,7 @@
             // 
             this.LABEL_EMAIL_ABM_USUARIO.AutoSize = true;
             this.LABEL_EMAIL_ABM_USUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_EMAIL_ABM_USUARIO.Location = new System.Drawing.Point(20, 395);
+            this.LABEL_EMAIL_ABM_USUARIO.Location = new System.Drawing.Point(20, 416);
             this.LABEL_EMAIL_ABM_USUARIO.Name = "LABEL_EMAIL_ABM_USUARIO";
             this.LABEL_EMAIL_ABM_USUARIO.Size = new System.Drawing.Size(79, 29);
             this.LABEL_EMAIL_ABM_USUARIO.TabIndex = 54;
@@ -262,7 +224,7 @@
             // 
             this.LABEL_ROL_ABM_USUARIO.AutoSize = true;
             this.LABEL_ROL_ABM_USUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_ROL_ABM_USUARIO.Location = new System.Drawing.Point(20, 433);
+            this.LABEL_ROL_ABM_USUARIO.Location = new System.Drawing.Point(20, 454);
             this.LABEL_ROL_ABM_USUARIO.Name = "LABEL_ROL_ABM_USUARIO";
             this.LABEL_ROL_ABM_USUARIO.Size = new System.Drawing.Size(53, 29);
             this.LABEL_ROL_ABM_USUARIO.TabIndex = 55;
@@ -274,7 +236,7 @@
             this.CB_ROL.Items.AddRange(new object[] {
             "Admin",
             "Normal"});
-            this.CB_ROL.Location = new System.Drawing.Point(140, 440);
+            this.CB_ROL.Location = new System.Drawing.Point(140, 461);
             this.CB_ROL.Name = "CB_ROL";
             this.CB_ROL.Size = new System.Drawing.Size(194, 21);
             this.CB_ROL.TabIndex = 56;
@@ -291,11 +253,78 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 271);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 29);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "Usuario";
+            // 
+            // TB_Usuario
+            // 
+            this.TB_Usuario.Location = new System.Drawing.Point(140, 277);
+            this.TB_Usuario.Name = "TB_Usuario";
+            this.TB_Usuario.Size = new System.Drawing.Size(194, 20);
+            this.TB_Usuario.TabIndex = 58;
+            // 
+            // ID_USUARIO
+            // 
+            this.ID_USUARIO.HeaderText = "ID";
+            this.ID_USUARIO.Name = "ID_USUARIO";
+            this.ID_USUARIO.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Usuario";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // NOMBRE_USUARIO
+            // 
+            this.NOMBRE_USUARIO.HeaderText = "Nombre";
+            this.NOMBRE_USUARIO.Name = "NOMBRE_USUARIO";
+            this.NOMBRE_USUARIO.ReadOnly = true;
+            // 
+            // APELLIDO_USUARIO
+            // 
+            this.APELLIDO_USUARIO.HeaderText = "Apellido";
+            this.APELLIDO_USUARIO.Name = "APELLIDO_USUARIO";
+            this.APELLIDO_USUARIO.ReadOnly = true;
+            // 
+            // DNI_USUARIO
+            // 
+            this.DNI_USUARIO.HeaderText = "DNI";
+            this.DNI_USUARIO.Name = "DNI_USUARIO";
+            this.DNI_USUARIO.ReadOnly = true;
+            // 
+            // EMAIL_USUARIO
+            // 
+            this.EMAIL_USUARIO.HeaderText = "Email";
+            this.EMAIL_USUARIO.Name = "EMAIL_USUARIO";
+            this.EMAIL_USUARIO.ReadOnly = true;
+            // 
+            // ROL_USUARIO
+            // 
+            this.ROL_USUARIO.HeaderText = "Rol";
+            this.ROL_USUARIO.Name = "ROL_USUARIO";
+            this.ROL_USUARIO.ReadOnly = true;
+            // 
+            // ISBLOQUEADO_USUARIO
+            // 
+            this.ISBLOQUEADO_USUARIO.HeaderText = "Bloqueado";
+            this.ISBLOQUEADO_USUARIO.Name = "ISBLOQUEADO_USUARIO";
+            this.ISBLOQUEADO_USUARIO.ReadOnly = true;
+            // 
             // FormABMUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 488);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TB_Usuario);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.CB_ROL);
             this.Controls.Add(this.LABEL_ROL_ABM_USUARIO);
@@ -343,13 +372,16 @@
         private System.Windows.Forms.Label LABEL_EMAIL_ABM_USUARIO;
         private System.Windows.Forms.Label LABEL_ROL_ABM_USUARIO;
         private System.Windows.Forms.ComboBox CB_ROL;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TB_Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_USUARIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn APELLIDO_USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI_USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL_USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ROL_USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ISBLOQUEADO_USUARIO;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

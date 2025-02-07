@@ -31,7 +31,7 @@ namespace gui
             {
                 if(checkBox1.Checked || usuario.IsBloqueado == false)
                 {
-                  indiceRow = dgvUsuario.Rows.Add(usuario.ID_Usuario,usuario.Nombre,usuario.Apellido,usuario.DNI,usuario.Email,usuario.Rol,usuario.IsBloqueado);
+                  indiceRow = dgvUsuario.Rows.Add(usuario.ID_Usuario,usuario.Username,usuario.Nombre,usuario.Apellido,usuario.DNI,usuario.Email,usuario.Rol,usuario.IsBloqueado);
                 }
                 if(usuario.IsBloqueado == true && dgvUsuario.Rows.Count > 0)
                 {
@@ -60,6 +60,7 @@ namespace gui
         private void BT_ALTA_USUARIO_Click(object sender, EventArgs e)
         {
             string nombre = TB_NOMBRE.Text;
+            string username = TB_Usuario.Text;
             string apellido = TB_APELLIDO.Text;
             string dni = TB_DNI.Text;
             string contraseña = dni + apellido;
@@ -67,7 +68,7 @@ namespace gui
             string rol = CB_ROL.SelectedItem.ToString();
             if(UsuarioBLL.GestorUsuarioBLLSG.VerificarDNI(dni) == true && UsuarioBLL.GestorUsuarioBLLSG.VerificarDNIDuplicado(dni) == false && UsuarioBLL.GestorUsuarioBLLSG.VerificarEmail(email) == true && UsuarioBLL.GestorUsuarioBLLSG.VerificarEmailDuplicado(email) == false)
             {
-              Usuario usuario = new Usuario(0,nombre,apellido,dni,contraseña,email,rol);
+              Usuario usuario = new Usuario(0,username,nombre,apellido,dni,contraseña,email,rol);
               UsuarioBLL.GestorUsuarioBLLSG.Alta(usuario);
               MostrarUsuarioPorConsulta();
               VaciarTextBox(this);
@@ -97,12 +98,13 @@ namespace gui
         }
         private void dgvUsuario_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            TB_NOMBRE.Text = dgvUsuario.SelectedRows[0].Cells[1].Value.ToString();
-            TB_APELLIDO.Text = dgvUsuario.SelectedRows[0].Cells[2].Value.ToString();
-            TB_DNI.Text = dgvUsuario.SelectedRows[0].Cells[3].Value.ToString();
-            TB_EMAIL.Text = dgvUsuario.SelectedRows[0].Cells[4].Value.ToString();
-            CB_ROL.SelectedItem = dgvUsuario.SelectedRows[0].Cells[5].Value.ToString();
-            if (dgvUsuario.SelectedRows[0].Cells[6].Value.ToString() == "True")
+            TB_Usuario.Text = dgvUsuario.SelectedRows[0].Cells[1].Value.ToString();
+            TB_NOMBRE.Text = dgvUsuario.SelectedRows[0].Cells[2].Value.ToString();
+            TB_APELLIDO.Text = dgvUsuario.SelectedRows[0].Cells[3].Value.ToString();
+            TB_DNI.Text = dgvUsuario.SelectedRows[0].Cells[4].Value.ToString();
+            TB_EMAIL.Text = dgvUsuario.SelectedRows[0].Cells[5].Value.ToString();
+            CB_ROL.SelectedItem = dgvUsuario.SelectedRows[0].Cells[6].Value.ToString();
+            if (dgvUsuario.SelectedRows[0].Cells[7].Value.ToString() == "True")
             {
                 BT_DESBLOQUEAR_USUARIO.Text = "Desbloquear";
             }
@@ -115,6 +117,7 @@ namespace gui
         {
             Usuario UsuarioModificar = UsuarioBLL.GestorUsuarioBLLSG.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
             UsuarioModificar.Nombre = TB_NOMBRE.Text;
+            UsuarioModificar.Username = TB_Usuario.Text;
             UsuarioModificar.Apellido = TB_APELLIDO.Text;
             UsuarioModificar.Email = TB_EMAIL.Text;
             UsuarioModificar.Rol = CB_ROL.SelectedItem.ToString();
@@ -138,7 +141,7 @@ namespace gui
         {
             Usuario UsuarioModificar = UsuarioBLL.GestorUsuarioBLLSG.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
            
-            if (dgvUsuario.SelectedRows[0].Cells[6].Value.ToString() == "True")
+            if (dgvUsuario.SelectedRows[0].Cells[7].Value.ToString() == "True")
             {
                 UsuarioModificar.IsBloqueado = false;
                 UsuarioBLL.GestorUsuarioBLLSG.Modificar(UsuarioModificar);
