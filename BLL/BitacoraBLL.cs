@@ -21,11 +21,6 @@ namespace BLL
               BitacoraBE bitacora = new BitacoraBE(SesionManager.GestorSesion.UsuarioSesion.Username,DateTime.Now.Date,DateTime.Now.Hour,Modulo,Descripcion,Criticidad);
               GestorBitacora.Alta(bitacora);
             }
-            else
-            {
-                BitacoraBE bitacora = new BitacoraBE("Sistema", DateTime.Now.Date, DateTime.Now.Hour, Modulo, Descripcion, Criticidad);
-                GestorBitacora.Alta(bitacora);
-            }
         }
 
         public List<BitacoraBE> ObtenerBitacoraPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
