@@ -1,4 +1,5 @@
-﻿using SERVICIOS;
+﻿using BLL;
+using SERVICIOS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,8 @@ namespace gui
         private void BT_CERRARSESION_Click(object sender, EventArgs e)
         {
             //RECORDAR CUANDO SE IMPLEMENTE EL SESION MANAGER LIMPIAR LA SESION
+            BitacoraBLL GestorBitacora = new BitacoraBLL();
+            GestorBitacora.AltaEvento("Inicio de Sesion", "Salida del Sistema", 4);
             SesionManager.GestorSesion.Logout();
             GestorForm.gestorFormSG.DefinirEstado(new EstadoIniciarSesion());
         }
@@ -33,6 +36,12 @@ namespace gui
         {
             SesionManager.GestorSesion.Logout();
             GestorForm.gestorFormSG.DefinirEstado(new EstadoCerrarAplicacion());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormBitacoraDeEventos bitacora = new FormBitacoraDeEventos();
+            bitacora.ShowDialog();
         }
     }
 }

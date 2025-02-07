@@ -31,6 +31,7 @@
             this.BT_CERRARSESION = new System.Windows.Forms.Button();
             this.LabelRolUsuario = new System.Windows.Forms.Label();
             this.LabelNombreUsuario = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BT_CERRARSESION
@@ -63,11 +64,22 @@
             this.LabelNombreUsuario.TabIndex = 53;
             this.LabelNombreUsuario.Text = "NombreUsuario";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(168, 207);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 48);
+            this.button1.TabIndex = 54;
+            this.button1.Text = "Bitacora";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(848, 449);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.LabelNombreUsuario);
             this.Controls.Add(this.LabelRolUsuario);
             this.Controls.Add(this.BT_CERRARSESION);
@@ -84,5 +96,6 @@
         private System.Windows.Forms.Button BT_CERRARSESION;
         private System.Windows.Forms.Label LabelRolUsuario;
         private System.Windows.Forms.Label LabelNombreUsuario;
+        private System.Windows.Forms.Button button1;
     }
 }

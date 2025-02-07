@@ -16,10 +16,12 @@ namespace gui
     public partial class FormLogin : Form
     {
         List<Usuario> ListaUsuario;
+        UsuarioBLL GestorUsuario;
         public FormLogin()
         {
             InitializeComponent();
-            ListaUsuario = UsuarioBLL.GestorUsuarioBLLSG.DevolverUsuariosPorConsulta();
+            GestorUsuario = new UsuarioBLL();
+            ListaUsuario = GestorUsuario.DevolverUsuariosPorConsulta();
         }
 
         private void BT_LOGIN_Click(object sender, EventArgs e)
@@ -31,8 +33,10 @@ namespace gui
                 {
                    if(usuarioIniciarSesion.Contraseña == TB_Contrasena.Text)
                    {
-                      SesionManager.GestorSesion.Login(usuarioIniciarSesion);
-                      GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
+                        SesionManager.GestorSesion.Login(usuarioIniciarSesion);
+                        BitacoraBLL GestorBitacora = new BitacoraBLL();
+                        GestorBitacora.AltaEvento("Inicio de Sesion", "Entrada al Sistema", 4);
+                        GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
                    }
                    else
                    {
@@ -45,7 +49,7 @@ namespace gui
                         {
                             usuarioIniciarSesion.Intentos += 1;
                         }
-                        UsuarioBLL.GestorUsuarioBLLSG.Modificar(usuarioIniciarSesion);
+                        GestorUsuario.Modificar(usuarioIniciarSesion);
                         MessageBox.Show($"Datos Ingresados Incorrectos!!!");
                    }
                 }

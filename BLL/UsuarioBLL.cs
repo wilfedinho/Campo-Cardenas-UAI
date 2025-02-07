@@ -13,19 +13,6 @@ namespace BLL
 {
     public class UsuarioBLL : Iabm<Usuario>
     {
-        private static UsuarioBLL instance;
-        public static UsuarioBLL GestorUsuarioBLLSG 
-        {
-            get 
-            {
-                if(instance == null)
-                {
-                    instance = new UsuarioBLL();
-                }
-                return instance;
-            }
-        }
-        
         public bool VerificarDNI(string DNI)
         {
             Regex rgx = new Regex("^[0-9]{2}[.]{1}[0-9]{3}[.]{1}[0-9]{3}$");
@@ -95,21 +82,29 @@ namespace BLL
         public void Alta(Usuario UsuarioAlta)
         {
             UsuarioAlta.Contraseña = Cifrador.GestorCifrador.EncriptarIrreversible(UsuarioAlta.Contraseña);
-            UsuarioORM.GestorUsuarioORM.Alta(UsuarioAlta);  
+            UsuarioORM.GestorUsuarioORM.Alta(UsuarioAlta);
+            BitacoraBLL GestorBitacora = new BitacoraBLL();
+            GestorBitacora.AltaEvento("Gestion de Usuario","Alta de Usuario",3);
         }
 
         public void Baja(Usuario UsuarioBaja)
         {
             UsuarioORM.GestorUsuarioORM.Baja(UsuarioBaja);
+            BitacoraBLL GestorBitacora = new BitacoraBLL();
+            GestorBitacora.AltaEvento("Gestion de Usuario", "Baja de Usuario", 5);
         }
 
         public void Modificar(Usuario UsuarioModificado)
         {
             UsuarioORM.GestorUsuarioORM.Modificar(UsuarioModificado);
+            BitacoraBLL GestorBitacora = new BitacoraBLL();
+            GestorBitacora.AltaEvento("Gestion de Usuario", "Modificacion de Usuario", 3);
         }
         public List<Usuario> DevolverUsuariosPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
         {
-            return UsuarioORM.GestorUsuarioORM.DevolverLosUsuariosPorConsulta(tipoConsulta,itemSeleccionado,itemValor, itemValor2);
+            BitacoraBLL GestorBitacora = new BitacoraBLL();
+            GestorBitacora.AltaEvento("Gestion de Usuario", "Consulta de Usuario", 1);
+            return UsuarioORM.GestorUsuarioORM.ObtenerUsuariosPorConsulta(tipoConsulta,itemSeleccionado,itemValor, itemValor2);
         }
     }
 }

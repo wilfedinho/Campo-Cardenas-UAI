@@ -62,7 +62,7 @@ namespace ORM
             };
             ActualizarGeneral();
         }
-        public List<Usuario> DevolverLosUsuariosPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
+        public List<Usuario> ObtenerUsuariosPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
         {
             List<Usuario> ListaUsuario = new List<Usuario>();
             DataView dv;

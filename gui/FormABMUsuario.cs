@@ -14,20 +14,22 @@ namespace gui
 {
     public partial class FormABMUsuario : Form
     {
+        UsuarioBLL GestorUsuario;
         public FormABMUsuario()
         {
             InitializeComponent();
             MostrarUsuarioPorConsulta();
+            GestorUsuario = new UsuarioBLL();
             BT_CANCELAR.Enabled = false;
             BT_APLICAR.Enabled = false;
         }
 
-        public void MostrarUsuarioPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "")
+        public void MostrarUsuarioPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
         {
             
             dgvUsuario.Rows.Clear();
             int indiceRow = 0;
-            foreach (Usuario usuario in UsuarioBLL.GestorUsuarioBLLSG.DevolverUsuariosPorConsulta(tipoConsulta,itemSeleccionado,itemValor))
+            foreach (Usuario usuario in GestorUsuario.DevolverUsuariosPorConsulta(tipoConsulta,itemSeleccionado,itemValor, itemValor2))
             {
                 if(checkBox1.Checked || usuario.IsBloqueado == false)
                 {
@@ -66,10 +68,10 @@ namespace gui
             string contraseña = dni + apellido;
             string email = TB_EMAIL.Text;
             string rol = CB_ROL.SelectedItem.ToString();
-            if(UsuarioBLL.GestorUsuarioBLLSG.VerificarDNI(dni) == true && UsuarioBLL.GestorUsuarioBLLSG.VerificarDNIDuplicado(dni) == false && UsuarioBLL.GestorUsuarioBLLSG.VerificarEmail(email) == true && UsuarioBLL.GestorUsuarioBLLSG.VerificarEmailDuplicado(email) == false)
+            if(GestorUsuario.VerificarDNI(dni) == true && GestorUsuario.VerificarDNIDuplicado(dni) == false && GestorUsuario.VerificarEmail(email) == true && GestorUsuario.VerificarEmailDuplicado(email) == false)
             {
               Usuario usuario = new Usuario(0,username,nombre,apellido,dni,contraseña,email,rol);
-              UsuarioBLL.GestorUsuarioBLLSG.Alta(usuario);
+                GestorUsuario.Alta(usuario);
               MostrarUsuarioPorConsulta();
               VaciarTextBox(this);
             }
@@ -81,8 +83,8 @@ namespace gui
         }
         private void BT_BAJA_USUARIO_Click(object sender, EventArgs e)
         {
-            Usuario UsuarioEliminar = UsuarioBLL.GestorUsuarioBLLSG.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
-            UsuarioBLL.GestorUsuarioBLLSG.Baja(UsuarioEliminar);
+            Usuario UsuarioEliminar = GestorUsuario.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
+            GestorUsuario.Baja(UsuarioEliminar);
             MostrarUsuarioPorConsulta();
             VaciarTextBox(this);
         }
@@ -115,13 +117,13 @@ namespace gui
         }
         private void BT_APLICAR_Click(object sender, EventArgs e)
         {
-            Usuario UsuarioModificar = UsuarioBLL.GestorUsuarioBLLSG.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
+            Usuario UsuarioModificar = GestorUsuario.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
             UsuarioModificar.Nombre = TB_NOMBRE.Text;
             UsuarioModificar.Username = TB_Usuario.Text;
             UsuarioModificar.Apellido = TB_APELLIDO.Text;
             UsuarioModificar.Email = TB_EMAIL.Text;
             UsuarioModificar.Rol = CB_ROL.SelectedItem.ToString();
-            UsuarioBLL.GestorUsuarioBLLSG.Modificar(UsuarioModificar);
+            GestorUsuario.Modificar(UsuarioModificar);
             MostrarUsuarioPorConsulta();
             VaciarTextBox(this);
         }
@@ -139,19 +141,23 @@ namespace gui
 
         private void BT_DESBLOQUEAR_USUARIO_Click(object sender, EventArgs e)
         {
-            Usuario UsuarioModificar = UsuarioBLL.GestorUsuarioBLLSG.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
+            Usuario UsuarioModificar = GestorUsuario.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
            
             if (dgvUsuario.SelectedRows[0].Cells[7].Value.ToString() == "True")
             {
                 UsuarioModificar.IsBloqueado = false;
-                UsuarioBLL.GestorUsuarioBLLSG.Modificar(UsuarioModificar);
+                GestorUsuario.Modificar(UsuarioModificar);
                 BT_DESBLOQUEAR_USUARIO.Text = "Bloquear";
+                BitacoraBLL GestorBitacora = new BitacoraBLL();
+                GestorBitacora.AltaEvento("Gestion de Usuario", "Desbloqueo de Usuario", 5);
             }
             else
             {
                 UsuarioModificar.IsBloqueado = true;
-                UsuarioBLL.GestorUsuarioBLLSG.Modificar(UsuarioModificar);
+                GestorUsuario.Modificar(UsuarioModificar);
                 BT_DESBLOQUEAR_USUARIO.Text = "Desbloquear";
+                BitacoraBLL GestorBitacora = new BitacoraBLL();
+                GestorBitacora.AltaEvento("Gestion de Usuario", "Bloqueo de Usuario", 5);
             }
             MostrarUsuarioPorConsulta();
         }
