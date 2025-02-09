@@ -110,6 +110,7 @@
             this.BT_Salir.Dock = System.Windows.Forms.DockStyle.Top;
             this.BT_Salir.FlatAppearance.BorderSize = 0;
             this.BT_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Salir.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BT_Salir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.BT_Salir.Location = new System.Drawing.Point(0, 600);
             this.BT_Salir.Name = "BT_Salir";
@@ -136,6 +137,7 @@
             this.button14.Dock = System.Windows.Forms.DockStyle.Top;
             this.button14.FlatAppearance.BorderSize = 0;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.button14.Location = new System.Drawing.Point(0, 62);
             this.button14.Name = "button14";
@@ -150,6 +152,7 @@
             this.button15.Dock = System.Windows.Forms.DockStyle.Top;
             this.button15.FlatAppearance.BorderSize = 0;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.button15.Location = new System.Drawing.Point(0, 31);
             this.button15.Name = "button15";
@@ -164,6 +167,7 @@
             this.button16.Dock = System.Windows.Forms.DockStyle.Top;
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.button16.Location = new System.Drawing.Point(0, 0);
             this.button16.Name = "button16";
@@ -178,6 +182,7 @@
             this.BT_Prueba3.Dock = System.Windows.Forms.DockStyle.Top;
             this.BT_Prueba3.FlatAppearance.BorderSize = 0;
             this.BT_Prueba3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Prueba3.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BT_Prueba3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.BT_Prueba3.Location = new System.Drawing.Point(0, 450);
             this.BT_Prueba3.Name = "BT_Prueba3";
@@ -204,6 +209,7 @@
             this.button10.Dock = System.Windows.Forms.DockStyle.Top;
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.button10.Location = new System.Drawing.Point(0, 62);
             this.button10.Name = "button10";
@@ -218,6 +224,7 @@
             this.button11.Dock = System.Windows.Forms.DockStyle.Top;
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.button11.Location = new System.Drawing.Point(0, 31);
             this.button11.Name = "button11";
@@ -232,6 +239,7 @@
             this.button12.Dock = System.Windows.Forms.DockStyle.Top;
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.button12.Location = new System.Drawing.Point(0, 0);
             this.button12.Name = "button12";
@@ -246,6 +254,7 @@
             this.BT_Prueba2.Dock = System.Windows.Forms.DockStyle.Top;
             this.BT_Prueba2.FlatAppearance.BorderSize = 0;
             this.BT_Prueba2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Prueba2.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BT_Prueba2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.BT_Prueba2.Location = new System.Drawing.Point(0, 300);
             this.BT_Prueba2.Name = "BT_Prueba2";
@@ -272,6 +281,7 @@
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.button6.Location = new System.Drawing.Point(0, 62);
             this.button6.Name = "button6";
@@ -286,6 +296,7 @@
             this.button7.Dock = System.Windows.Forms.DockStyle.Top;
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.button7.Location = new System.Drawing.Point(0, 31);
             this.button7.Name = "button7";
@@ -300,6 +311,7 @@
             this.button8.Dock = System.Windows.Forms.DockStyle.Top;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.button8.Location = new System.Drawing.Point(0, 0);
             this.button8.Name = "button8";
@@ -314,6 +326,7 @@
             this.BT_Prueba.Dock = System.Windows.Forms.DockStyle.Top;
             this.BT_Prueba.FlatAppearance.BorderSize = 0;
             this.BT_Prueba.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Prueba.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BT_Prueba.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.BT_Prueba.Location = new System.Drawing.Point(0, 150);
             this.BT_Prueba.Name = "BT_Prueba";
@@ -340,6 +353,7 @@
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.button4.Location = new System.Drawing.Point(0, 62);
             this.button4.Name = "button4";
@@ -354,6 +368,7 @@
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.button3.Location = new System.Drawing.Point(0, 31);
             this.button3.Name = "button3";
@@ -368,6 +383,7 @@
             this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
@@ -382,6 +398,7 @@
             this.BT_ADMINISTRAR.Dock = System.Windows.Forms.DockStyle.Top;
             this.BT_ADMINISTRAR.FlatAppearance.BorderSize = 0;
             this.BT_ADMINISTRAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_ADMINISTRAR.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BT_ADMINISTRAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.BT_ADMINISTRAR.Location = new System.Drawing.Point(0, 0);
             this.BT_ADMINISTRAR.Name = "BT_ADMINISTRAR";
