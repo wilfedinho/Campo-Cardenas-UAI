@@ -16,18 +16,22 @@ namespace gui
     public partial class FormBitacoraDeEventos : Form
     {
         BitacoraBLL GestorBitacora;
+        UsuarioBLL GestorUsuario;
+        List<Usuario> ListaUsuario;
         public FormBitacoraDeEventos()
         {
             InitializeComponent();
             GestorBitacora = new BitacoraBLL();
+            GestorUsuario = new UsuarioBLL();
+            ListaUsuario = GestorUsuario.DevolverUsuariosPorConsulta();
             Mostrar();
         }
-        public void Mostrar(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
+        public void Mostrar()
         {
             int indiceRow = 0;
             int criticidad = 0;
             dgvBitacora.Rows.Clear();
-            foreach(BitacoraBE bitacora in GestorBitacora.ObtenerBitacoraPorConsulta(tipoConsulta,itemSeleccionado,itemValor,itemValor2))
+            foreach(BitacoraBE bitacora in GestorBitacora.ObtenerBitacoraPorConsulta())
             {
                indiceRow = dgvBitacora.Rows.Add(bitacora.Username,bitacora.Fecha,bitacora.Hora,bitacora.Modulo, bitacora.Descripcion, bitacora.Criticidad);
                 criticidad = bitacora.Criticidad;
@@ -52,6 +56,25 @@ namespace gui
                             break;
                     }
                 }
+            }
+        }
+
+        private void dgvBitacora_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Usuario usuario = ListaUsuario.Find(x => x.Username == dgvBitacora.SelectedRows[0].Cells[0].Value.ToString());
+            if(usuario != null)
+            {
+             labelUsuario.Text = $"Usuario: {usuario.Username}";
+             labelNombre.Text = $"Nombre: {usuario.Nombre}";
+             labelApellido.Text = $"Apellido: {usuario.Apellido}";
+             labelDNI.Text = $"DNI: {usuario.DNI}";
+            }
+            else
+            {
+                labelUsuario.Text = $"Usuario: Error";
+                labelNombre.Text = $"Nombre: Error";
+                labelApellido.Text = $"Apellido: Error";
+                labelDNI.Text = $"DNI: Error";
             }
         }
     }

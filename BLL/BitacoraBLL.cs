@@ -23,10 +23,10 @@ namespace BLL
             }
         }
 
-        public List<BitacoraBE> ObtenerBitacoraPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
+        public List<BitacoraBE> ObtenerBitacoraPorConsulta(string usuarioFiltrar = "", string moduloFiltrar = "", string descripcionFiltrar = "", string criticidadFiltrar = "", DateTime? fechaInicioFiltrar = null, DateTime? fechaFinFiltrar = null)
         {
             BitacoraORM GestorBitacora = new BitacoraORM();
-            return GestorBitacora.ObtenerEventosPorConsulta(tipoConsulta,itemSeleccionado,itemValor,itemValor2);
+            return GestorBitacora.ObtenerEventosPorConsulta(usuarioFiltrar,moduloFiltrar,descripcionFiltrar,criticidadFiltrar,fechaInicioFiltrar,fechaFinFiltrar);
         }
 
     }

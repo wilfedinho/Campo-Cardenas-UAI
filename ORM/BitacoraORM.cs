@@ -26,24 +26,25 @@ namespace ORM
             GestorBaseDeDatos.GestorBaseDeDatosSG.ActualizarGeneral();
         }
 
-        public List<BitacoraBE> ObtenerEventosPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
+        public List<BitacoraBE> ObtenerEventosPorConsulta(string usuarioFiltrar = "", string moduloFiltrar = "", string descripcionFiltrar = "", string criticidadFiltrar = "", DateTime? fechaInicioFiltrar = null, DateTime? fechaFinFiltrar = null)
         {
             List<BitacoraBE> ListaBitacora = new List<BitacoraBE>();
-            DataView dv;
-            string query = "";
-            switch (tipoConsulta)
-            {
-                case "Simple":
-                    query = $"{itemSeleccionado} = '{itemValor}'";
-                    break;
-                case "D-H":
-                    query = $"{itemSeleccionado} >= '{itemValor}' AND {itemSeleccionado} <= '{itemValor2}'";
-                    break;
-                case "Incremental":
-                    query = $"{itemSeleccionado} LIKE '{itemValor}%'";
-                    break;
-            }
-            dv = new DataView(GestorBaseDeDatos.GestorBaseDeDatosSG.DevolverTabla("Bitacora"), query, "", DataViewRowState.Unchanged);
+            List<string> filtros = new List<string>();
+            DataView dv = new DataView(GestorBaseDeDatos.GestorBaseDeDatosSG.DevolverTabla("Bitacora"), "", "", DataViewRowState.Unchanged);
+
+            if (!string.IsNullOrEmpty(usuarioFiltrar))
+                filtros.Add($"Username = '{usuarioFiltrar}'");
+            if (!string.IsNullOrEmpty(moduloFiltrar))
+                filtros.Add($"Modulo = '{moduloFiltrar}'");
+            if (!string.IsNullOrEmpty(descripcionFiltrar))
+                filtros.Add($"Descripcion = '{descripcionFiltrar}'");
+            if (!string.IsNullOrEmpty(criticidadFiltrar))
+                filtros.Add($"Criticidad = '{criticidadFiltrar}'");
+            if (fechaInicioFiltrar.HasValue)
+                filtros.Add($"Fecha >= '{fechaInicioFiltrar.Value}'");
+            if (fechaFinFiltrar.HasValue)
+                filtros.Add($"Fecha <= '{fechaFinFiltrar.Value}'");
+            dv.RowFilter = string.Join(" AND ", filtros);
             foreach (DataRowView drv in dv)
             {
                 int idBitacora = int.Parse(drv[0].ToString());
