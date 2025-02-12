@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBitacora = new System.Windows.Forms.DataGridView();
             this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOMBRE_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +53,7 @@
             this.labelFechaInicio = new System.Windows.Forms.Label();
             this.labelFechaFin = new System.Windows.Forms.Label();
             this.BT_Filtrar = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxFecha = new System.Windows.Forms.CheckBox();
             this.labelDNI = new System.Windows.Forms.Label();
             this.BT_LimpiarFiltros = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).BeginInit();
@@ -62,6 +64,14 @@
             this.dgvBitacora.AllowUserToAddRows = false;
             this.dgvBitacora.AllowUserToDeleteRows = false;
             this.dgvBitacora.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.164948F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBitacora.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBitacora.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_USUARIO,
@@ -70,6 +80,14 @@
             this.DNI_USUARIO,
             this.EMAIL_USUARIO,
             this.ROL_USUARIO});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.164948F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBitacora.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvBitacora.Location = new System.Drawing.Point(12, 12);
             this.dgvBitacora.Name = "dgvBitacora";
             this.dgvBitacora.ReadOnly = true;
@@ -182,7 +200,7 @@
             this.labelCBUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCBUsuario.Location = new System.Drawing.Point(268, 253);
             this.labelCBUsuario.Name = "labelCBUsuario";
-            this.labelCBUsuario.Size = new System.Drawing.Size(71, 20);
+            this.labelCBUsuario.Size = new System.Drawing.Size(74, 20);
             this.labelCBUsuario.TabIndex = 61;
             this.labelCBUsuario.Text = "Usuario";
             // 
@@ -192,7 +210,7 @@
             this.labelCBCriticidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCBCriticidad.Location = new System.Drawing.Point(268, 431);
             this.labelCBCriticidad.Name = "labelCBCriticidad";
-            this.labelCBCriticidad.Size = new System.Drawing.Size(84, 20);
+            this.labelCBCriticidad.Size = new System.Drawing.Size(90, 20);
             this.labelCBCriticidad.TabIndex = 62;
             this.labelCBCriticidad.Text = "Criticidad";
             // 
@@ -202,7 +220,7 @@
             this.labelCBDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCBDescripcion.Location = new System.Drawing.Point(268, 375);
             this.labelCBDescripcion.Name = "labelCBDescripcion";
-            this.labelCBDescripcion.Size = new System.Drawing.Size(103, 20);
+            this.labelCBDescripcion.Size = new System.Drawing.Size(110, 20);
             this.labelCBDescripcion.TabIndex = 63;
             this.labelCBDescripcion.Text = "Descripción";
             // 
@@ -212,21 +230,21 @@
             this.labelCBModulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCBModulo.Location = new System.Drawing.Point(268, 313);
             this.labelCBModulo.Name = "labelCBModulo";
-            this.labelCBModulo.Size = new System.Drawing.Size(67, 20);
+            this.labelCBModulo.Size = new System.Drawing.Size(69, 20);
             this.labelCBModulo.TabIndex = 64;
             this.labelCBModulo.Text = "Módulo";
             // 
             // monthCalendarFechaInicio
             // 
-            this.monthCalendarFechaInicio.Enabled = false;
             this.monthCalendarFechaInicio.Location = new System.Drawing.Point(448, 289);
+            this.monthCalendarFechaInicio.MaxSelectionCount = 1;
             this.monthCalendarFechaInicio.Name = "monthCalendarFechaInicio";
             this.monthCalendarFechaInicio.TabIndex = 67;
             // 
             // monthCalendarFechaFin
             // 
-            this.monthCalendarFechaFin.Enabled = false;
             this.monthCalendarFechaFin.Location = new System.Drawing.Point(720, 289);
+            this.monthCalendarFechaFin.MaxSelectionCount = 1;
             this.monthCalendarFechaFin.Name = "monthCalendarFechaFin";
             this.monthCalendarFechaFin.TabIndex = 68;
             // 
@@ -236,7 +254,7 @@
             this.labelFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFechaInicio.Location = new System.Drawing.Point(444, 260);
             this.labelFechaInicio.Name = "labelFechaInicio";
-            this.labelFechaInicio.Size = new System.Drawing.Size(107, 20);
+            this.labelFechaInicio.Size = new System.Drawing.Size(111, 20);
             this.labelFechaInicio.TabIndex = 69;
             this.labelFechaInicio.Text = "Fecha Inicio";
             // 
@@ -246,7 +264,7 @@
             this.labelFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFechaFin.Location = new System.Drawing.Point(716, 260);
             this.labelFechaFin.Name = "labelFechaFin";
-            this.labelFechaFin.Size = new System.Drawing.Size(89, 20);
+            this.labelFechaFin.Size = new System.Drawing.Size(92, 20);
             this.labelFechaFin.TabIndex = 70;
             this.labelFechaFin.Text = "Fecha Fin";
             // 
@@ -260,16 +278,17 @@
             this.BT_Filtrar.UseVisualStyleBackColor = true;
             this.BT_Filtrar.Click += new System.EventHandler(this.BT_Filtrar_Click);
             // 
-            // checkBox1
+            // checkBoxFecha
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.649485F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(846, 262);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(122, 20);
-            this.checkBox1.TabIndex = 72;
-            this.checkBox1.Text = "Incluir Fecha?";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxFecha.AutoSize = true;
+            this.checkBoxFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.649485F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxFecha.Location = new System.Drawing.Point(846, 262);
+            this.checkBoxFecha.Name = "checkBoxFecha";
+            this.checkBoxFecha.Size = new System.Drawing.Size(122, 20);
+            this.checkBoxFecha.TabIndex = 72;
+            this.checkBoxFecha.Text = "Incluir Fecha?";
+            this.checkBoxFecha.UseVisualStyleBackColor = true;
+            this.checkBoxFecha.CheckedChanged += new System.EventHandler(this.checkBoxFecha_CheckedChanged);
             // 
             // labelDNI
             // 
@@ -289,6 +308,7 @@
             this.BT_LimpiarFiltros.TabIndex = 74;
             this.BT_LimpiarFiltros.Text = "Limpiar Filtros";
             this.BT_LimpiarFiltros.UseVisualStyleBackColor = true;
+            this.BT_LimpiarFiltros.Click += new System.EventHandler(this.BT_LimpiarFiltros_Click);
             // 
             // FormBitacoraDeEventos
             // 
@@ -297,7 +317,7 @@
             this.ClientSize = new System.Drawing.Size(980, 483);
             this.Controls.Add(this.BT_LimpiarFiltros);
             this.Controls.Add(this.labelDNI);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxFecha);
             this.Controls.Add(this.BT_Filtrar);
             this.Controls.Add(this.labelFechaFin);
             this.Controls.Add(this.labelFechaInicio);
@@ -349,7 +369,7 @@
         private System.Windows.Forms.Label labelFechaInicio;
         private System.Windows.Forms.Label labelFechaFin;
         private System.Windows.Forms.Button BT_Filtrar;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxFecha;
         private System.Windows.Forms.Label labelDNI;
         private System.Windows.Forms.Button BT_LimpiarFiltros;
     }

@@ -25,6 +25,13 @@ namespace gui
             GestorUsuario = new UsuarioBLL();
             ListaUsuario = GestorUsuario.DevolverUsuariosPorConsulta();
             Mostrar();
+            LLenarCB();
+            monthCalendarFechaInicio.Enabled = false;
+            monthCalendarFechaFin.Enabled = false;
+            labelUsuario.Text = $"Usuario: ";
+            labelNombre.Text = $"Nombre: ";
+            labelApellido.Text = $"Apellido: ";
+            labelDNI.Text = $"DNI: ";
         }
         public void Mostrar(string usuarioFiltrar = "", string moduloFiltrar = "", string descripcionFiltrar = "", string criticidadFiltrar = "", DateTime? fechaInicioFiltrar = null, DateTime? fechaFinFiltrar = null)
         {
@@ -58,14 +65,74 @@ namespace gui
                 }
             }
         }
+        public void LLenarCB()
+        {
+            foreach (BitacoraBE bitacora in GestorBitacora.ObtenerBitacoraPorConsulta())
+            {
+                
+                if (CB_Usuario.Items.Count == 0 || !CB_Usuario.Items.Contains(bitacora.Username))
+                    CB_Usuario.Items.Add(bitacora.Username);
+
+                if (CB_Modulo.Items.Count == 0 || !CB_Modulo.Items.Contains(bitacora.Modulo))
+                    CB_Modulo.Items.Add(bitacora.Modulo);
+
+                if (CB_Descripcion.Items.Count == 0 || !CB_Descripcion.Items.Contains(bitacora.Descripcion))
+                    CB_Descripcion.Items.Add(bitacora.Descripcion);
+
+                if (CB_Criticidad.Items.Count == 0 || !CB_Criticidad.Items.Contains(bitacora.Criticidad.ToString()))
+                    CB_Criticidad.Items.Add(bitacora.Criticidad.ToString());
+            }
+        }
+
+        public void LimpiarCB()
+        {
+            CB_Usuario.SelectedIndex = -1;
+            CB_Modulo.SelectedIndex = -1;
+            CB_Descripcion.SelectedIndex = -1;
+            CB_Criticidad.SelectedIndex = -1;
+            monthCalendarFechaInicio.SelectionStart = DateTime.MinValue;
+            monthCalendarFechaFin.SelectionStart = DateTime.MinValue;
+        }
         private void BT_Filtrar_Click(object sender, EventArgs e)
         {
-            string usuarioFiltrar = CB_Usuario.SelectedItem.ToString();
-            string moduloFiltrar = CB_Modulo.SelectedItem.ToString();
-            string descripcionFiltrar = CB_Descripcion.SelectedItem.ToString();
-            string criticidadFiltrar = CB_Criticidad.SelectedItem.ToString();
-            DateTime fechaInicioFiltrar = monthCalendarFechaInicio.selec
+            string usuarioFiltrar = "";
+            string moduloFiltrar = "";
+            string descripcionFiltrar = "";
+            string criticidadFiltrar = "";
+
+            // Obtener valores de los ComboBox
+            if (CB_Usuario.SelectedIndex >= 0)
+                usuarioFiltrar = CB_Usuario.SelectedItem.ToString();
+            if (CB_Modulo.SelectedIndex >= 0)
+                moduloFiltrar = CB_Modulo.SelectedItem.ToString();
+            if (CB_Descripcion.SelectedIndex >= 0)
+                descripcionFiltrar = CB_Descripcion.SelectedItem.ToString();
+            if (CB_Criticidad.SelectedIndex >= 0)
+                criticidadFiltrar = CB_Criticidad.SelectedItem.ToString();
+
+            // Verificar si la fecha está seleccionada y aplicar filtro
+            if (checkBoxFecha.Checked == false)
+            {
+                // Si no se selecciona fecha, utilizar un rango de fechas amplias
+                Mostrar(usuarioFiltrar, moduloFiltrar, descripcionFiltrar, criticidadFiltrar, DateTime.MinValue, DateTime.MaxValue);
+            }
+            else
+            {
+                // Verificar que las fechas seleccionadas no sean vacías
+                DateTime fechaInicioFiltrar = monthCalendarFechaInicio.SelectionStart;
+                DateTime fechaFinFiltrar = monthCalendarFechaFin.SelectionStart;
+
+                // Verificar si las fechas de inicio y fin son válidas
+                if (fechaInicioFiltrar != fechaFinFiltrar)
+                {
+                    Mostrar(usuarioFiltrar, moduloFiltrar, descripcionFiltrar, criticidadFiltrar, fechaInicioFiltrar, fechaFinFiltrar);
+                }
+            }
+
+            // Limpiar ComboBoxes
+            LimpiarCB();
         }
+
 
         private void dgvBitacora_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -86,5 +153,28 @@ namespace gui
             }
         }
 
+        private void BT_LimpiarFiltros_Click(object sender, EventArgs e)
+        {
+            LimpiarCB();
+            Mostrar();
+            labelUsuario.Text = $"Usuario: ";
+            labelNombre.Text = $"Nombre: ";
+            labelApellido.Text = $"Apellido: ";
+            labelDNI.Text = $"DNI: ";
+        }
+
+        private void checkBoxFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxFecha.Checked == true)
+            {
+              monthCalendarFechaInicio.Enabled = true;
+              monthCalendarFechaFin.Enabled = true;
+            }
+            else
+            {
+                monthCalendarFechaInicio.Enabled = false;
+                monthCalendarFechaFin.Enabled = false;
+            }
+        }
     }
 }
