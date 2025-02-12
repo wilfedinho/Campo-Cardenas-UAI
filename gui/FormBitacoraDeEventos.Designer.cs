@@ -258,6 +258,7 @@
             this.BT_Filtrar.TabIndex = 71;
             this.BT_Filtrar.Text = "Filtrar";
             this.BT_Filtrar.UseVisualStyleBackColor = true;
+            this.BT_Filtrar.Click += new System.EventHandler(this.BT_Filtrar_Click);
             // 
             // checkBox1
             // 

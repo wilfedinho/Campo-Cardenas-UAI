@@ -26,12 +26,12 @@ namespace gui
             ListaUsuario = GestorUsuario.DevolverUsuariosPorConsulta();
             Mostrar();
         }
-        public void Mostrar()
+        public void Mostrar(string usuarioFiltrar = "", string moduloFiltrar = "", string descripcionFiltrar = "", string criticidadFiltrar = "", DateTime? fechaInicioFiltrar = null, DateTime? fechaFinFiltrar = null)
         {
             int indiceRow = 0;
             int criticidad = 0;
             dgvBitacora.Rows.Clear();
-            foreach(BitacoraBE bitacora in GestorBitacora.ObtenerBitacoraPorConsulta())
+            foreach(BitacoraBE bitacora in GestorBitacora.ObtenerBitacoraPorConsulta(usuarioFiltrar,moduloFiltrar, descripcionFiltrar, criticidadFiltrar, fechaInicioFiltrar, fechaFinFiltrar))
             {
                indiceRow = dgvBitacora.Rows.Add(bitacora.Username,bitacora.Fecha,bitacora.Hora,bitacora.Modulo, bitacora.Descripcion, bitacora.Criticidad);
                 criticidad = bitacora.Criticidad;
@@ -58,6 +58,14 @@ namespace gui
                 }
             }
         }
+        private void BT_Filtrar_Click(object sender, EventArgs e)
+        {
+            string usuarioFiltrar = CB_Usuario.SelectedItem.ToString();
+            string moduloFiltrar = CB_Modulo.SelectedItem.ToString();
+            string descripcionFiltrar = CB_Descripcion.SelectedItem.ToString();
+            string criticidadFiltrar = CB_Criticidad.SelectedItem.ToString();
+            DateTime fechaInicioFiltrar = monthCalendarFechaInicio.selec
+        }
 
         private void dgvBitacora_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -77,5 +85,6 @@ namespace gui
                 labelDNI.Text = $"DNI: Error";
             }
         }
+
     }
 }
