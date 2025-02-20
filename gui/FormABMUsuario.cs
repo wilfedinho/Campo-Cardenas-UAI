@@ -1,5 +1,6 @@
 ﻿using BE;
 using BLL;
+using SERVICIOS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace gui
 
         public void MostrarUsuarioPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
         {
-            
+            GestorUsuario = new UsuarioBLL();
             dgvUsuario.Rows.Clear();
             int indiceRow = 0;
             foreach (Usuario usuario in GestorUsuario.DevolverUsuariosPorConsulta(tipoConsulta,itemSeleccionado,itemValor, itemValor2))
@@ -65,7 +66,7 @@ namespace gui
             string username = TB_Usuario.Text;
             string apellido = TB_APELLIDO.Text;
             string dni = TB_DNI.Text;
-            string contraseña = dni + apellido;
+            string contraseña = dni+apellido;
             string email = TB_EMAIL.Text;
             string rol = CB_ROL.SelectedItem.ToString();
             if(GestorUsuario.VerificarDNI(dni) == true && GestorUsuario.VerificarDNIDuplicado(dni) == false && GestorUsuario.VerificarEmail(email) == true && GestorUsuario.VerificarEmailDuplicado(email) == false)
@@ -73,7 +74,9 @@ namespace gui
               Usuario usuario = new Usuario(0,username,nombre,apellido,dni,contraseña,email,rol);
                 GestorUsuario.Alta(usuario);
               MostrarUsuarioPorConsulta();
-              VaciarTextBox(this);
+                BitacoraBLL GestorBitacora = new BitacoraBLL();
+                GestorBitacora.AltaEvento("Gestion de Usuario", "Alta de Usuario", 5);
+                VaciarTextBox(this);
             }
             else
             {
@@ -86,6 +89,8 @@ namespace gui
             Usuario UsuarioEliminar = GestorUsuario.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
             GestorUsuario.Baja(UsuarioEliminar);
             MostrarUsuarioPorConsulta();
+            BitacoraBLL GestorBitacora = new BitacoraBLL();
+            GestorBitacora.AltaEvento("Gestion de Usuario", "Baja de Usuario", 5);
             VaciarTextBox(this);
         }
         private void BT_USUARIO_MODIFICAR_Click(object sender, EventArgs e)
@@ -125,6 +130,8 @@ namespace gui
             UsuarioModificar.Rol = CB_ROL.SelectedItem.ToString();
             GestorUsuario.Modificar(UsuarioModificar);
             MostrarUsuarioPorConsulta();
+            BitacoraBLL GestorBitacora = new BitacoraBLL();
+            GestorBitacora.AltaEvento("Gestion de Usuario", "Modificacion de Usuario", 5);
             VaciarTextBox(this);
         }
         private void BT_CANCELAR_Click(object sender, EventArgs e)
@@ -165,6 +172,16 @@ namespace gui
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             MostrarUsuarioPorConsulta();
+        }
+
+        private void BT_SALIR_Click(object sender, EventArgs e)
+        {
+            GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
+        }
+
+        private void FormABMUsuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
         }
     }
 }

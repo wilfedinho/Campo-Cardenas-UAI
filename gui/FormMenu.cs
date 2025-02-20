@@ -101,6 +101,9 @@ namespace gui
 
         private void button2_Click(object sender, EventArgs e)
         {
+            FormABMUsuario formABM = new FormABMUsuario();
+            formABM.ShowDialog();
+            this.Hide();
             hideSubmenu();
         }
 
@@ -131,11 +134,16 @@ namespace gui
 
         private void button8_Click(object sender, EventArgs e)
         {
+            FormCambiarClave formClave = new FormCambiarClave();
+            formClave.ShowDialog();
+            this.Hide();
             hideSubmenu();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            SesionManager.GestorSesion.Logout();
+            GestorForm.gestorFormSG.DefinirEstado(new EstadoIniciarSesion());
             hideSubmenu();
         }
 
@@ -176,6 +184,8 @@ namespace gui
 
         private void BT_Salir_Click(object sender, EventArgs e)
         {
+            SesionManager.GestorSesion.Logout();
+            GestorForm.gestorFormSG.DefinirEstado(new EstadoCerrarAplicacion());
             hideSubmenu();
         }
 

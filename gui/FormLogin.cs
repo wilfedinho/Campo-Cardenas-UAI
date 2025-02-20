@@ -31,12 +31,14 @@ namespace gui
             {
                 if(usuarioIniciarSesion.IsBloqueado == false)
                 {
-                   if(usuarioIniciarSesion.Contraseña == TB_Contrasena.Text)
+                   if(usuarioIniciarSesion.Contraseña == Cifrador.GestorCifrador.EncriptarIrreversible(TB_Contrasena.Text))
                    {
                         SesionManager.GestorSesion.Login(usuarioIniciarSesion);
                         BitacoraBLL GestorBitacora = new BitacoraBLL();
                         GestorBitacora.AltaEvento("Inicio de Sesion", "Entrada al Sistema", 4);
                         GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
+                        usuarioIniciarSesion.Intentos = 0;
+                        GestorUsuario.Modificar(usuarioIniciarSesion);
                    }
                    else
                    {

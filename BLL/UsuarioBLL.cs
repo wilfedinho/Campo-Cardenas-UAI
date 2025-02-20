@@ -79,6 +79,20 @@ namespace BLL
                 return false;
             }
         }
+
+        public bool VerificarCambioClave(string ClaveNueva, string ClaveConfirmacion)
+        {
+            if(Cifrador.GestorCifrador.EncriptarIrreversible(ClaveNueva) == Cifrador.GestorCifrador.EncriptarIrreversible(ClaveConfirmacion) && Cifrador.GestorCifrador.EncriptarIrreversible(ClaveNueva) != SesionManager.GestorSesion.UsuarioSesion.Contraseña)
+            {
+                SesionManager.GestorSesion.UsuarioSesion.Contraseña = Cifrador.GestorCifrador.EncriptarIrreversible(ClaveNueva);
+                Modificar(SesionManager.GestorSesion.UsuarioSesion);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void Alta(Usuario UsuarioAlta)
         {
             UsuarioAlta.Contraseña = Cifrador.GestorCifrador.EncriptarIrreversible(UsuarioAlta.Contraseña);
