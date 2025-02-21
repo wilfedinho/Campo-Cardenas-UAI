@@ -47,12 +47,6 @@ namespace gui
             GestorForm.gestorFormSG.DefinirEstado(new EstadoCerrarAplicacion());
         }
 
-    /*    private void button1_Click(object sender, EventArgs e)
-        {
-            FormBitacoraDeEventos bitacora = new FormBitacoraDeEventos();
-            bitacora.ShowDialog();
-        }*/
-
         //Prueba Botones Nuevo Diseño Del Menu
         private void Diseno()
         {
@@ -142,6 +136,8 @@ namespace gui
 
         private void button7_Click(object sender, EventArgs e)
         {
+            BitacoraBLL GestorBitacora = new BitacoraBLL();
+            GestorBitacora.AltaEvento("Inicio de Sesion", "Salida del Sistema", 4);
             SesionManager.GestorSesion.Logout();
             GestorForm.gestorFormSG.DefinirEstado(new EstadoIniciarSesion());
             hideSubmenu();

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBitacora = new System.Windows.Forms.DataGridView();
             this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOMBRE_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,14 +64,14 @@
             this.dgvBitacora.AllowUserToAddRows = false;
             this.dgvBitacora.AllowUserToDeleteRows = false;
             this.dgvBitacora.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.164948F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBitacora.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.164948F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBitacora.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBitacora.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_USUARIO,
@@ -80,14 +80,14 @@
             this.DNI_USUARIO,
             this.EMAIL_USUARIO,
             this.ROL_USUARIO});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.164948F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBitacora.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.164948F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBitacora.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBitacora.Location = new System.Drawing.Point(12, 12);
             this.dgvBitacora.Name = "dgvBitacora";
             this.dgvBitacora.ReadOnly = true;
@@ -135,30 +135,33 @@
             // labelUsuario
             // 
             this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsuario.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.labelUsuario.Location = new System.Drawing.Point(12, 289);
             this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(132, 29);
+            this.labelUsuario.Size = new System.Drawing.Size(94, 20);
             this.labelUsuario.TabIndex = 54;
             this.labelUsuario.Text = "Username";
             // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.labelNombre.Location = new System.Drawing.Point(12, 333);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(107, 29);
+            this.labelNombre.Size = new System.Drawing.Size(77, 20);
             this.labelNombre.TabIndex = 55;
             this.labelNombre.Text = "Nombre";
             // 
             // labelApellido
             // 
             this.labelApellido.AutoSize = true;
-            this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApellido.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.labelApellido.Location = new System.Drawing.Point(12, 375);
             this.labelApellido.Name = "labelApellido";
-            this.labelApellido.Size = new System.Drawing.Size(110, 29);
+            this.labelApellido.Size = new System.Drawing.Size(79, 20);
             this.labelApellido.TabIndex = 56;
             this.labelApellido.Text = "Apellido";
             // 
@@ -197,7 +200,8 @@
             // labelCBUsuario
             // 
             this.labelCBUsuario.AutoSize = true;
-            this.labelCBUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCBUsuario.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelCBUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.labelCBUsuario.Location = new System.Drawing.Point(268, 253);
             this.labelCBUsuario.Name = "labelCBUsuario";
             this.labelCBUsuario.Size = new System.Drawing.Size(74, 20);
@@ -207,17 +211,19 @@
             // labelCBCriticidad
             // 
             this.labelCBCriticidad.AutoSize = true;
-            this.labelCBCriticidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCBCriticidad.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelCBCriticidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.labelCBCriticidad.Location = new System.Drawing.Point(268, 431);
             this.labelCBCriticidad.Name = "labelCBCriticidad";
-            this.labelCBCriticidad.Size = new System.Drawing.Size(90, 20);
+            this.labelCBCriticidad.Size = new System.Drawing.Size(92, 20);
             this.labelCBCriticidad.TabIndex = 62;
             this.labelCBCriticidad.Text = "Criticidad";
             // 
             // labelCBDescripcion
             // 
             this.labelCBDescripcion.AutoSize = true;
-            this.labelCBDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCBDescripcion.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelCBDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.labelCBDescripcion.Location = new System.Drawing.Point(268, 375);
             this.labelCBDescripcion.Name = "labelCBDescripcion";
             this.labelCBDescripcion.Size = new System.Drawing.Size(110, 20);
@@ -227,15 +233,17 @@
             // labelCBModulo
             // 
             this.labelCBModulo.AutoSize = true;
-            this.labelCBModulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCBModulo.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelCBModulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.labelCBModulo.Location = new System.Drawing.Point(268, 313);
             this.labelCBModulo.Name = "labelCBModulo";
-            this.labelCBModulo.Size = new System.Drawing.Size(69, 20);
+            this.labelCBModulo.Size = new System.Drawing.Size(73, 20);
             this.labelCBModulo.TabIndex = 64;
             this.labelCBModulo.Text = "Módulo";
             // 
             // monthCalendarFechaInicio
             // 
+            this.monthCalendarFechaInicio.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.monthCalendarFechaInicio.Location = new System.Drawing.Point(448, 289);
             this.monthCalendarFechaInicio.MaxSelectionCount = 1;
             this.monthCalendarFechaInicio.Name = "monthCalendarFechaInicio";
@@ -243,6 +251,7 @@
             // 
             // monthCalendarFechaFin
             // 
+            this.monthCalendarFechaFin.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.monthCalendarFechaFin.Location = new System.Drawing.Point(720, 289);
             this.monthCalendarFechaFin.MaxSelectionCount = 1;
             this.monthCalendarFechaFin.Name = "monthCalendarFechaFin";
@@ -251,7 +260,8 @@
             // labelFechaInicio
             // 
             this.labelFechaInicio.AutoSize = true;
-            this.labelFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFechaInicio.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.labelFechaInicio.Location = new System.Drawing.Point(444, 260);
             this.labelFechaInicio.Name = "labelFechaInicio";
             this.labelFechaInicio.Size = new System.Drawing.Size(111, 20);
@@ -261,30 +271,36 @@
             // labelFechaFin
             // 
             this.labelFechaFin.AutoSize = true;
-            this.labelFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFechaFin.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelFechaFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.labelFechaFin.Location = new System.Drawing.Point(716, 260);
             this.labelFechaFin.Name = "labelFechaFin";
-            this.labelFechaFin.Size = new System.Drawing.Size(92, 20);
+            this.labelFechaFin.Size = new System.Drawing.Size(89, 20);
             this.labelFechaFin.TabIndex = 70;
             this.labelFechaFin.Text = "Fecha Fin";
             // 
             // BT_Filtrar
             // 
+            this.BT_Filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_Filtrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_Filtrar.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_Filtrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.BT_Filtrar.Location = new System.Drawing.Point(505, 454);
             this.BT_Filtrar.Name = "BT_Filtrar";
-            this.BT_Filtrar.Size = new System.Drawing.Size(145, 21);
+            this.BT_Filtrar.Size = new System.Drawing.Size(145, 39);
             this.BT_Filtrar.TabIndex = 71;
             this.BT_Filtrar.Text = "Filtrar";
-            this.BT_Filtrar.UseVisualStyleBackColor = true;
+            this.BT_Filtrar.UseVisualStyleBackColor = false;
             this.BT_Filtrar.Click += new System.EventHandler(this.BT_Filtrar_Click);
             // 
             // checkBoxFecha
             // 
             this.checkBoxFecha.AutoSize = true;
-            this.checkBoxFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.649485F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxFecha.Location = new System.Drawing.Point(846, 262);
+            this.checkBoxFecha.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.checkBoxFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.checkBoxFecha.Location = new System.Drawing.Point(823, 260);
             this.checkBoxFecha.Name = "checkBoxFecha";
-            this.checkBoxFecha.Size = new System.Drawing.Size(122, 20);
+            this.checkBoxFecha.Size = new System.Drawing.Size(145, 24);
             this.checkBoxFecha.TabIndex = 72;
             this.checkBoxFecha.Text = "Incluir Fecha?";
             this.checkBoxFecha.UseVisualStyleBackColor = true;
@@ -293,28 +309,34 @@
             // labelDNI
             // 
             this.labelDNI.AutoSize = true;
-            this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDNI.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.labelDNI.Location = new System.Drawing.Point(12, 422);
             this.labelDNI.Name = "labelDNI";
-            this.labelDNI.Size = new System.Drawing.Size(57, 29);
+            this.labelDNI.Size = new System.Drawing.Size(40, 20);
             this.labelDNI.TabIndex = 73;
             this.labelDNI.Text = "DNI";
             // 
             // BT_LimpiarFiltros
             // 
+            this.BT_LimpiarFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_LimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_LimpiarFiltros.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.BT_LimpiarFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.BT_LimpiarFiltros.Location = new System.Drawing.Point(775, 454);
             this.BT_LimpiarFiltros.Name = "BT_LimpiarFiltros";
-            this.BT_LimpiarFiltros.Size = new System.Drawing.Size(145, 21);
+            this.BT_LimpiarFiltros.Size = new System.Drawing.Size(145, 39);
             this.BT_LimpiarFiltros.TabIndex = 74;
             this.BT_LimpiarFiltros.Text = "Limpiar Filtros";
-            this.BT_LimpiarFiltros.UseVisualStyleBackColor = true;
+            this.BT_LimpiarFiltros.UseVisualStyleBackColor = false;
             this.BT_LimpiarFiltros.Click += new System.EventHandler(this.BT_LimpiarFiltros_Click);
             // 
             // FormBitacoraDeEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 483);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
+            this.ClientSize = new System.Drawing.Size(980, 505);
             this.Controls.Add(this.BT_LimpiarFiltros);
             this.Controls.Add(this.labelDNI);
             this.Controls.Add(this.checkBoxFecha);

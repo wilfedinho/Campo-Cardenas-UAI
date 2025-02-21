@@ -53,28 +53,29 @@
             // 
             // LabelNombreUsuarioa
             // 
-            this.LabelNombreUsuarioa.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelNombreUsuarioa.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LabelNombreUsuarioa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LabelNombreUsuarioa.Location = new System.Drawing.Point(137, 50);
+            this.LabelNombreUsuarioa.Location = new System.Drawing.Point(149, 51);
             this.LabelNombreUsuarioa.Name = "LabelNombreUsuarioa";
-            this.LabelNombreUsuarioa.Size = new System.Drawing.Size(267, 29);
+            this.LabelNombreUsuarioa.Size = new System.Drawing.Size(147, 29);
             this.LabelNombreUsuarioa.TabIndex = 53;
             this.LabelNombreUsuarioa.Text = "Clave Nueva";
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.3299F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(117, 146);
+            this.label1.Location = new System.Drawing.Point(137, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 29);
+            this.label1.Size = new System.Drawing.Size(159, 29);
             this.label1.TabIndex = 54;
             this.label1.Text = "Confirmar Clave";
             // 
             // BT_ADMINISTRAR
             // 
+            this.BT_ADMINISTRAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
             this.BT_ADMINISTRAR.FlatAppearance.BorderSize = 0;
-            this.BT_ADMINISTRAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_ADMINISTRAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_ADMINISTRAR.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BT_ADMINISTRAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.BT_ADMINISTRAR.Location = new System.Drawing.Point(121, 243);
@@ -82,13 +83,14 @@
             this.BT_ADMINISTRAR.Size = new System.Drawing.Size(190, 50);
             this.BT_ADMINISTRAR.TabIndex = 55;
             this.BT_ADMINISTRAR.Text = "Cambiar Clave";
-            this.BT_ADMINISTRAR.UseVisualStyleBackColor = true;
+            this.BT_ADMINISTRAR.UseVisualStyleBackColor = false;
             this.BT_ADMINISTRAR.Click += new System.EventHandler(this.BT_ADMINISTRAR_Click);
             // 
             // FormCambiarClave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(469, 348);
             this.Controls.Add(this.BT_ADMINISTRAR);
             this.Controls.Add(this.label1);
