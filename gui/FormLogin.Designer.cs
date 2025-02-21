@@ -71,7 +71,7 @@
             this.LabelNombreUsuarioa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.LabelNombreUsuarioa.Location = new System.Drawing.Point(139, 29);
             this.LabelNombreUsuarioa.Name = "LabelNombreUsuarioa";
-            this.LabelNombreUsuarioa.Size = new System.Drawing.Size(194, 29);
+            this.LabelNombreUsuarioa.Size = new System.Drawing.Size(200, 29);
             this.LabelNombreUsuarioa.TabIndex = 55;
             this.LabelNombreUsuarioa.Text = "Iniciar Sesion";
             // 

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace gui
 {
-    public partial class FormABMUsuario : Form
+    public partial class FormABMUsuario : Form, iObserverLenguaje
     {
         UsuarioBLL GestorUsuario;
         public FormABMUsuario()
@@ -182,6 +182,12 @@ namespace gui
         private void FormABMUsuario_FormClosed(object sender, FormClosedEventArgs e)
         {
             GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
+        }
+
+        public void ActualizarLenguaje()
+        {
+            //Forma Peluche Foreach para recorrer todos los controles
+            throw new NotImplementedException();
         }
     }
 }

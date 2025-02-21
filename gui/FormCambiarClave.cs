@@ -1,4 +1,5 @@
 ﻿using BLL;
+using SERVICIOS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,13 +12,19 @@ using System.Windows.Forms;
 
 namespace gui
 {
-    public partial class FormCambiarClave : Form
+    public partial class FormCambiarClave : Form ,  iObserverLenguaje
     {
         UsuarioBLL GestorUsuario;
         public FormCambiarClave()
         {
             InitializeComponent();
             GestorUsuario = new UsuarioBLL();
+        }
+
+        public void ActualizarLenguaje()
+        {
+            //Forma Peluche Foreach para recorrer todos los controles
+            throw new NotImplementedException();
         }
 
         private void BT_ADMINISTRAR_Click(object sender, EventArgs e)

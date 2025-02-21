@@ -43,7 +43,7 @@ namespace gui
                    else
                    {
                         
-                        if(usuarioIniciarSesion.Intentos >= 3)
+                        if(usuarioIniciarSesion.Intentos >= 3 && usuarioIniciarSesion.Rol != "Admin")
                         {
                             usuarioIniciarSesion.IsBloqueado = true;
                         }

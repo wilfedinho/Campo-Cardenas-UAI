@@ -404,7 +404,7 @@
             this.BT_ADMINISTRAR.Name = "BT_ADMINISTRAR";
             this.BT_ADMINISTRAR.Size = new System.Drawing.Size(183, 50);
             this.BT_ADMINISTRAR.TabIndex = 0;
-            this.BT_ADMINISTRAR.Text = "Administrar";
+            this.BT_ADMINISTRAR.Text = "TD_Administrar";
             this.BT_ADMINISTRAR.UseVisualStyleBackColor = true;
             this.BT_ADMINISTRAR.Click += new System.EventHandler(this.BT_ADMINISTRAR_Click);
             // 

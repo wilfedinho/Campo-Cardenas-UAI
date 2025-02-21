@@ -12,6 +12,12 @@ namespace SERVICIOS
         private static SesionManager Instancia;
 
         public Usuario UsuarioSesion;
+        public string IdiomaSesion = "Español";
+
+        public void aplicarLenguaje(string nuevoIdioma) 
+        {
+            Traductor.TraductorSG.Actualizar(nuevoIdioma);
+        }
 
         public static SesionManager GestorSesion
         {

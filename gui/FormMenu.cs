@@ -13,8 +13,10 @@ using System.Windows.Forms;
 
 namespace gui
 {
-    public partial class FormMenu : Form
+    public partial class FormMenu : Form , iObserverLenguaje
     {
+        FormABMUsuario formABMUSUARIO;
+        FormCambiarClave formCambiarClave;
         
         public FormMenu()
         {
@@ -28,8 +30,19 @@ namespace gui
             LabelRolUsuario.MaximumSize = new Size(panelPrincipal.Width, 0);
             LabelRolUsuario.Text = $"Puedo ver que Posees un Rol {SesionManager.GestorSesion.UsuarioSesion.Rol}, Así que podrás acceder a estas funciones!!";
             LabelRolUsuario.Height = LabelRolUsuario.PreferredHeight; // Ajusta la altura automáticamente
+            SuscribirFormularios();
+
+            Traductor.TraductorSG.Notificar();
 
             Diseno();
+        }
+        public void SuscribirFormularios()
+        {
+            formABMUSUARIO = new FormABMUsuario();
+            formCambiarClave = new FormCambiarClave();
+            Traductor.TraductorSG.Suscribir(this);
+            Traductor.TraductorSG.Suscribir(formABMUSUARIO);
+            Traductor.TraductorSG.Suscribir(formCambiarClave);
         }
 
         /*    private void BT_CERRARSESION_Click(object sender, EventArgs e)
@@ -95,8 +108,8 @@ namespace gui
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormABMUsuario formABM = new FormABMUsuario();
-            formABM.ShowDialog();
+
+            formABMUSUARIO.ShowDialog();
             this.Hide();
             hideSubmenu();
         }
@@ -128,8 +141,8 @@ namespace gui
 
         private void button8_Click(object sender, EventArgs e)
         {
-            FormCambiarClave formClave = new FormCambiarClave();
-            formClave.ShowDialog();
+
+            formCambiarClave.ShowDialog();
             this.Hide();
             hideSubmenu();
         }
@@ -185,5 +198,10 @@ namespace gui
             hideSubmenu();
         }
 
+        public void ActualizarLenguaje()
+        {
+             //Forma Peluche Foreach para recorrer todos los controles
+           BT_ADMINISTRAR.Text = Traductor.TraductorSG.Traducir(BT_ADMINISTRAR.Text);
+        }
     }
 }
