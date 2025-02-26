@@ -69,9 +69,10 @@ namespace gui
             string contraseña = dni+apellido;
             string email = TB_EMAIL.Text;
             string rol = CB_ROL.SelectedItem.ToString();
-            if(GestorUsuario.VerificarDNI(dni) == true && GestorUsuario.VerificarDNIDuplicado(dni) == false && GestorUsuario.VerificarEmail(email) == true && GestorUsuario.VerificarEmailDuplicado(email) == false)
+            string idioma = "Español";
+            if (GestorUsuario.VerificarDNI(dni) == true && GestorUsuario.VerificarDNIDuplicado(dni) == false && GestorUsuario.VerificarEmail(email) == true && GestorUsuario.VerificarEmailDuplicado(email) == false)
             {
-                Usuario usuario = new Usuario(0,username,nombre,apellido,dni,contraseña,email,rol);
+                Usuario usuario = new Usuario(0,username,nombre,apellido,dni,contraseña,email,rol,idioma);
                 GestorUsuario.Alta(usuario);
                 MostrarUsuarioPorConsulta();
                 BitacoraBLL GestorBitacora = new BitacoraBLL();

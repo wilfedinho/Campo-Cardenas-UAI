@@ -36,6 +36,7 @@ namespace SERVICIOS
             if(GestorSesion.UsuarioSesion == null)
             {
                 GestorSesion.UsuarioSesion = UsuarioLoguear;
+                aplicarLenguaje(UsuarioSesion.IdiomaUsuario);
             }
         }
         public void Logout()

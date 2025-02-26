@@ -18,8 +18,9 @@ namespace BE
         public string Rol { get; set; }
         public int Intentos { get; set; }
         public bool IsBloqueado { get; set; }
+        public string IdiomaUsuario { get; set; }
 
-        public Usuario(int nID, string nUsername, string nNombre, string nApellido, string nDNI, string nContraseña, string nEmail, string rOL, int nIntentos = 0, bool nIsBloqueado = false)
+        public Usuario(int nID, string nUsername, string nNombre, string nApellido, string nDNI, string nContraseña, string nEmail, string rOL, string nIdioma, int nIntentos = 0, bool nIsBloqueado = false)
         {
             ID_Usuario = nID;
             Username = nUsername;
@@ -29,6 +30,7 @@ namespace BE
             Contraseña = nContraseña;
             Email = nEmail;
             Rol = rOL;
+            IdiomaUsuario = nIdioma;
             Intentos = nIntentos;
             IsBloqueado = nIsBloqueado;
         }

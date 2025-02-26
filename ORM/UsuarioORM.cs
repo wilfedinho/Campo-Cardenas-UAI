@@ -35,6 +35,7 @@ namespace ORM
             nuevaFila["Contraseña"] = UsuarioAlta.Contraseña;
             nuevaFila["Email"] = UsuarioAlta.Email;
             nuevaFila["Rol"] = UsuarioAlta.Rol;
+            nuevaFila["IdiomaUsuario"] = UsuarioAlta.IdiomaUsuario;
             nuevaFila["Intentos"] = UsuarioAlta.Intentos;
             nuevaFila["IsBloqueado"] = UsuarioAlta.IsBloqueado;
             GestorBaseDeDatos.GestorBaseDeDatosSG.DevolverTabla("Usuario").Rows.Add(nuevaFila);
@@ -57,6 +58,7 @@ namespace ORM
                 UsuarioModdificado.Contraseña,
                 UsuarioModdificado.Email,
                 UsuarioModdificado.Rol,
+                UsuarioModdificado.IdiomaUsuario,
                 UsuarioModdificado.Intentos,
                 UsuarioModdificado.IsBloqueado,
             };
@@ -90,9 +92,10 @@ namespace ORM
               string contrasena = drv[5].ToString();
               string email = drv[6].ToString();
               string rol = drv[7].ToString(); //Cuando se implemente el patron Composite para los patrones se deberá cambiar el mapeado del rol en si
-              int intentos = int.Parse(drv[8].ToString());
-              bool isbloqueado = bool.Parse(drv[9].ToString());
-              Usuario usuario = new Usuario(id,username, nombre,apellido,dni,contrasena,email,rol,intentos,isbloqueado);
+              string idioma = drv[8].ToString(); //Cuando se implemente el patron Composite para los patrones se deberá cambiar el mapeado del rol en si
+              int intentos = int.Parse(drv[9].ToString());
+              bool isbloqueado = bool.Parse(drv[10].ToString());
+              Usuario usuario = new Usuario(id,username, nombre,apellido,dni,contrasena,email,rol,idioma,intentos,isbloqueado);
               ListaUsuario.Add(usuario);
             }
             return ListaUsuario;
