@@ -72,7 +72,7 @@
             this.LabelNombreUsuarioa.Name = "LabelNombreUsuarioa";
             this.LabelNombreUsuarioa.Size = new System.Drawing.Size(267, 29);
             this.LabelNombreUsuarioa.TabIndex = 52;
-            this.LabelNombreUsuarioa.Text = "NombreUsuario";
+            this.LabelNombreUsuarioa.Text = "TD_NombreUsuario";
             // 
             // LabelRolUsuario
             // 
@@ -83,7 +83,7 @@
             this.LabelRolUsuario.Name = "LabelRolUsuario";
             this.LabelRolUsuario.Size = new System.Drawing.Size(267, 29);
             this.LabelRolUsuario.TabIndex = 53;
-            this.LabelRolUsuario.Text = "RolUsuario";
+            this.LabelRolUsuario.Text = "TD_RolUsuario";
             // 
             // panelSideMenu
             // 
@@ -116,7 +116,7 @@
             this.BT_Salir.Name = "BT_Salir";
             this.BT_Salir.Size = new System.Drawing.Size(183, 50);
             this.BT_Salir.TabIndex = 8;
-            this.BT_Salir.Text = "Salir";
+            this.BT_Salir.Text = "TD_Salir";
             this.BT_Salir.UseVisualStyleBackColor = true;
             this.BT_Salir.Click += new System.EventHandler(this.BT_Salir_Click);
             // 
@@ -302,7 +302,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(183, 31);
             this.button7.TabIndex = 1;
-            this.button7.Text = "Cerrar Sesion";
+            this.button7.Text = "TD_CerrarSesion";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -317,7 +317,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(183, 31);
             this.button8.TabIndex = 0;
-            this.button8.Text = "CambiarClave";
+            this.button8.Text = "TD_CambiarClave";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -332,7 +332,7 @@
             this.BT_Prueba.Name = "BT_Prueba";
             this.BT_Prueba.Size = new System.Drawing.Size(183, 50);
             this.BT_Prueba.TabIndex = 2;
-            this.BT_Prueba.Text = "Sesion";
+            this.BT_Prueba.Text = "TD_Sesion";
             this.BT_Prueba.UseVisualStyleBackColor = true;
             this.BT_Prueba.Click += new System.EventHandler(this.BT_Prueba_Click);
             // 
@@ -389,7 +389,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(183, 31);
             this.button2.TabIndex = 0;
-            this.button2.Text = "Usuarios";
+            this.button2.Text = "TD_Usuarios";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

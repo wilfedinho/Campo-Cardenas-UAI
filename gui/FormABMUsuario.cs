@@ -71,9 +71,9 @@ namespace gui
             string rol = CB_ROL.SelectedItem.ToString();
             if(GestorUsuario.VerificarDNI(dni) == true && GestorUsuario.VerificarDNIDuplicado(dni) == false && GestorUsuario.VerificarEmail(email) == true && GestorUsuario.VerificarEmailDuplicado(email) == false)
             {
-              Usuario usuario = new Usuario(0,username,nombre,apellido,dni,contraseña,email,rol);
+                Usuario usuario = new Usuario(0,username,nombre,apellido,dni,contraseña,email,rol);
                 GestorUsuario.Alta(usuario);
-              MostrarUsuarioPorConsulta();
+                MostrarUsuarioPorConsulta();
                 BitacoraBLL GestorBitacora = new BitacoraBLL();
                 GestorBitacora.AltaEvento("Gestion de Usuario", "Alta de Usuario", 5);
                 VaciarTextBox(this);
@@ -81,17 +81,22 @@ namespace gui
             else
             {
                 VaciarTextBox(this);
-                MessageBox.Show("Valores Ingresados Incorrectos!!");
+                MessageBox.Show("TD_Valores Ingresados Incorrectos!!");
             }
         }
         private void BT_BAJA_USUARIO_Click(object sender, EventArgs e)
         {
-            Usuario UsuarioEliminar = GestorUsuario.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
-            GestorUsuario.Baja(UsuarioEliminar);
-            MostrarUsuarioPorConsulta();
-            BitacoraBLL GestorBitacora = new BitacoraBLL();
-            GestorBitacora.AltaEvento("Gestion de Usuario", "Baja de Usuario", 5);
-            VaciarTextBox(this);
+            try
+            {
+                Usuario UsuarioEliminar = GestorUsuario.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
+                GestorUsuario.Baja(UsuarioEliminar);
+                MostrarUsuarioPorConsulta();
+                BitacoraBLL GestorBitacora = new BitacoraBLL();
+                GestorBitacora.AltaEvento("Gestion de Usuario", "Baja de Usuario", 5);
+                VaciarTextBox(this);
+
+            }
+            catch { MessageBox.Show("TD_Debe seleccionar el usuario a borrar!!"); }
         }
         private void BT_USUARIO_MODIFICAR_Click(object sender, EventArgs e)
         {
@@ -113,26 +118,32 @@ namespace gui
             CB_ROL.SelectedItem = dgvUsuario.SelectedRows[0].Cells[6].Value.ToString();
             if (dgvUsuario.SelectedRows[0].Cells[7].Value.ToString() == "True")
             {
-                BT_DESBLOQUEAR_USUARIO.Text = "Desbloquear";
+                BT_DESBLOQUEAR_USUARIO.Text = "TD_Desbloquear";
+                ActualizarLenguaje();
             }
             else
             {
-                BT_DESBLOQUEAR_USUARIO.Text = "Bloquear";
+                BT_DESBLOQUEAR_USUARIO.Text = "TD_Bloquear";
+                ActualizarLenguaje();
             }
         }
         private void BT_APLICAR_Click(object sender, EventArgs e)
         {
-            Usuario UsuarioModificar = GestorUsuario.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
-            UsuarioModificar.Nombre = TB_NOMBRE.Text;
-            UsuarioModificar.Username = TB_Usuario.Text;
-            UsuarioModificar.Apellido = TB_APELLIDO.Text;
-            UsuarioModificar.Email = TB_EMAIL.Text;
-            UsuarioModificar.Rol = CB_ROL.SelectedItem.ToString();
-            GestorUsuario.Modificar(UsuarioModificar);
-            MostrarUsuarioPorConsulta();
-            BitacoraBLL GestorBitacora = new BitacoraBLL();
-            GestorBitacora.AltaEvento("Gestion de Usuario", "Modificacion de Usuario", 5);
-            VaciarTextBox(this);
+            try
+            {
+                Usuario UsuarioModificar = GestorUsuario.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
+                UsuarioModificar.Nombre = TB_NOMBRE.Text;
+                UsuarioModificar.Username = TB_Usuario.Text;
+                UsuarioModificar.Apellido = TB_APELLIDO.Text;
+                UsuarioModificar.Email = TB_EMAIL.Text;
+                UsuarioModificar.Rol = CB_ROL.SelectedItem.ToString();
+                GestorUsuario.Modificar(UsuarioModificar);
+                MostrarUsuarioPorConsulta();
+                BitacoraBLL GestorBitacora = new BitacoraBLL();
+                GestorBitacora.AltaEvento("Gestion de Usuario", "Modificacion de Usuario", 5);
+                VaciarTextBox(this);
+            }
+            catch { MessageBox.Show("TD_Debe seleccionar el Usuario para modificarlo!!"); }
         }
         private void BT_CANCELAR_Click(object sender, EventArgs e)
         {
@@ -154,17 +165,19 @@ namespace gui
             {
                 UsuarioModificar.IsBloqueado = false;
                 GestorUsuario.Modificar(UsuarioModificar);
-                BT_DESBLOQUEAR_USUARIO.Text = "Bloquear";
+                BT_DESBLOQUEAR_USUARIO.Text = "TD_Bloquear";
                 BitacoraBLL GestorBitacora = new BitacoraBLL();
                 GestorBitacora.AltaEvento("Gestion de Usuario", "Desbloqueo de Usuario", 5);
+                ActualizarLenguaje();
             }
             else
             {
                 UsuarioModificar.IsBloqueado = true;
                 GestorUsuario.Modificar(UsuarioModificar);
-                BT_DESBLOQUEAR_USUARIO.Text = "Desbloquear";
+                BT_DESBLOQUEAR_USUARIO.Text = "TD_Desbloquear";
                 BitacoraBLL GestorBitacora = new BitacoraBLL();
                 GestorBitacora.AltaEvento("Gestion de Usuario", "Bloqueo de Usuario", 5);
+                ActualizarLenguaje();
             }
             MostrarUsuarioPorConsulta();
         }
@@ -184,10 +197,32 @@ namespace gui
             GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
         }
 
+
         public void ActualizarLenguaje()
         {
-            //Forma Peluche Foreach para recorrer todos los controles
-            throw new NotImplementedException();
+            RecorrerControles(this);
+        }
+
+        public void RecorrerControles(Control control)
+        {
+            foreach (Control c in control.Controls)
+            {
+                // Aquí puedes hacer lo que quieras con cada control.
+                c.Text = Traductor.TraductorSG.Traducir(c.Text);
+
+                // Llamada recursiva para recorrer controles hijos (anidados).
+                if (c.HasChildren)
+                {
+                    RecorrerControles(c);
+                }
+                if(c is DataGridView dgv) 
+                {
+                    foreach (DataGridViewColumn columna in dgv.Columns)
+                    {
+                        columna.HeaderText = Traductor.TraductorSG.Traducir(columna.HeaderText);
+                    }
+                }
+            }
         }
     }
 }

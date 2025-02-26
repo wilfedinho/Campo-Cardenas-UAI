@@ -21,10 +21,25 @@ namespace gui
             GestorUsuario = new UsuarioBLL();
         }
 
+
         public void ActualizarLenguaje()
         {
-            //Forma Peluche Foreach para recorrer todos los controles
-            throw new NotImplementedException();
+            RecorrerControles(this);
+        }
+
+        public void RecorrerControles(Control control)
+        {
+            foreach (Control c in control.Controls)
+            {
+                // Aquí puedes hacer lo que quieras con cada control.
+                c.Text = Traductor.TraductorSG.Traducir(c.Text);
+
+                // Llamada recursiva para recorrer controles hijos (anidados).
+                if (c.HasChildren)
+                {
+                    RecorrerControles(c);
+                }
+            }
         }
 
         private void BT_ADMINISTRAR_Click(object sender, EventArgs e)

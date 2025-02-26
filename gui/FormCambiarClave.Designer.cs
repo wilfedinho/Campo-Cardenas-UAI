@@ -59,17 +59,17 @@
             this.LabelNombreUsuarioa.Name = "LabelNombreUsuarioa";
             this.LabelNombreUsuarioa.Size = new System.Drawing.Size(147, 29);
             this.LabelNombreUsuarioa.TabIndex = 53;
-            this.LabelNombreUsuarioa.Text = "Clave Nueva";
+            this.LabelNombreUsuarioa.Text = "TD_ClaveNueva";
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(137, 146);
+            this.label1.Location = new System.Drawing.Point(122, 147);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 29);
+            this.label1.Size = new System.Drawing.Size(189, 29);
             this.label1.TabIndex = 54;
-            this.label1.Text = "Confirmar Clave";
+            this.label1.Text = "TD_ConfirmarClave";
             // 
             // BT_ADMINISTRAR
             // 
@@ -82,7 +82,7 @@
             this.BT_ADMINISTRAR.Name = "BT_ADMINISTRAR";
             this.BT_ADMINISTRAR.Size = new System.Drawing.Size(190, 50);
             this.BT_ADMINISTRAR.TabIndex = 55;
-            this.BT_ADMINISTRAR.Text = "Cambiar Clave";
+            this.BT_ADMINISTRAR.Text = "TD_CambiarClave";
             this.BT_ADMINISTRAR.UseVisualStyleBackColor = false;
             this.BT_ADMINISTRAR.Click += new System.EventHandler(this.BT_ADMINISTRAR_Click);
             // 

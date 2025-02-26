@@ -86,6 +86,8 @@ namespace BLL
             {
                 SesionManager.GestorSesion.UsuarioSesion.Contraseña = Cifrador.GestorCifrador.EncriptarIrreversible(ClaveNueva);
                 Modificar(SesionManager.GestorSesion.UsuarioSesion);
+                BitacoraBLL GestorBitacora = new BitacoraBLL();
+                GestorBitacora.AltaEvento("Cambio de Clave","Usuario Cambió clave",1);
                 return true;
             }
             else

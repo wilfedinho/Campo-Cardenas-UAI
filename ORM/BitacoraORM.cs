@@ -50,7 +50,7 @@ namespace ORM
                 int idBitacora = int.Parse(drv[0].ToString());
                 string username = drv[1].ToString();
                 DateTime fecha = DateTime.Parse(drv[2].ToString()).Date;
-                int hora = DateTime.Parse(drv[3].ToString()).Hour;
+                TimeSpan hora = TimeSpan.Parse(drv[3].ToString());
                 string Modulo = drv[4].ToString();
                 string Descripcion = drv[5].ToString();
                 int Criticidad = int.Parse(drv[6].ToString());

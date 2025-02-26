@@ -23,16 +23,28 @@ namespace gui
             InitializeComponent();
             LabelNombreUsuarioa.AutoSize = false;
             LabelNombreUsuarioa.MaximumSize = new Size(panelPrincipal.Width, 0);
-            LabelNombreUsuarioa.Text = $"Bienvenido {SesionManager.GestorSesion.UsuarioSesion.Nombre} a Fertech!!! \n\n\n";
+            // LabelNombreUsuarioa.Text = $"Bienvenido {SesionManager.GestorSesion.UsuarioSesion.Nombre} a Fertech!!! \n\n\n";
+            //Recuerda que al traducir debes hacer el replace cada vez que un string deba mapear partes del mismo
+
             LabelNombreUsuarioa.Height = LabelNombreUsuarioa.PreferredHeight; // Ajusta la altura automáticamente
 
             LabelRolUsuario.AutoSize = false;
             LabelRolUsuario.MaximumSize = new Size(panelPrincipal.Width, 0);
-            LabelRolUsuario.Text = $"Puedo ver que Posees un Rol {SesionManager.GestorSesion.UsuarioSesion.Rol}, Así que podrás acceder a estas funciones!!";
+            //LabelRolUsuario.Text = $"Puedo ver que Posees un Rol {SesionManager.GestorSesion.UsuarioSesion.Rol}, Así que podrás acceder a estas funciones!!";
             LabelRolUsuario.Height = LabelRolUsuario.PreferredHeight; // Ajusta la altura automáticamente
             SuscribirFormularios();
 
             Traductor.TraductorSG.Notificar();
+
+            string a = LabelNombreUsuarioa.Text;
+            string b = LabelRolUsuario.Text;
+            a = a.Replace("{SesionManager.GestorSesion.UsuarioSesion.Nombre}", $"{SesionManager.GestorSesion.UsuarioSesion.Nombre}");
+            b =  b.Replace("{SesionManager.GestorSesion.UsuarioSesion.Rol}", $"{SesionManager.GestorSesion.UsuarioSesion.Rol}");
+            LabelNombreUsuarioa.Text = a;
+            LabelRolUsuario.Text = b;
+
+            LabelNombreUsuarioa.Height = LabelNombreUsuarioa.PreferredHeight; // Ajusta la altura automáticamente
+            LabelRolUsuario.Height = LabelRolUsuario.PreferredHeight; // Ajusta la altura automáticamente
 
             Diseno();
         }
@@ -44,22 +56,12 @@ namespace gui
             Traductor.TraductorSG.Suscribir(formABMUSUARIO);
             Traductor.TraductorSG.Suscribir(formCambiarClave);
         }
-
-        /*    private void BT_CERRARSESION_Click(object sender, EventArgs e)
-        {
-            //RECORDAR CUANDO SE IMPLEMENTE EL SESION MANAGER LIMPIAR LA SESION Y CON LOS PERMISOS MOSTRAR LOS BOTONES CORRESPONDIENTES
-            BitacoraBLL GestorBitacora = new BitacoraBLL();
-            GestorBitacora.AltaEvento("Inicio de Sesion", "Salida del Sistema", 4);
-            SesionManager.GestorSesion.Logout();
-            GestorForm.gestorFormSG.DefinirEstado(new EstadoIniciarSesion());
-        }
-        */
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             SesionManager.GestorSesion.Logout();
             GestorForm.gestorFormSG.DefinirEstado(new EstadoCerrarAplicacion());
         }
-
+        #region Diseno
         //Prueba Botones Nuevo Diseño Del Menu
         private void Diseno()
         {
@@ -100,6 +102,9 @@ namespace gui
                 subMenu.Visible = false;
             }
         }
+        #endregion
+
+        #region Button Click
 
         private void BT_ADMINISTRAR_Click(object sender, EventArgs e)
         {
@@ -197,11 +202,27 @@ namespace gui
             GestorForm.gestorFormSG.DefinirEstado(new EstadoCerrarAplicacion());
             hideSubmenu();
         }
+        #endregion
 
         public void ActualizarLenguaje()
         {
-             //Forma Peluche Foreach para recorrer todos los controles
-           BT_ADMINISTRAR.Text = Traductor.TraductorSG.Traducir(BT_ADMINISTRAR.Text);
+            RecorrerControles(this);
         }
+
+        public void RecorrerControles(Control control)
+        {
+            foreach (Control c in control.Controls)
+            {
+                // Aquí puedes hacer lo que quieras con cada control.
+                c.Text = Traductor.TraductorSG.Traducir(c.Text);
+
+                // Llamada recursiva para recorrer controles hijos (anidados).
+                if (c.HasChildren)
+                {
+                    RecorrerControles(c);
+                }
+            }
+        }
+
     }
 }

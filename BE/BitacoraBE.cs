@@ -11,11 +11,11 @@ namespace BE
         public int IdBitacora {  get; set; }
         public string Username { get; set; }
         public DateTime Fecha { get; set; }
-        public int Hora { get; set; }
+        public TimeSpan Hora { get; set; }
         public string Modulo { get; set; }
         public string Descripcion { get; set; }
         public int Criticidad { get; set; }
-        public BitacoraBE(string nUsername, DateTime nFecha, int nHora, string nModulo, string nDescripcion, int nCriticidad, int nIdBitacora = 0) 
+        public BitacoraBE(string nUsername, DateTime nFecha, TimeSpan nHora, string nModulo, string nDescripcion, int nCriticidad, int nIdBitacora = 0) 
         {
             IdBitacora = nIdBitacora;
             Username = nUsername;

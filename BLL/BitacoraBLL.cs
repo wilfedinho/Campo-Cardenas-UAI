@@ -18,7 +18,7 @@ namespace BLL
             BitacoraORM GestorBitacora = new BitacoraORM();
             if(SesionManager.GestorSesion.UsuarioSesion != null)
             {
-              BitacoraBE bitacora = new BitacoraBE(SesionManager.GestorSesion.UsuarioSesion.Username,DateTime.Now.Date,DateTime.Now.Hour,Modulo,Descripcion,Criticidad);
+              BitacoraBE bitacora = new BitacoraBE(SesionManager.GestorSesion.UsuarioSesion.Username,DateTime.Now.Date,DateTime.Now.TimeOfDay,Modulo,Descripcion,Criticidad);
               GestorBitacora.Alta(bitacora);
             }
         }

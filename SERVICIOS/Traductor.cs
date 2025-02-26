@@ -47,15 +47,15 @@ namespace SERVICIOS
             Notificar();
             Lenguaje.Clear();
         }
-        public string Traducir(string toTranslate) //Funcion Principal
+        public string Traducir(string TextoATraducir) //Funcion Principal
         {
             try
             {
                 if (Lenguaje.Count == 0) CargarTraducciones("Español");
                 string translation = "";
-                return translation = Lenguaje[toTranslate];
+                return translation = Lenguaje[TextoATraducir];
             }
-            catch (Exception ex) { return toTranslate; }
+            catch (Exception ex) { return TextoATraducir; }
         }
 
         public void Notificar()
