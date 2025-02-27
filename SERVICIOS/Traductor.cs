@@ -24,6 +24,7 @@ namespace SERVICIOS
         }
         List<iObserverLenguaje> ListaFormularios = new List<iObserverLenguaje>();
         Dictionary<string, string> Lenguaje = new Dictionary<string, string>();
+       
         string jsonFilePath;
         //C:\Users\William Càrdenas\Desktop\TESIS 2025\Campo-Cardenas-UAI\gui\bin\Debug\Lenguajes\Español.json
 
@@ -41,6 +42,21 @@ namespace SERVICIOS
             }
         }
 
+        public List<string> DevolverIdiomasDisponibles()
+        {
+            List<string> ListaIdiomas = new List<string>();
+            // Obtiene todos los archivos con extensión .json en la ruta especificada.
+            string[] archivos = Directory.GetFiles("C:\\Users\\William Càrdenas\\Desktop\\TESIS 2025\\Campo-Cardenas-UAI\\gui\\bin\\Debug\\Lenguajes", "*.json");
+
+            // Guarda los nombres de archivo sin ruta ni extensión.
+            List<string> nombresDeIdiomas = archivos
+                .Select(archivo => Path.GetFileNameWithoutExtension(archivo))
+                .ToList();
+
+            return nombresDeIdiomas;
+
+        }
+
         public void Actualizar(string lenguajeActual)
         {
             CargarTraducciones(lenguajeActual);
@@ -51,7 +67,7 @@ namespace SERVICIOS
         {
             try
             {
-                if (Lenguaje.Count == 0) CargarTraducciones("Español");
+                if (Lenguaje.Count == 0) CargarTraducciones(SesionManager.GestorSesion.UsuarioSesion.IdiomaUsuario);
                 string translation = "";
                 return translation = Lenguaje[TextoATraducir];
             }

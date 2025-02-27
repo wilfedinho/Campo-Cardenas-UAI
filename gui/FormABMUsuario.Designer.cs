@@ -46,17 +46,19 @@
             this.LABEL_EMAIL_ABM_USUARIO = new System.Windows.Forms.Label();
             this.LABEL_ROL_ABM_USUARIO = new System.Windows.Forms.Label();
             this.CB_ROL = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxMostrarBloqueados = new System.Windows.Forms.CheckBox();
+            this.labelUsuarioABM = new System.Windows.Forms.Label();
             this.TB_Usuario = new System.Windows.Forms.TextBox();
             this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOMBRE_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.APELLIDO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EMAIL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ROL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ISBLOQUEADO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelDebeborrar = new System.Windows.Forms.Label();
+            this.labelDebeSeleccionar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,7 +112,7 @@
             this.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_USUARIO,
-            this.Column1,
+            this.ColumnUsuario,
             this.NOMBRE_USUARIO,
             this.APELLIDO_USUARIO,
             this.DNI_USUARIO,
@@ -276,29 +278,29 @@
             this.CB_ROL.Size = new System.Drawing.Size(194, 21);
             this.CB_ROL.TabIndex = 56;
             // 
-            // checkBox1
+            // checkBoxMostrarBloqueados
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.checkBox1.Location = new System.Drawing.Point(364, 282);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(229, 24);
-            this.checkBox1.TabIndex = 57;
-            this.checkBox1.Text = "TD_MostrarBloqueados";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBoxMostrarBloqueados.AutoSize = true;
+            this.checkBoxMostrarBloqueados.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.checkBoxMostrarBloqueados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.checkBoxMostrarBloqueados.Location = new System.Drawing.Point(364, 282);
+            this.checkBoxMostrarBloqueados.Name = "checkBoxMostrarBloqueados";
+            this.checkBoxMostrarBloqueados.Size = new System.Drawing.Size(229, 24);
+            this.checkBoxMostrarBloqueados.TabIndex = 57;
+            this.checkBoxMostrarBloqueados.Text = "TD_MostrarBloqueados";
+            this.checkBoxMostrarBloqueados.UseVisualStyleBackColor = true;
+            this.checkBoxMostrarBloqueados.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // label1
+            // labelUsuarioABM
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(20, 271);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 20);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "TD_Usuario";
+            this.labelUsuarioABM.AutoSize = true;
+            this.labelUsuarioABM.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelUsuarioABM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelUsuarioABM.Location = new System.Drawing.Point(20, 271);
+            this.labelUsuarioABM.Name = "labelUsuarioABM";
+            this.labelUsuarioABM.Size = new System.Drawing.Size(106, 20);
+            this.labelUsuarioABM.TabIndex = 59;
+            this.labelUsuarioABM.Text = "TD_Usuario";
             // 
             // TB_Usuario
             // 
@@ -313,11 +315,11 @@
             this.ID_USUARIO.Name = "ID_USUARIO";
             this.ID_USUARIO.ReadOnly = true;
             // 
-            // Column1
+            // ColumnUsuario
             // 
-            this.Column1.HeaderText = "TD_Usuario";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.ColumnUsuario.HeaderText = "TD_Usuario";
+            this.ColumnUsuario.Name = "ColumnUsuario";
+            this.ColumnUsuario.ReadOnly = true;
             // 
             // NOMBRE_USUARIO
             // 
@@ -355,15 +357,41 @@
             this.ISBLOQUEADO_USUARIO.Name = "ISBLOQUEADO_USUARIO";
             this.ISBLOQUEADO_USUARIO.ReadOnly = true;
             // 
+            // labelDebeborrar
+            // 
+            this.labelDebeborrar.AutoSize = true;
+            this.labelDebeborrar.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelDebeborrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelDebeborrar.Location = new System.Drawing.Point(393, 416);
+            this.labelDebeborrar.Name = "labelDebeborrar";
+            this.labelDebeborrar.Size = new System.Drawing.Size(106, 20);
+            this.labelDebeborrar.TabIndex = 60;
+            this.labelDebeborrar.Text = "TD_Usuario";
+            this.labelDebeborrar.Visible = false;
+            // 
+            // labelDebeSeleccionar
+            // 
+            this.labelDebeSeleccionar.AutoSize = true;
+            this.labelDebeSeleccionar.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelDebeSeleccionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelDebeSeleccionar.Location = new System.Drawing.Point(393, 451);
+            this.labelDebeSeleccionar.Name = "labelDebeSeleccionar";
+            this.labelDebeSeleccionar.Size = new System.Drawing.Size(106, 20);
+            this.labelDebeSeleccionar.TabIndex = 61;
+            this.labelDebeSeleccionar.Text = "TD_Usuario";
+            this.labelDebeSeleccionar.Visible = false;
+            // 
             // FormABMUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(963, 488);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelDebeSeleccionar);
+            this.Controls.Add(this.labelDebeborrar);
+            this.Controls.Add(this.labelUsuarioABM);
             this.Controls.Add(this.TB_Usuario);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxMostrarBloqueados);
             this.Controls.Add(this.CB_ROL);
             this.Controls.Add(this.LABEL_ROL_ABM_USUARIO);
             this.Controls.Add(this.LABEL_EMAIL_ABM_USUARIO);
@@ -411,16 +439,18 @@
         private System.Windows.Forms.Label LABEL_EMAIL_ABM_USUARIO;
         private System.Windows.Forms.Label LABEL_ROL_ABM_USUARIO;
         private System.Windows.Forms.ComboBox CB_ROL;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBoxMostrarBloqueados;
+        private System.Windows.Forms.Label labelUsuarioABM;
         private System.Windows.Forms.TextBox TB_Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_USUARIO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn APELLIDO_USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI_USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL_USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ROL_USUARIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ISBLOQUEADO_USUARIO;
+        private System.Windows.Forms.Label labelDebeborrar;
+        private System.Windows.Forms.Label labelDebeSeleccionar;
     }
 }

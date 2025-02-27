@@ -95,6 +95,13 @@ namespace BLL
                 return false;
             }
         }
+        public void CambiarIdioma(string nuevoIdioma)
+        {
+            SesionManager.GestorSesion.UsuarioSesion.IdiomaUsuario = nuevoIdioma;
+            UsuarioORM GestorORM = new UsuarioORM();
+            GestorORM.Modificar(SesionManager.GestorSesion.UsuarioSesion);
+            SesionManager.GestorSesion.aplicarLenguaje(nuevoIdioma);
+        }
         public void Alta(Usuario UsuarioAlta)
         {
             UsuarioAlta.Contraseña = Cifrador.GestorCifrador.EncriptarIrreversible(UsuarioAlta.Contraseña);

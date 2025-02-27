@@ -32,7 +32,7 @@ namespace gui
             int indiceRow = 0;
             foreach (Usuario usuario in GestorUsuario.DevolverUsuariosPorConsulta(tipoConsulta,itemSeleccionado,itemValor, itemValor2))
             {
-                if(checkBox1.Checked || usuario.IsBloqueado == false)
+                if(checkBoxMostrarBloqueados.Checked || usuario.IsBloqueado == false)
                 {
                   indiceRow = dgvUsuario.Rows.Add(usuario.ID_Usuario,usuario.Username,usuario.Nombre,usuario.Apellido,usuario.DNI,usuario.Email,usuario.Rol,usuario.IsBloqueado);
                 }
@@ -97,7 +97,7 @@ namespace gui
                 VaciarTextBox(this);
 
             }
-            catch { MessageBox.Show("TD_Debe seleccionar el usuario a borrar!!"); }
+            catch { MessageBox.Show(labelDebeborrar.Text); }
         }
         private void BT_USUARIO_MODIFICAR_Click(object sender, EventArgs e)
         {
@@ -119,12 +119,12 @@ namespace gui
             CB_ROL.SelectedItem = dgvUsuario.SelectedRows[0].Cells[6].Value.ToString();
             if (dgvUsuario.SelectedRows[0].Cells[7].Value.ToString() == "True")
             {
-                BT_DESBLOQUEAR_USUARIO.Text = "TD_Desbloquear";
+                BT_DESBLOQUEAR_USUARIO.Name = "BT_DESBLOQUEAR_USUARIO";
                 ActualizarLenguaje();
             }
             else
             {
-                BT_DESBLOQUEAR_USUARIO.Text = "TD_Bloquear";
+                BT_DESBLOQUEAR_USUARIO.Name = "BT_BLOQUEAR_USUARIO";
                 ActualizarLenguaje();
             }
         }
@@ -144,7 +144,7 @@ namespace gui
                 GestorBitacora.AltaEvento("Gestion de Usuario", "Modificacion de Usuario", 5);
                 VaciarTextBox(this);
             }
-            catch { MessageBox.Show("TD_Debe seleccionar el Usuario para modificarlo!!"); }
+            catch { MessageBox.Show(labelDebeSeleccionar.Text); }
         }
         private void BT_CANCELAR_Click(object sender, EventArgs e)
         {
@@ -209,7 +209,7 @@ namespace gui
             foreach (Control c in control.Controls)
             {
                 // Aquí puedes hacer lo que quieras con cada control.
-                c.Text = Traductor.TraductorSG.Traducir(c.Text);
+                c.Text = Traductor.TraductorSG.Traducir(c.Name);
 
                 // Llamada recursiva para recorrer controles hijos (anidados).
                 if (c.HasChildren)
@@ -220,7 +220,7 @@ namespace gui
                 {
                     foreach (DataGridViewColumn columna in dgv.Columns)
                     {
-                        columna.HeaderText = Traductor.TraductorSG.Traducir(columna.HeaderText);
+                        columna.HeaderText = Traductor.TraductorSG.Traducir(columna.Name);
                     }
                 }
             }

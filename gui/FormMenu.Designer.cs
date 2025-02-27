@@ -43,14 +43,14 @@
             this.button12 = new System.Windows.Forms.Button();
             this.BT_Prueba2 = new System.Windows.Forms.Button();
             this.panelSubmenuPrueba = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.BT_Prueba = new System.Windows.Forms.Button();
+            this.BT_CambiarIdioma = new System.Windows.Forms.Button();
+            this.BT_CerrarSesion = new System.Windows.Forms.Button();
+            this.BT_CambiarClave = new System.Windows.Forms.Button();
+            this.BT_Sesion = new System.Windows.Forms.Button();
             this.panelAdministrarSubmenu = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BT_Usuarios = new System.Windows.Forms.Button();
             this.BT_ADMINISTRAR = new System.Windows.Forms.Button();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -95,7 +95,7 @@
             this.panelSideMenu.Controls.Add(this.panelSubmenuPrueba2);
             this.panelSideMenu.Controls.Add(this.BT_Prueba2);
             this.panelSideMenu.Controls.Add(this.panelSubmenuPrueba);
-            this.panelSideMenu.Controls.Add(this.BT_Prueba);
+            this.panelSideMenu.Controls.Add(this.BT_Sesion);
             this.panelSideMenu.Controls.Add(this.panelAdministrarSubmenu);
             this.panelSideMenu.Controls.Add(this.BT_ADMINISTRAR);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -267,81 +267,81 @@
             // panelSubmenuPrueba
             // 
             this.panelSubmenuPrueba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.panelSubmenuPrueba.Controls.Add(this.button6);
-            this.panelSubmenuPrueba.Controls.Add(this.button7);
-            this.panelSubmenuPrueba.Controls.Add(this.button8);
+            this.panelSubmenuPrueba.Controls.Add(this.BT_CambiarIdioma);
+            this.panelSubmenuPrueba.Controls.Add(this.BT_CerrarSesion);
+            this.panelSubmenuPrueba.Controls.Add(this.BT_CambiarClave);
             this.panelSubmenuPrueba.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuPrueba.Location = new System.Drawing.Point(0, 200);
             this.panelSubmenuPrueba.Name = "panelSubmenuPrueba";
             this.panelSubmenuPrueba.Size = new System.Drawing.Size(183, 100);
             this.panelSubmenuPrueba.TabIndex = 3;
             // 
-            // button6
+            // BT_CambiarIdioma
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.button6.Location = new System.Drawing.Point(0, 62);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(183, 31);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.BT_CambiarIdioma.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_CambiarIdioma.FlatAppearance.BorderSize = 0;
+            this.BT_CambiarIdioma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_CambiarIdioma.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_CambiarIdioma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_CambiarIdioma.Location = new System.Drawing.Point(0, 62);
+            this.BT_CambiarIdioma.Name = "BT_CambiarIdioma";
+            this.BT_CambiarIdioma.Size = new System.Drawing.Size(183, 31);
+            this.BT_CambiarIdioma.TabIndex = 2;
+            this.BT_CambiarIdioma.Text = "TD_CambiarIdioma";
+            this.BT_CambiarIdioma.UseVisualStyleBackColor = true;
+            this.BT_CambiarIdioma.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // BT_CerrarSesion
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.button7.Location = new System.Drawing.Point(0, 31);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(183, 31);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "TD_CerrarSesion";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.BT_CerrarSesion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_CerrarSesion.FlatAppearance.BorderSize = 0;
+            this.BT_CerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_CerrarSesion.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_CerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_CerrarSesion.Location = new System.Drawing.Point(0, 31);
+            this.BT_CerrarSesion.Name = "BT_CerrarSesion";
+            this.BT_CerrarSesion.Size = new System.Drawing.Size(183, 31);
+            this.BT_CerrarSesion.TabIndex = 1;
+            this.BT_CerrarSesion.Text = "TD_CerrarSesion";
+            this.BT_CerrarSesion.UseVisualStyleBackColor = true;
+            this.BT_CerrarSesion.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button8
+            // BT_CambiarClave
             // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.button8.Location = new System.Drawing.Point(0, 0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(183, 31);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "TD_CambiarClave";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.BT_CambiarClave.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_CambiarClave.FlatAppearance.BorderSize = 0;
+            this.BT_CambiarClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_CambiarClave.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_CambiarClave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_CambiarClave.Location = new System.Drawing.Point(0, 0);
+            this.BT_CambiarClave.Name = "BT_CambiarClave";
+            this.BT_CambiarClave.Size = new System.Drawing.Size(183, 31);
+            this.BT_CambiarClave.TabIndex = 0;
+            this.BT_CambiarClave.Text = "TD_CambiarClave";
+            this.BT_CambiarClave.UseVisualStyleBackColor = true;
+            this.BT_CambiarClave.Click += new System.EventHandler(this.button8_Click);
             // 
-            // BT_Prueba
+            // BT_Sesion
             // 
-            this.BT_Prueba.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_Prueba.FlatAppearance.BorderSize = 0;
-            this.BT_Prueba.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Prueba.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BT_Prueba.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Prueba.Location = new System.Drawing.Point(0, 150);
-            this.BT_Prueba.Name = "BT_Prueba";
-            this.BT_Prueba.Size = new System.Drawing.Size(183, 50);
-            this.BT_Prueba.TabIndex = 2;
-            this.BT_Prueba.Text = "TD_Sesion";
-            this.BT_Prueba.UseVisualStyleBackColor = true;
-            this.BT_Prueba.Click += new System.EventHandler(this.BT_Prueba_Click);
+            this.BT_Sesion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_Sesion.FlatAppearance.BorderSize = 0;
+            this.BT_Sesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Sesion.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_Sesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_Sesion.Location = new System.Drawing.Point(0, 150);
+            this.BT_Sesion.Name = "BT_Sesion";
+            this.BT_Sesion.Size = new System.Drawing.Size(183, 50);
+            this.BT_Sesion.TabIndex = 2;
+            this.BT_Sesion.Text = "TD_Sesion";
+            this.BT_Sesion.UseVisualStyleBackColor = true;
+            this.BT_Sesion.Click += new System.EventHandler(this.BT_Prueba_Click);
             // 
             // panelAdministrarSubmenu
             // 
             this.panelAdministrarSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.panelAdministrarSubmenu.Controls.Add(this.button4);
             this.panelAdministrarSubmenu.Controls.Add(this.button3);
-            this.panelAdministrarSubmenu.Controls.Add(this.button2);
+            this.panelAdministrarSubmenu.Controls.Add(this.BT_Usuarios);
             this.panelAdministrarSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAdministrarSubmenu.Location = new System.Drawing.Point(0, 50);
             this.panelAdministrarSubmenu.Name = "panelAdministrarSubmenu";
@@ -378,20 +378,20 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // BT_Usuarios
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 31);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "TD_Usuarios";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.BT_Usuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_Usuarios.FlatAppearance.BorderSize = 0;
+            this.BT_Usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Usuarios.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_Usuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_Usuarios.Location = new System.Drawing.Point(0, 0);
+            this.BT_Usuarios.Name = "BT_Usuarios";
+            this.BT_Usuarios.Size = new System.Drawing.Size(183, 31);
+            this.BT_Usuarios.TabIndex = 0;
+            this.BT_Usuarios.Text = "TD_Usuarios";
+            this.BT_Usuarios.UseVisualStyleBackColor = true;
+            this.BT_Usuarios.Click += new System.EventHandler(this.button2_Click);
             // 
             // BT_ADMINISTRAR
             // 
@@ -462,7 +462,7 @@
         private System.Windows.Forms.Panel panelAdministrarSubmenu;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BT_Usuarios;
         private System.Windows.Forms.Button BT_Salir;
         private System.Windows.Forms.Panel panelSubmenuPrueba3;
         private System.Windows.Forms.Button button14;
@@ -475,10 +475,10 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button BT_Prueba2;
         private System.Windows.Forms.Panel panelSubmenuPrueba;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button BT_Prueba;
+        private System.Windows.Forms.Button BT_CambiarIdioma;
+        private System.Windows.Forms.Button BT_CerrarSesion;
+        private System.Windows.Forms.Button BT_CambiarClave;
+        private System.Windows.Forms.Button BT_Sesion;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelPrincipal;
     }

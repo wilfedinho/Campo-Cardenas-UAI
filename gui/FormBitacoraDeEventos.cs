@@ -176,5 +176,20 @@ namespace gui
                 monthCalendarFechaFin.Enabled = false;
             }
         }
+
+        private void FormBitacoraDeEventos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
+        }
+
+        private void FormBitacoraDeEventos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCBUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

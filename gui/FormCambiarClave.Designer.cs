@@ -30,9 +30,11 @@
         {
             this.TB_ClaveNueva = new System.Windows.Forms.TextBox();
             this.TB_ConfirmarClave = new System.Windows.Forms.TextBox();
-            this.LabelNombreUsuarioa = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BT_ADMINISTRAR = new System.Windows.Forms.Button();
+            this.LabelClaveNueva = new System.Windows.Forms.Label();
+            this.labelTD_ConfirmarClave = new System.Windows.Forms.Label();
+            this.BT_CambiarClave = new System.Windows.Forms.Button();
+            this.labelCambioErroneo = new System.Windows.Forms.Label();
+            this.labelCambioExitoso = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TB_ClaveNueva
@@ -51,40 +53,60 @@
             this.TB_ConfirmarClave.Size = new System.Drawing.Size(189, 20);
             this.TB_ConfirmarClave.TabIndex = 1;
             // 
-            // LabelNombreUsuarioa
+            // LabelClaveNueva
             // 
-            this.LabelNombreUsuarioa.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.LabelNombreUsuarioa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LabelNombreUsuarioa.Location = new System.Drawing.Point(149, 51);
-            this.LabelNombreUsuarioa.Name = "LabelNombreUsuarioa";
-            this.LabelNombreUsuarioa.Size = new System.Drawing.Size(147, 29);
-            this.LabelNombreUsuarioa.TabIndex = 53;
-            this.LabelNombreUsuarioa.Text = "TD_ClaveNueva";
+            this.LabelClaveNueva.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.LabelClaveNueva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.LabelClaveNueva.Location = new System.Drawing.Point(149, 51);
+            this.LabelClaveNueva.Name = "LabelClaveNueva";
+            this.LabelClaveNueva.Size = new System.Drawing.Size(147, 29);
+            this.LabelClaveNueva.TabIndex = 53;
+            this.LabelClaveNueva.Text = "TD_ClaveNueva";
             // 
-            // label1
+            // labelTD_ConfirmarClave
             // 
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(122, 147);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 29);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "TD_ConfirmarClave";
+            this.labelTD_ConfirmarClave.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelTD_ConfirmarClave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelTD_ConfirmarClave.Location = new System.Drawing.Point(122, 147);
+            this.labelTD_ConfirmarClave.Name = "labelTD_ConfirmarClave";
+            this.labelTD_ConfirmarClave.Size = new System.Drawing.Size(189, 29);
+            this.labelTD_ConfirmarClave.TabIndex = 54;
+            this.labelTD_ConfirmarClave.Text = "TD_ConfirmarClave";
             // 
-            // BT_ADMINISTRAR
+            // BT_CambiarClave
             // 
-            this.BT_ADMINISTRAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
-            this.BT_ADMINISTRAR.FlatAppearance.BorderSize = 0;
-            this.BT_ADMINISTRAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BT_ADMINISTRAR.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BT_ADMINISTRAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_ADMINISTRAR.Location = new System.Drawing.Point(121, 243);
-            this.BT_ADMINISTRAR.Name = "BT_ADMINISTRAR";
-            this.BT_ADMINISTRAR.Size = new System.Drawing.Size(190, 50);
-            this.BT_ADMINISTRAR.TabIndex = 55;
-            this.BT_ADMINISTRAR.Text = "TD_CambiarClave";
-            this.BT_ADMINISTRAR.UseVisualStyleBackColor = false;
-            this.BT_ADMINISTRAR.Click += new System.EventHandler(this.BT_ADMINISTRAR_Click);
+            this.BT_CambiarClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.BT_CambiarClave.FlatAppearance.BorderSize = 0;
+            this.BT_CambiarClave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BT_CambiarClave.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_CambiarClave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_CambiarClave.Location = new System.Drawing.Point(121, 243);
+            this.BT_CambiarClave.Name = "BT_CambiarClave";
+            this.BT_CambiarClave.Size = new System.Drawing.Size(190, 50);
+            this.BT_CambiarClave.TabIndex = 55;
+            this.BT_CambiarClave.Text = "TD_CambiarClave";
+            this.BT_CambiarClave.UseVisualStyleBackColor = false;
+            this.BT_CambiarClave.Click += new System.EventHandler(this.BT_ADMINISTRAR_Click);
+            // 
+            // labelCambioErroneo
+            // 
+            this.labelCambioErroneo.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelCambioErroneo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelCambioErroneo.Location = new System.Drawing.Point(319, 38);
+            this.labelCambioErroneo.Name = "labelCambioErroneo";
+            this.labelCambioErroneo.Size = new System.Drawing.Size(147, 29);
+            this.labelCambioErroneo.TabIndex = 56;
+            this.labelCambioErroneo.Text = "TD_ClaveNueva";
+            // 
+            // labelCambioExitoso
+            // 
+            this.labelCambioExitoso.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.labelCambioExitoso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.labelCambioExitoso.Location = new System.Drawing.Point(319, 9);
+            this.labelCambioExitoso.Name = "labelCambioExitoso";
+            this.labelCambioExitoso.Size = new System.Drawing.Size(147, 29);
+            this.labelCambioExitoso.TabIndex = 57;
+            this.labelCambioExitoso.Text = "TD_ClaveNueva";
             // 
             // FormCambiarClave
             // 
@@ -92,9 +114,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(469, 348);
-            this.Controls.Add(this.BT_ADMINISTRAR);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.LabelNombreUsuarioa);
+            this.Controls.Add(this.labelCambioExitoso);
+            this.Controls.Add(this.labelCambioErroneo);
+            this.Controls.Add(this.BT_CambiarClave);
+            this.Controls.Add(this.labelTD_ConfirmarClave);
+            this.Controls.Add(this.LabelClaveNueva);
             this.Controls.Add(this.TB_ConfirmarClave);
             this.Controls.Add(this.TB_ClaveNueva);
             this.Name = "FormCambiarClave";
@@ -109,8 +133,10 @@
 
         private System.Windows.Forms.TextBox TB_ClaveNueva;
         private System.Windows.Forms.TextBox TB_ConfirmarClave;
-        private System.Windows.Forms.Label LabelNombreUsuarioa;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BT_ADMINISTRAR;
+        private System.Windows.Forms.Label LabelClaveNueva;
+        private System.Windows.Forms.Label labelTD_ConfirmarClave;
+        private System.Windows.Forms.Button BT_CambiarClave;
+        private System.Windows.Forms.Label labelCambioErroneo;
+        private System.Windows.Forms.Label labelCambioExitoso;
     }
 }

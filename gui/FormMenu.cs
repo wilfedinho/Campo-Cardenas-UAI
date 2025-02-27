@@ -17,6 +17,7 @@ namespace gui
     {
         FormABMUsuario formABMUSUARIO;
         FormCambiarClave formCambiarClave;
+        FormCambiarIdioma formCambiarIdioma;
         
         public FormMenu()
         {
@@ -52,9 +53,12 @@ namespace gui
         {
             formABMUSUARIO = new FormABMUsuario();
             formCambiarClave = new FormCambiarClave();
+            formCambiarIdioma = new FormCambiarIdioma();
             Traductor.TraductorSG.Suscribir(this);
             Traductor.TraductorSG.Suscribir(formABMUSUARIO);
             Traductor.TraductorSG.Suscribir(formCambiarClave);
+            Traductor.TraductorSG.Suscribir(formCambiarIdioma);
+
         }
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -163,6 +167,8 @@ namespace gui
 
         private void button6_Click(object sender, EventArgs e)
         {
+            formCambiarIdioma.ShowDialog();
+            this.Hide();
             hideSubmenu();
         }
 
@@ -214,7 +220,7 @@ namespace gui
             foreach (Control c in control.Controls)
             {
                 // Aquí puedes hacer lo que quieras con cada control.
-                c.Text = Traductor.TraductorSG.Traducir(c.Text);
+                c.Text = Traductor.TraductorSG.Traducir(c.Name);
 
                 // Llamada recursiva para recorrer controles hijos (anidados).
                 if (c.HasChildren)
