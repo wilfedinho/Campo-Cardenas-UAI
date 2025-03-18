@@ -22,6 +22,10 @@ namespace gui
         public FormMenu()
         {
             InitializeComponent();
+            ReiniciarMenu();
+        }
+        public void ReiniciarMenu()
+        {
             LabelNombreUsuarioa.AutoSize = false;
             LabelNombreUsuarioa.MaximumSize = new Size(panelPrincipal.Width, 0);
             // LabelNombreUsuarioa.Text = $"Bienvenido {SesionManager.GestorSesion.UsuarioSesion.Nombre} a Fertech!!! \n\n\n";
@@ -40,7 +44,7 @@ namespace gui
             string a = LabelNombreUsuarioa.Text;
             string b = LabelRolUsuario.Text;
             a = a.Replace("{SesionManager.GestorSesion.UsuarioSesion.Nombre}", $"{SesionManager.GestorSesion.UsuarioSesion.Nombre}");
-            b =  b.Replace("{SesionManager.GestorSesion.UsuarioSesion.Rol}", $"{SesionManager.GestorSesion.UsuarioSesion.Rol}");
+            b = b.Replace("{SesionManager.GestorSesion.UsuarioSesion.Rol}", $"{SesionManager.GestorSesion.UsuarioSesion.Rol}");
             LabelNombreUsuarioa.Text = a;
             LabelRolUsuario.Text = b;
 
@@ -51,7 +55,7 @@ namespace gui
         }
         public void SuscribirFormularios()
         {
-            formABMUSUARIO = new FormABMUsuario();
+            formABMUSUARIO = new FormABMUsuario(this);
             formCambiarClave = new FormCambiarClave();
             formCambiarIdioma = new FormCambiarIdioma();
             Traductor.TraductorSG.Suscribir(this);
@@ -121,6 +125,8 @@ namespace gui
             formABMUSUARIO.ShowDialog();
             this.Hide();
             hideSubmenu();
+            ReiniciarMenu();
+            this.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -154,6 +160,8 @@ namespace gui
             formCambiarClave.ShowDialog();
             this.Hide();
             hideSubmenu();
+            ReiniciarMenu();
+            this.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -170,6 +178,8 @@ namespace gui
             formCambiarIdioma.ShowDialog();
             this.Hide();
             hideSubmenu();
+            ReiniciarMenu();
+            this.Show();
         }
 
         private void button12_Click(object sender, EventArgs e)

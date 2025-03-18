@@ -16,13 +16,15 @@ namespace gui
     public partial class FormABMUsuario : Form, iObserverLenguaje
     {
         UsuarioBLL GestorUsuario;
-        public FormABMUsuario()
+        FormMenu menu;
+        public FormABMUsuario(FormMenu menuOrigen)
         {
             InitializeComponent();
             MostrarUsuarioPorConsulta();
             GestorUsuario = new UsuarioBLL();
             BT_CANCELAR.Enabled = false;
             BT_APLICAR.Enabled = false;
+            menu = menuOrigen;
         }
 
         public void MostrarUsuarioPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
@@ -190,12 +192,12 @@ namespace gui
 
         private void BT_SALIR_Click(object sender, EventArgs e)
         {
-            GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
+            this.Close();
         }
 
         private void FormABMUsuario_FormClosed(object sender, FormClosedEventArgs e)
         {
-            GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
+
         }
 
 
