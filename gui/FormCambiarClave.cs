@@ -57,7 +57,7 @@ namespace gui
 
         private void FormCambiarClave_FormClosed(object sender, FormClosedEventArgs e)
         {
-            GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());
+          
         }
     }
 }
