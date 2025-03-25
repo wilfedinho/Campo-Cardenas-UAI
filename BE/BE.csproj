@@ -45,6 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BitacoraBE.cs" />
+    <Compile Include="Permiso.cs" />
+    <Compile Include="PermisoCompuesto.cs" />
+    <Compile Include="PermisoSimple.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
