@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SERVICIOS
 {
-    public class Traductor
+    public class Traductor : ISujeto
     {
         public static Traductor Instance;
         public static Traductor TraductorSG
