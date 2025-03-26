@@ -97,6 +97,7 @@
             this.labelCambioErroneo.Size = new System.Drawing.Size(147, 29);
             this.labelCambioErroneo.TabIndex = 56;
             this.labelCambioErroneo.Text = "TD_ClaveNueva";
+            this.labelCambioErroneo.Visible = false;
             // 
             // labelCambioExitoso
             // 
@@ -107,6 +108,7 @@
             this.labelCambioExitoso.Size = new System.Drawing.Size(147, 29);
             this.labelCambioExitoso.TabIndex = 57;
             this.labelCambioExitoso.Text = "TD_ClaveNueva";
+            this.labelCambioExitoso.Visible = false;
             // 
             // FormCambiarClave
             // 
