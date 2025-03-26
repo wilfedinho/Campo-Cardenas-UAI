@@ -65,7 +65,7 @@ namespace SERVICIOS
         }
         public string Traducir(string TextoATraducir) //Funcion Principal
         {
-            try
+           try
             {
                 if (Lenguaje.Count == 0) CargarTraducciones(SesionManager.GestorSesion.UsuarioSesion.IdiomaUsuario);
                 string translation = "";

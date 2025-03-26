@@ -22,31 +22,20 @@ namespace gui
         public FormMenu()
         {
             InitializeComponent();
-            ReiniciarMenu();
-        }
-        public void ReiniciarMenu()
-        {
             LabelNombreUsuarioa.AutoSize = false;
             LabelNombreUsuarioa.MaximumSize = new Size(panelPrincipal.Width, 0);
-            // LabelNombreUsuarioa.Text = $"Bienvenido {SesionManager.GestorSesion.UsuarioSesion.Nombre} a Fertech!!! \n\n\n";
-            //Recuerda que al traducir debes hacer el replace cada vez que un string deba mapear partes del mismo
+
 
             LabelNombreUsuarioa.Height = LabelNombreUsuarioa.PreferredHeight; // Ajusta la altura automáticamente
 
             LabelRolUsuario.AutoSize = false;
             LabelRolUsuario.MaximumSize = new Size(panelPrincipal.Width, 0);
-            //LabelRolUsuario.Text = $"Puedo ver que Posees un Rol {SesionManager.GestorSesion.UsuarioSesion.Rol}, Así que podrás acceder a estas funciones!!";
             LabelRolUsuario.Height = LabelRolUsuario.PreferredHeight; // Ajusta la altura automáticamente
             SuscribirFormularios();
 
             Traductor.TraductorSG.Notificar();
 
-            string a = LabelNombreUsuarioa.Text;
-            string b = LabelRolUsuario.Text;
-            a = a.Replace("{SesionManager.GestorSesion.UsuarioSesion.Nombre}", $"{SesionManager.GestorSesion.UsuarioSesion.Nombre}");
-            b = b.Replace("{SesionManager.GestorSesion.UsuarioSesion.Rol}", $"{SesionManager.GestorSesion.UsuarioSesion.Rol}");
-            LabelNombreUsuarioa.Text = a;
-            LabelRolUsuario.Text = b;
+
 
             LabelNombreUsuarioa.Height = LabelNombreUsuarioa.PreferredHeight; // Ajusta la altura automáticamente
             LabelRolUsuario.Height = LabelRolUsuario.PreferredHeight; // Ajusta la altura automáticamente
@@ -123,9 +112,9 @@ namespace gui
         {
 
             formABMUSUARIO.ShowDialog();
-            this.Hide();
+           
             hideSubmenu();
-            ReiniciarMenu();
+            
             this.Show();
         }
 
@@ -158,9 +147,8 @@ namespace gui
         {
 
             formCambiarClave.ShowDialog();
-            this.Hide();
+            
             hideSubmenu();
-            ReiniciarMenu();
             this.Show();
         }
 
@@ -176,9 +164,9 @@ namespace gui
         private void button6_Click(object sender, EventArgs e)
         {
             formCambiarIdioma.ShowDialog();
-            this.Hide();
+       
             hideSubmenu();
-            ReiniciarMenu();
+          
             this.Show();
         }
 
@@ -231,6 +219,22 @@ namespace gui
             {
                 // Aquí puedes hacer lo que quieras con cada control.
                 c.Text = Traductor.TraductorSG.Traducir(c.Name);
+                if(c.Name == LabelNombreUsuarioa.Name) 
+                {
+                    string a = LabelNombreUsuarioa.Text;
+                    a = a.Replace("{SesionManager.GestorSesion.UsuarioSesion.Nombre}", $"{SesionManager.GestorSesion.UsuarioSesion.Nombre}");
+                    LabelNombreUsuarioa.Text = a;
+                    LabelNombreUsuarioa.Height = LabelNombreUsuarioa.PreferredHeight; // Ajusta la altura automáticamente
+                   
+                }
+
+                if(c.Name == LabelRolUsuario.Name) 
+                {
+                    string b = LabelRolUsuario.Text;
+                    b = b.Replace("{SesionManager.GestorSesion.UsuarioSesion.Rol}", $"{SesionManager.GestorSesion.UsuarioSesion.Rol}"); 
+                    LabelRolUsuario.Text = b;
+                    LabelRolUsuario.Height = LabelRolUsuario.PreferredHeight;
+                }
 
                 // Llamada recursiva para recorrer controles hijos (anidados).
                 if (c.HasChildren)
