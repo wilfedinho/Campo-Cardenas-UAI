@@ -12,6 +12,18 @@ namespace ORM
 {
     public class PermisoORM
     {
+        private static PermisoORM Instancia;
+        public static PermisoORM GestorPermisoORM
+        {
+            get
+            {
+                if (Instancia == null)
+                {
+                    Instancia = new PermisoORM();
+                }
+                return Instancia;
+            }
+        }
         public List<Permiso> LeerPermisosEnArbol() 
         {
           List<Permiso> ListaPermiso = new List<Permiso>();

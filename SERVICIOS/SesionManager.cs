@@ -1,6 +1,7 @@
 ﻿using BE;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace SERVICIOS
 
         public Usuario UsuarioSesion;
         public string IdiomaSesion = "Español";
+        public PermisoCompuesto permisosDeLaSesion;
 
         public void aplicarLenguaje(string nuevoIdioma) 
         {
@@ -45,6 +47,12 @@ namespace SERVICIOS
             {
                 GestorSesion.UsuarioSesion = null;
             }
+        }
+    
+        public bool SesionTienePermisos(string permisoSolicitado) 
+        {
+            PermisoCompuesto permiso = new PermisoCompuesto(permisoSolicitado);
+            return permiso.VerificarPermisoIncluido(permisosDeLaSesion, permisoSolicitado);
         }
     }
 }
