@@ -18,6 +18,8 @@ namespace gui
         FormABMUsuario formABMUSUARIO;
         FormCambiarClave formCambiarClave;
         FormCambiarIdioma formCambiarIdioma;
+        FormBitacoraDeEventos formBitacoraDeEventos;
+        FormPermisos formPermisos;
         
         public FormMenu()
         {
@@ -40,6 +42,8 @@ namespace gui
             LabelNombreUsuarioa.Height = LabelNombreUsuarioa.PreferredHeight; // Ajusta la altura automáticamente
             LabelRolUsuario.Height = LabelRolUsuario.PreferredHeight; // Ajusta la altura automáticamente
 
+            VerificarAccesibilidadDeTodosLosControles();
+
             Diseno();
         }
         public void SuscribirFormularios()
@@ -47,10 +51,15 @@ namespace gui
             formABMUSUARIO = new FormABMUsuario(this);
             formCambiarClave = new FormCambiarClave();
             formCambiarIdioma = new FormCambiarIdioma();
+            formBitacoraDeEventos = new FormBitacoraDeEventos();
+            formPermisos = new FormPermisos();
+            
             Traductor.TraductorSG.Suscribir(this);
             Traductor.TraductorSG.Suscribir(formABMUSUARIO);
             Traductor.TraductorSG.Suscribir(formCambiarClave);
             Traductor.TraductorSG.Suscribir(formCambiarIdioma);
+            Traductor.TraductorSG.Suscribir(formBitacoraDeEventos);
+            Traductor.TraductorSG.Suscribir(formPermisos);
 
         }
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
@@ -120,12 +129,16 @@ namespace gui
 
         private void button3_Click(object sender, EventArgs e)
         {
+            formBitacoraDeEventos.ShowDialog();
             hideSubmenu();
+            this.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            formPermisos.ShowDialog();
             hideSubmenu();
+            this.Show();
         }
 
         private void BT_Prueba_Click(object sender, EventArgs e)
@@ -243,6 +256,37 @@ namespace gui
                 }
             }
         }
+
+        #region Logica de Permisos Para Habilitar Accesos
+        public void VerificarAccesibilidadDeTodosLosControles() 
+        {
+            PermisoBLL GestorPermiso = new PermisoBLL();
+            VerificarAccesibilidadRecursivo(Controls, GestorPermiso);
+        }
+
+        public void VerificarAccesibilidadRecursivo(Control.ControlCollection controles, PermisoBLL GestorPermiso) 
+        {
+            foreach(Control c in controles) 
+            {
+                VerificarAccesibilidad(c, GestorPermiso);
+
+
+                if(c.HasChildren) 
+                {
+                    VerificarAccesibilidadRecursivo(c.Controls,GestorPermiso);
+                }
+            }
+        
+        }
+
+        public void VerificarAccesibilidad(Control control, PermisoBLL GestorPermiso, bool estadoSecundario = true) 
+        {
+            
+               control.Visible = GestorPermiso.ConfigurarControl(control.Tag?.ToString(),estadoSecundario);
+            
+        
+        }
+        #endregion
 
     }
 }

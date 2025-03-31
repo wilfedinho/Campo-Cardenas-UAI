@@ -52,6 +52,7 @@
             // CB_Familias
             // 
             this.CB_Familias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.CB_Familias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_Familias.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CB_Familias.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.CB_Familias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
@@ -155,7 +156,7 @@
             this.listaPermisos.FormattingEnabled = true;
             this.listaPermisos.Location = new System.Drawing.Point(271, 35);
             this.listaPermisos.Name = "listaPermisos";
-            this.listaPermisos.Size = new System.Drawing.Size(259, 420);
+            this.listaPermisos.Size = new System.Drawing.Size(367, 420);
             this.listaPermisos.TabIndex = 7;
             // 
             // vistaPermisosArbol
@@ -164,9 +165,9 @@
             this.vistaPermisosArbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.vistaPermisosArbol.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.vistaPermisosArbol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.vistaPermisosArbol.Location = new System.Drawing.Point(562, 33);
+            this.vistaPermisosArbol.Location = new System.Drawing.Point(670, 35);
             this.vistaPermisosArbol.Name = "vistaPermisosArbol";
-            this.vistaPermisosArbol.Size = new System.Drawing.Size(259, 422);
+            this.vistaPermisosArbol.Size = new System.Drawing.Size(367, 420);
             this.vistaPermisosArbol.TabIndex = 8;
             // 
             // labelRolyGrupo
@@ -207,7 +208,7 @@
             this.labelVista.AutoSize = true;
             this.labelVista.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.labelVista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelVista.Location = new System.Drawing.Point(558, 12);
+            this.labelVista.Location = new System.Drawing.Point(666, 12);
             this.labelVista.Name = "labelVista";
             this.labelVista.Size = new System.Drawing.Size(85, 20);
             this.labelVista.TabIndex = 12;
@@ -290,7 +291,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(845, 485);
+            this.ClientSize = new System.Drawing.Size(1049, 485);
             this.Controls.Add(this.labelIngreseElNuevoNombre);
             this.Controls.Add(this.labelDeseaBorrarLaFamilia);
             this.Controls.Add(this.labelNoSePuedeSeleccionarElRolAdmin);

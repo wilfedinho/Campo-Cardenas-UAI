@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace gui
 {
-    public partial class FormPermisos : Form
+    public partial class FormPermisos : Form, iObserverLenguaje
     {
         string adminRolNombre = "AdminSistema";
         bool esItemSeleccionado = false;
@@ -39,7 +39,7 @@ namespace gui
             listaPermisos.Items.AddRange(permisos.Select(p => p.obtenerPermisoNombre()).Where(nombre => nombre != adminRolNombre).ToArray());
         }
 
-        /* CODIGO ORIGINAL 
+        // CODIGO ORIGINAL 
          public void CargarArbol() 
          {
              vistaPermisosArbol.Nodes.Clear();
@@ -66,7 +66,7 @@ namespace gui
                  }
              }
          }
-        */
+        /*
         //Codigo gpt
         public void CargarArbol()
         {
@@ -92,7 +92,7 @@ namespace gui
                     AgregarNodoRecursivo((PermisoCompuesto)permisoHijo, nodo.Nodes);
                 }
             }
-        }
+        }*/
 
         public void CargarFamilias() 
         {
@@ -289,6 +289,11 @@ namespace gui
                 }
             
             }
+        }
+
+        public void ActualizarLenguaje()
+        {
+            
         }
     }
 }

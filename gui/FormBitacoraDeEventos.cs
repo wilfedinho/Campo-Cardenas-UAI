@@ -1,5 +1,6 @@
 ﻿using BE;
 using BLL;
+using SERVICIOS;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace gui
 {
-    public partial class FormBitacoraDeEventos : Form
+    public partial class FormBitacoraDeEventos : Form, iObserverLenguaje
     {
         BitacoraBLL GestorBitacora;
         UsuarioBLL GestorUsuario;
@@ -188,6 +189,16 @@ namespace gui
         }
 
         private void labelCBUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void ActualizarLenguaje()
+        {
+            
+        }
+
+        private void CB_Usuario_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -34,6 +34,8 @@ namespace gui
                    if(usuarioIniciarSesion.Contraseña == Cifrador.GestorCifrador.EncriptarIrreversible(TB_Contrasena.Text))
                    {
                         SesionManager.GestorSesion.Login(usuarioIniciarSesion);
+                        PermisoBLL GestorPermiso = new PermisoBLL();
+                        GestorPermiso.AsignarRolSesion(SesionManager.GestorSesion.UsuarioSesion.Rol);
                         BitacoraBLL GestorBitacora = new BitacoraBLL();
                         GestorBitacora.AltaEvento("Inicio de Sesion", "Entrada al Sistema", 4);
                         GestorForm.gestorFormSG.DefinirEstado(new EstadoMenu());

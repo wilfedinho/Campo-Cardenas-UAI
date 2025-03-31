@@ -334,6 +334,7 @@
             // CB_ROL
             // 
             this.CB_ROL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.CB_ROL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_ROL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CB_ROL.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.CB_ROL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
