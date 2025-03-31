@@ -32,6 +32,14 @@
             this.BT_BAJA_USUARIO = new System.Windows.Forms.Button();
             this.BT_MODIFICAR_USUARIO = new System.Windows.Forms.Button();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
+            this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ROL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ISBLOQUEADO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BT_DESBLOQUEAR_USUARIO = new System.Windows.Forms.Button();
             this.BT_CANCELAR = new System.Windows.Forms.Button();
             this.BT_APLICAR = new System.Windows.Forms.Button();
@@ -49,14 +57,6 @@
             this.checkBoxMostrarBloqueados = new System.Windows.Forms.CheckBox();
             this.labelUsuarioABM = new System.Windows.Forms.Label();
             this.TB_Usuario = new System.Windows.Forms.TextBox();
-            this.ID_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ROL_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ISBLOQUEADO_USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelDebeborrar = new System.Windows.Forms.Label();
             this.labelDebeSeleccionar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
@@ -128,6 +128,54 @@
             this.dgvUsuario.TabIndex = 3;
             this.dgvUsuario.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsuario_CellMouseClick);
             // 
+            // ID_USUARIO
+            // 
+            this.ID_USUARIO.HeaderText = "TD_ID";
+            this.ID_USUARIO.Name = "ID_USUARIO";
+            this.ID_USUARIO.ReadOnly = true;
+            // 
+            // ColumnUsuario
+            // 
+            this.ColumnUsuario.HeaderText = "TD_Usuario";
+            this.ColumnUsuario.Name = "ColumnUsuario";
+            this.ColumnUsuario.ReadOnly = true;
+            // 
+            // NOMBRE_USUARIO
+            // 
+            this.NOMBRE_USUARIO.HeaderText = "TD_Nombre";
+            this.NOMBRE_USUARIO.Name = "NOMBRE_USUARIO";
+            this.NOMBRE_USUARIO.ReadOnly = true;
+            // 
+            // APELLIDO_USUARIO
+            // 
+            this.APELLIDO_USUARIO.HeaderText = "TD_Apellido";
+            this.APELLIDO_USUARIO.Name = "APELLIDO_USUARIO";
+            this.APELLIDO_USUARIO.ReadOnly = true;
+            // 
+            // DNI_USUARIO
+            // 
+            this.DNI_USUARIO.HeaderText = "TD_DNI";
+            this.DNI_USUARIO.Name = "DNI_USUARIO";
+            this.DNI_USUARIO.ReadOnly = true;
+            // 
+            // EMAIL_USUARIO
+            // 
+            this.EMAIL_USUARIO.HeaderText = "TD_Email";
+            this.EMAIL_USUARIO.Name = "EMAIL_USUARIO";
+            this.EMAIL_USUARIO.ReadOnly = true;
+            // 
+            // ROL_USUARIO
+            // 
+            this.ROL_USUARIO.HeaderText = "TD_Rol";
+            this.ROL_USUARIO.Name = "ROL_USUARIO";
+            this.ROL_USUARIO.ReadOnly = true;
+            // 
+            // ISBLOQUEADO_USUARIO
+            // 
+            this.ISBLOQUEADO_USUARIO.HeaderText = "TD_Bloqueado";
+            this.ISBLOQUEADO_USUARIO.Name = "ISBLOQUEADO_USUARIO";
+            this.ISBLOQUEADO_USUARIO.ReadOnly = true;
+            // 
             // BT_DESBLOQUEAR_USUARIO
             // 
             this.BT_DESBLOQUEAR_USUARIO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
@@ -186,30 +234,46 @@
             // 
             // TB_NOMBRE
             // 
+            this.TB_NOMBRE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_NOMBRE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_NOMBRE.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_NOMBRE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.TB_NOMBRE.Location = new System.Drawing.Point(140, 311);
             this.TB_NOMBRE.Name = "TB_NOMBRE";
-            this.TB_NOMBRE.Size = new System.Drawing.Size(194, 20);
+            this.TB_NOMBRE.Size = new System.Drawing.Size(194, 27);
             this.TB_NOMBRE.TabIndex = 47;
             // 
             // TB_APELLIDO
             // 
+            this.TB_APELLIDO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_APELLIDO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_APELLIDO.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_APELLIDO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.TB_APELLIDO.Location = new System.Drawing.Point(140, 348);
             this.TB_APELLIDO.Name = "TB_APELLIDO";
-            this.TB_APELLIDO.Size = new System.Drawing.Size(194, 20);
+            this.TB_APELLIDO.Size = new System.Drawing.Size(194, 27);
             this.TB_APELLIDO.TabIndex = 48;
             // 
             // TB_DNI
             // 
+            this.TB_DNI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_DNI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_DNI.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_DNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.TB_DNI.Location = new System.Drawing.Point(140, 388);
             this.TB_DNI.Name = "TB_DNI";
-            this.TB_DNI.Size = new System.Drawing.Size(194, 20);
+            this.TB_DNI.Size = new System.Drawing.Size(194, 27);
             this.TB_DNI.TabIndex = 49;
             // 
             // TB_EMAIL
             // 
+            this.TB_EMAIL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_EMAIL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_EMAIL.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_EMAIL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.TB_EMAIL.Location = new System.Drawing.Point(140, 422);
             this.TB_EMAIL.Name = "TB_EMAIL";
-            this.TB_EMAIL.Size = new System.Drawing.Size(194, 20);
+            this.TB_EMAIL.Size = new System.Drawing.Size(194, 27);
             this.TB_EMAIL.TabIndex = 50;
             // 
             // LABEL_NOMBRE_ABM_USUARIO
@@ -269,13 +333,17 @@
             // 
             // CB_ROL
             // 
+            this.CB_ROL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.CB_ROL.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CB_ROL.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.CB_ROL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.CB_ROL.FormattingEnabled = true;
             this.CB_ROL.Items.AddRange(new object[] {
             "Admin",
             "Normal"});
             this.CB_ROL.Location = new System.Drawing.Point(140, 461);
             this.CB_ROL.Name = "CB_ROL";
-            this.CB_ROL.Size = new System.Drawing.Size(194, 21);
+            this.CB_ROL.Size = new System.Drawing.Size(194, 27);
             this.CB_ROL.TabIndex = 56;
             // 
             // checkBoxMostrarBloqueados
@@ -304,58 +372,14 @@
             // 
             // TB_Usuario
             // 
+            this.TB_Usuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_Usuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Usuario.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.TB_Usuario.Location = new System.Drawing.Point(140, 277);
             this.TB_Usuario.Name = "TB_Usuario";
-            this.TB_Usuario.Size = new System.Drawing.Size(194, 20);
+            this.TB_Usuario.Size = new System.Drawing.Size(194, 27);
             this.TB_Usuario.TabIndex = 58;
-            // 
-            // ID_USUARIO
-            // 
-            this.ID_USUARIO.HeaderText = "TD_ID";
-            this.ID_USUARIO.Name = "ID_USUARIO";
-            this.ID_USUARIO.ReadOnly = true;
-            // 
-            // ColumnUsuario
-            // 
-            this.ColumnUsuario.HeaderText = "TD_Usuario";
-            this.ColumnUsuario.Name = "ColumnUsuario";
-            this.ColumnUsuario.ReadOnly = true;
-            // 
-            // NOMBRE_USUARIO
-            // 
-            this.NOMBRE_USUARIO.HeaderText = "TD_Nombre";
-            this.NOMBRE_USUARIO.Name = "NOMBRE_USUARIO";
-            this.NOMBRE_USUARIO.ReadOnly = true;
-            // 
-            // APELLIDO_USUARIO
-            // 
-            this.APELLIDO_USUARIO.HeaderText = "TD_Apellido";
-            this.APELLIDO_USUARIO.Name = "APELLIDO_USUARIO";
-            this.APELLIDO_USUARIO.ReadOnly = true;
-            // 
-            // DNI_USUARIO
-            // 
-            this.DNI_USUARIO.HeaderText = "TD_DNI";
-            this.DNI_USUARIO.Name = "DNI_USUARIO";
-            this.DNI_USUARIO.ReadOnly = true;
-            // 
-            // EMAIL_USUARIO
-            // 
-            this.EMAIL_USUARIO.HeaderText = "TD_Email";
-            this.EMAIL_USUARIO.Name = "EMAIL_USUARIO";
-            this.EMAIL_USUARIO.ReadOnly = true;
-            // 
-            // ROL_USUARIO
-            // 
-            this.ROL_USUARIO.HeaderText = "TD_Rol";
-            this.ROL_USUARIO.Name = "ROL_USUARIO";
-            this.ROL_USUARIO.ReadOnly = true;
-            // 
-            // ISBLOQUEADO_USUARIO
-            // 
-            this.ISBLOQUEADO_USUARIO.HeaderText = "TD_Bloqueado";
-            this.ISBLOQUEADO_USUARIO.Name = "ISBLOQUEADO_USUARIO";
-            this.ISBLOQUEADO_USUARIO.ReadOnly = true;
             // 
             // labelDebeborrar
             // 
@@ -386,7 +410,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(963, 488);
+            this.ClientSize = new System.Drawing.Size(963, 495);
             this.Controls.Add(this.labelDebeSeleccionar);
             this.Controls.Add(this.labelDebeborrar);
             this.Controls.Add(this.labelUsuarioABM);

@@ -128,7 +128,10 @@ namespace BLL
         {
            return PermisoORM.GestorPermisoORM.ObtenerTodoSinRoles();
         }
-
+        public List<Permiso> ObtenerPermisosArbol() 
+        {
+          return PermisoORM.GestorPermisoORM.LeerPermisosEnArbol();
+        }
         #endregion
 
 
@@ -170,8 +173,5 @@ namespace BLL
             }
             return SesionManager.GestorSesion.SesionTienePermisos(tag);
         }
-
-
-
     }
 }

@@ -54,5 +54,6 @@ namespace SERVICIOS
             PermisoCompuesto permiso = new PermisoCompuesto(permisoSolicitado);
             return permiso.VerificarPermisoIncluido(permisosDeLaSesion, permisoSolicitado);
         }
+      
     }
 }
