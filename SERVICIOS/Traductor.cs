@@ -26,10 +26,6 @@ namespace SERVICIOS
         Dictionary<string, string> Lenguaje = new Dictionary<string, string>();
        
         string jsonFilePath;
-        //C:\Users\William Càrdenas\Desktop\TESIS 2025\Campo-Cardenas-UAI\gui\bin\Debug\Lenguajes\Español.json
-
-        //File.Exists(Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lenguajes", $"{nuevoLenguaje}.json")))
-
         public void CargarTraducciones(string nuevoLenguaje)
         {
             
@@ -45,10 +41,10 @@ namespace SERVICIOS
         public List<string> DevolverIdiomasDisponibles()
         {
             List<string> ListaIdiomas = new List<string>();
-            // Obtiene todos los archivos con extensión .json en la ruta especificada.
+          
             string[] archivos = Directory.GetFiles("C:\\Users\\William Càrdenas\\Desktop\\TESIS 2025\\Campo-Cardenas-UAI\\gui\\bin\\Debug\\Lenguajes", "*.json");
 
-            // Guarda los nombres de archivo sin ruta ni extensión.
+          
             List<string> nombresDeIdiomas = archivos
                 .Select(archivo => Path.GetFileNameWithoutExtension(archivo))
                 .ToList();
@@ -63,7 +59,7 @@ namespace SERVICIOS
             Notificar();
             Lenguaje.Clear();
         }
-        public string Traducir(string TextoATraducir) //Funcion Principal
+        public string Traducir(string TextoATraducir) 
         {
            try
             {

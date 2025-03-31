@@ -63,12 +63,12 @@ namespace gui
         {
             foreach (Control c in control.Controls)
             {
-                // Aquí puedes hacer lo que quieras con cada control.
+              
                 if(!(c is ComboBox))
                 {
                    c.Text = Traductor.TraductorSG.Traducir(c.Name);
                 }
-                // Llamada recursiva para recorrer controles hijos (anidados).
+              
                 if (c.HasChildren)
                 {
                     RecorrerControles(c);

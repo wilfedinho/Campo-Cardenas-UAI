@@ -17,7 +17,7 @@ namespace BLL
         public bool VerificarDNI(string DNI)
         {
             Regex rgx = new Regex("^[0-9]{2}[.]{1}[0-9]{3}[.]{1}[0-9]{3}$");
-            //Sie esta bien el formato devolverá True
+           
             if(rgx.IsMatch(DNI))
             {
                 return true;
@@ -29,7 +29,7 @@ namespace BLL
         }
         public bool VerificarEmail(string email)
         {
-            //Devolverá True si el formato de mail ta correcto
+            
             Regex rgx = new Regex (@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$");
             if(rgx.IsMatch(email))
             {
@@ -44,7 +44,7 @@ namespace BLL
         public bool VerificarDNIDuplicado(string DNI)
         {
             Usuario usuario = DevolverUsuariosPorConsulta().Find(x => x.DNI == DNI);
-            //Si el usuario Posee un DNI Duplicado devolverá True
+          
             if (usuario != null)
             {
                 return true;
@@ -57,7 +57,7 @@ namespace BLL
         public bool VerificarEmailDuplicado(string Email)
         {
             Usuario usuario = DevolverUsuariosPorConsulta().Find(x => x.Email == Email);
-            //Si el usuario Posee un Email Duplicado devolverá True
+        
             if (usuario != null)
             {
                 return true;
@@ -69,7 +69,7 @@ namespace BLL
         }
         public bool VerificarUsernameDuplicado(string username)
         {
-            //Si el usuario Posee un Username Duplicado devolverá True
+           
             Usuario usuario = DevolverUsuariosPorConsulta().Find(x => x.Username == username);
             if(usuario != null)
             {

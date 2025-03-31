@@ -25,7 +25,5 @@ namespace BE
             Descripcion = nDescripcion;
             Criticidad = nCriticidad;
         }
-
-
     }
 }

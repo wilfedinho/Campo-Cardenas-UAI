@@ -85,7 +85,7 @@ namespace gui
             else
             {
                 VaciarTextBox(this);
-                MessageBox.Show("TD_Valores Ingresados Incorrectos!!");
+              
             }
         }
         private void BT_BAJA_USUARIO_Click(object sender, EventArgs e)
@@ -220,10 +220,10 @@ namespace gui
             {
                 if((c is TextBox tb) == false) 
                 {
-                   // Aquí puedes hacer lo que quieras con cada control.
+                 
                    c.Text = Traductor.TraductorSG.Traducir(c.Name);
 
-                   // Llamada recursiva para recorrer controles hijos (anidados).
+                  
                    if (c.HasChildren)
                    {
                       RecorrerControles(c);

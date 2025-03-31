@@ -17,7 +17,7 @@ namespace gui
     public partial class FormPermisos : Form, iObserverLenguaje
     {
         string adminRolNombre = "AdminSistema";
-        bool esItemSeleccionado = false;
+       
         public FormPermisos()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace gui
             listaPermisos.Items.AddRange(permisos.Select(p => p.obtenerPermisoNombre()).Where(nombre => nombre != adminRolNombre).ToArray());
         }
 
-        // CODIGO ORIGINAL 
+      
          public void CargarArbol() 
          {
              vistaPermisosArbol.Nodes.Clear();
@@ -91,8 +91,6 @@ namespace gui
                 }
                 else 
                 {
-                    esItemSeleccionado = (CB_Familias.SelectedItem != null);
-                    //colocarEstadoBotones(esItemSeleccionado);
                     LimpiarTodasSeleccionesPermisos();
                     if(CB_Familias.SelectedItem != null) 
                     {
@@ -275,10 +273,10 @@ namespace gui
             {
                 if ((c is TextBox tb) == false)
                 {
-                    // Aquí puedes hacer lo que quieras con cada control.
+              
                     c.Text = Traductor.TraductorSG.Traducir(c.Name);
 
-                    // Llamada recursiva para recorrer controles hijos (anidados).
+        
                     if (c.HasChildren)
                     {
                         RecorrerControles(c);

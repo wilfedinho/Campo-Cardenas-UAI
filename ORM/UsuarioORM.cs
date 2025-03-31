@@ -91,8 +91,8 @@ namespace ORM
               string dni = drv[4].ToString();
               string contrasena = drv[5].ToString();
               string email = drv[6].ToString();
-              string rol = drv[7].ToString(); //Cuando se implemente el patron Composite para los patrones se deberá cambiar el mapeado del rol en si
-              string idioma = drv[8].ToString(); //Cuando se implemente el patron Composite para los patrones se deberá cambiar el mapeado del rol en si
+              string rol = drv[7].ToString(); 
+              string idioma = drv[8].ToString(); 
               int intentos = int.Parse(drv[9].ToString());
               bool isbloqueado = bool.Parse(drv[10].ToString());
               Usuario usuario = new Usuario(id,username, nombre,apellido,dni,contrasena,email,rol,idioma,intentos,isbloqueado);

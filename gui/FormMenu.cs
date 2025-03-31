@@ -28,19 +28,19 @@ namespace gui
             LabelNombreUsuarioa.MaximumSize = new Size(panelPrincipal.Width, 0);
 
 
-            LabelNombreUsuarioa.Height = LabelNombreUsuarioa.PreferredHeight; // Ajusta la altura automáticamente
+            LabelNombreUsuarioa.Height = LabelNombreUsuarioa.PreferredHeight; 
 
             LabelRolUsuario.AutoSize = false;
             LabelRolUsuario.MaximumSize = new Size(panelPrincipal.Width, 0);
-            LabelRolUsuario.Height = LabelRolUsuario.PreferredHeight; // Ajusta la altura automáticamente
+            LabelRolUsuario.Height = LabelRolUsuario.PreferredHeight; 
             SuscribirFormularios();
 
             Traductor.TraductorSG.Notificar();
 
 
 
-            LabelNombreUsuarioa.Height = LabelNombreUsuarioa.PreferredHeight; // Ajusta la altura automáticamente
-            LabelRolUsuario.Height = LabelRolUsuario.PreferredHeight; // Ajusta la altura automáticamente
+            LabelNombreUsuarioa.Height = LabelNombreUsuarioa.PreferredHeight; 
+            LabelRolUsuario.Height = LabelRolUsuario.PreferredHeight; 
 
             VerificarAccesibilidadDeTodosLosControles();
 
@@ -68,7 +68,7 @@ namespace gui
             GestorForm.gestorFormSG.DefinirEstado(new EstadoCerrarAplicacion());
         }
         #region Diseno
-        //Prueba Botones Nuevo Diseño Del Menu
+    
         private void Diseno()
         {
             panelAdministrarSubmenu.Visible = false;
@@ -230,14 +230,14 @@ namespace gui
         {
             foreach (Control c in control.Controls)
             {
-                // Aquí puedes hacer lo que quieras con cada control.
+             
                 c.Text = Traductor.TraductorSG.Traducir(c.Name);
                 if(c.Name == LabelNombreUsuarioa.Name) 
                 {
                     string a = LabelNombreUsuarioa.Text;
                     a = a.Replace("{SesionManager.GestorSesion.UsuarioSesion.Nombre}", $"{SesionManager.GestorSesion.UsuarioSesion.Nombre}");
                     LabelNombreUsuarioa.Text = a;
-                    LabelNombreUsuarioa.Height = LabelNombreUsuarioa.PreferredHeight; // Ajusta la altura automáticamente
+                    LabelNombreUsuarioa.Height = LabelNombreUsuarioa.PreferredHeight; 
                    
                 }
 
@@ -249,7 +249,7 @@ namespace gui
                     LabelRolUsuario.Height = LabelRolUsuario.PreferredHeight;
                 }
 
-                // Llamada recursiva para recorrer controles hijos (anidados).
+                
                 if (c.HasChildren)
                 {
                     RecorrerControles(c);

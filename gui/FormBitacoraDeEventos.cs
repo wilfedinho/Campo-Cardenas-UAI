@@ -101,7 +101,7 @@ namespace gui
             string descripcionFiltrar = "";
             string criticidadFiltrar = "";
 
-            // Obtener valores de los ComboBox
+          
             if (CB_Usuario.SelectedIndex >= 0)
                 usuarioFiltrar = CB_Usuario.SelectedItem.ToString();
             if (CB_Modulo.SelectedIndex >= 0)
@@ -111,26 +111,20 @@ namespace gui
             if (CB_Criticidad.SelectedIndex >= 0)
                 criticidadFiltrar = CB_Criticidad.SelectedItem.ToString();
 
-            // Verificar si la fecha está seleccionada y aplicar filtro
+          
             if (checkBoxFecha.Checked == false)
             {
-                // Si no se selecciona fecha, utilizar un rango de fechas amplias
                 Mostrar(usuarioFiltrar, moduloFiltrar, descripcionFiltrar, criticidadFiltrar, DateTime.MinValue, DateTime.MaxValue);
             }
             else
             {
-                // Verificar que las fechas seleccionadas no sean vacías
                 DateTime fechaInicioFiltrar = monthCalendarFechaInicio.SelectionStart;
                 DateTime fechaFinFiltrar = monthCalendarFechaFin.SelectionStart;
-
-                // Verificar si las fechas de inicio y fin son válidas
                 if (fechaInicioFiltrar != fechaFinFiltrar)
                 {
                     Mostrar(usuarioFiltrar, moduloFiltrar, descripcionFiltrar, criticidadFiltrar, fechaInicioFiltrar, fechaFinFiltrar);
                 }
             }
-
-            // Limpiar ComboBoxes
             LimpiarCB();
         }
 
@@ -140,10 +134,10 @@ namespace gui
             Usuario usuario = ListaUsuario.Find(x => x.Username == dgvBitacora.SelectedRows[0].Cells[0].Value.ToString());
             if(usuario != null)
             {
-             labelUsuario.Text = $"Usuario: {usuario.Username}";
-             labelNombre.Text = $"Nombre: {usuario.Nombre}";
-             labelApellido.Text = $"Apellido: {usuario.Apellido}";
-             labelDNI.Text = $"DNI: {usuario.DNI}";
+              labelUsuario.Text = $"Usuario: {usuario.Username}";
+              labelNombre.Text = $"Nombre: {usuario.Nombre}";
+              labelApellido.Text = $"Apellido: {usuario.Apellido}";
+              labelDNI.Text = $"DNI: {usuario.DNI}";
             }
             else
             {

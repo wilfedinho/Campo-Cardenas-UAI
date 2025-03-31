@@ -39,13 +39,13 @@ namespace SERVICIOS
           {
             using (SHA256 sha256 = SHA256.Create())
             {
-               // Convertir la cadena de entrada en bytes antes de aplicar el hash
+           
                byte[] bytes = Encoding.UTF8.GetBytes(textoEncriptar);
 
-               // Calcular el hash de los bytes
+      
                byte[] hashBytes = sha256.ComputeHash(bytes);
 
-               // Convertir el hash en una cadena hexadecimal
+           
                StringBuilder stringBuilder = new StringBuilder();
                for (int i = 0; i < hashBytes.Length; i++)
                {

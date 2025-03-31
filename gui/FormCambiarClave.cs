@@ -33,10 +33,10 @@ namespace gui
             foreach (Control c in control.Controls)
             {
                  if((c is TextBox) == false) 
-                 // Aquí puedes hacer lo que quieras con cada control.
+              
                  c.Text = Traductor.TraductorSG.Traducir(c.Name);
 
-                 // Llamada recursiva para recorrer controles hijos (anidados).
+             
                  if (c.HasChildren)
                  {
                      RecorrerControles(c);
