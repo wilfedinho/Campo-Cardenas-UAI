@@ -39,7 +39,7 @@
             this.BT_Prueba3 = new System.Windows.Forms.Button();
             this.panelSubmenuPrueba2 = new System.Windows.Forms.Panel();
             this.BT_Restauracion = new System.Windows.Forms.Button();
-            this.BT_Respaldo_TD = new System.Windows.Forms.Button();
+            this.BT_Respaldo = new System.Windows.Forms.Button();
             this.BT_SeguridadDeDatos = new System.Windows.Forms.Button();
             this.panelSubmenuPrueba = new System.Windows.Forms.Panel();
             this.BT_CambiarIdioma = new System.Windows.Forms.Button();
@@ -196,7 +196,7 @@
             // 
             this.panelSubmenuPrueba2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
             this.panelSubmenuPrueba2.Controls.Add(this.BT_Restauracion);
-            this.panelSubmenuPrueba2.Controls.Add(this.BT_Respaldo_TD);
+            this.panelSubmenuPrueba2.Controls.Add(this.BT_Respaldo);
             this.panelSubmenuPrueba2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuPrueba2.Location = new System.Drawing.Point(0, 350);
             this.panelSubmenuPrueba2.Name = "panelSubmenuPrueba2";
@@ -215,25 +215,25 @@
             this.BT_Restauracion.Size = new System.Drawing.Size(183, 31);
             this.BT_Restauracion.TabIndex = 1;
             this.BT_Restauracion.Tag = "Acceder a Restauracion";
-            this.BT_Restauracion.Text = "Restauracion_TD";
+            this.BT_Restauracion.Text = "TD_Restauracion";
             this.BT_Restauracion.UseVisualStyleBackColor = true;
             this.BT_Restauracion.Click += new System.EventHandler(this.button11_Click);
             // 
-            // BT_Respaldo_TD
+            // BT_Respaldo
             // 
-            this.BT_Respaldo_TD.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_Respaldo_TD.FlatAppearance.BorderSize = 0;
-            this.BT_Respaldo_TD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_Respaldo_TD.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BT_Respaldo_TD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_Respaldo_TD.Location = new System.Drawing.Point(0, 0);
-            this.BT_Respaldo_TD.Name = "BT_Respaldo_TD";
-            this.BT_Respaldo_TD.Size = new System.Drawing.Size(183, 31);
-            this.BT_Respaldo_TD.TabIndex = 0;
-            this.BT_Respaldo_TD.Tag = "Acceder a Respaldo";
-            this.BT_Respaldo_TD.Text = "Respaldo_TD";
-            this.BT_Respaldo_TD.UseVisualStyleBackColor = true;
-            this.BT_Respaldo_TD.Click += new System.EventHandler(this.button12_Click);
+            this.BT_Respaldo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_Respaldo.FlatAppearance.BorderSize = 0;
+            this.BT_Respaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_Respaldo.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_Respaldo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.BT_Respaldo.Location = new System.Drawing.Point(0, 0);
+            this.BT_Respaldo.Name = "BT_Respaldo";
+            this.BT_Respaldo.Size = new System.Drawing.Size(183, 31);
+            this.BT_Respaldo.TabIndex = 0;
+            this.BT_Respaldo.Tag = "Acceder a Respaldo";
+            this.BT_Respaldo.Text = "TD_Respaldo";
+            this.BT_Respaldo.UseVisualStyleBackColor = true;
+            this.BT_Respaldo.Click += new System.EventHandler(this.button12_Click);
             // 
             // BT_SeguridadDeDatos
             // 
@@ -247,7 +247,7 @@
             this.BT_SeguridadDeDatos.Size = new System.Drawing.Size(183, 50);
             this.BT_SeguridadDeDatos.TabIndex = 4;
             this.BT_SeguridadDeDatos.Tag = "Acceder a Seguridad De Datos";
-            this.BT_SeguridadDeDatos.Text = "SeguridadDeDatos_TD";
+            this.BT_SeguridadDeDatos.Text = "TD_SeguridadDeDatos";
             this.BT_SeguridadDeDatos.UseVisualStyleBackColor = true;
             this.BT_SeguridadDeDatos.Click += new System.EventHandler(this.BT_Prueba2_Click);
             // 
@@ -351,7 +351,7 @@
             this.BT_Permisos.Size = new System.Drawing.Size(183, 31);
             this.BT_Permisos.TabIndex = 2;
             this.BT_Permisos.Tag = "Acceder a Gestion de Permisos";
-            this.BT_Permisos.Text = "Permisos_TD";
+            this.BT_Permisos.Text = "TD_Permisos";
             this.BT_Permisos.UseVisualStyleBackColor = true;
             this.BT_Permisos.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -367,7 +367,7 @@
             this.BT_Bitacora.Size = new System.Drawing.Size(183, 31);
             this.BT_Bitacora.TabIndex = 1;
             this.BT_Bitacora.Tag = "Acceder a Bitacora";
-            this.BT_Bitacora.Text = "Bitacora_TD";
+            this.BT_Bitacora.Text = "TD_Bitacora";
             this.BT_Bitacora.UseVisualStyleBackColor = true;
             this.BT_Bitacora.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -466,7 +466,7 @@
         private System.Windows.Forms.Button BT_Prueba3;
         private System.Windows.Forms.Panel panelSubmenuPrueba2;
         private System.Windows.Forms.Button BT_Restauracion;
-        private System.Windows.Forms.Button BT_Respaldo_TD;
+        private System.Windows.Forms.Button BT_Respaldo;
         private System.Windows.Forms.Button BT_SeguridadDeDatos;
         private System.Windows.Forms.Panel panelSubmenuPrueba;
         private System.Windows.Forms.Button BT_CambiarIdioma;

@@ -66,34 +66,6 @@ namespace gui
                  }
              }
          }
-        /*
-        //Codigo gpt
-        public void CargarArbol()
-        {
-            vistaPermisosArbol.Nodes.Clear();
-            PermisoBLL GestorPermiso = new PermisoBLL();
-            var permisosRaiz = GestorPermiso.ObtenerPermisosArbol();
-
-            foreach (var permiso in permisosRaiz)
-            {
-                AgregarNodoRecursivo((PermisoCompuesto)permiso, vistaPermisosArbol.Nodes);
-            }
-        }
-
-        private void AgregarNodoRecursivo(PermisoCompuesto permiso, TreeNodeCollection nodosPadre)
-        {
-            var nodo = new TreeNode(permiso.obtenerPermisoNombre());
-            nodosPadre.Add(nodo);
-
-            if (permiso is PermisoCompuesto permisoCompuesto)
-            {
-                foreach (var permisoHijo in permisoCompuesto.PermisosIncluidos())
-                {
-                    AgregarNodoRecursivo((PermisoCompuesto)permisoHijo, nodo.Nodes);
-                }
-            }
-        }*/
-
         public void CargarFamilias() 
         {
            CB_Familias.Items.Clear();
@@ -294,7 +266,25 @@ namespace gui
 
         public void ActualizarLenguaje()
         {
-            
+            RecorrerControles(this);
+        }
+
+        public void RecorrerControles(Control control)
+        {
+            foreach (Control c in control.Controls)
+            {
+                if ((c is TextBox tb) == false)
+                {
+                    // Aquí puedes hacer lo que quieras con cada control.
+                    c.Text = Traductor.TraductorSG.Traducir(c.Name);
+
+                    // Llamada recursiva para recorrer controles hijos (anidados).
+                    if (c.HasChildren)
+                    {
+                        RecorrerControles(c);
+                    }
+                }
+            }
         }
     }
 }

@@ -76,7 +76,7 @@
             this.BT_ElimiarSeleccionado.Name = "BT_ElimiarSeleccionado";
             this.BT_ElimiarSeleccionado.Size = new System.Drawing.Size(215, 52);
             this.BT_ElimiarSeleccionado.TabIndex = 1;
-            this.BT_ElimiarSeleccionado.Text = "EliminarSeleccionado_TD";
+            this.BT_ElimiarSeleccionado.Text = "TD_EliminarSeleccionado";
             this.BT_ElimiarSeleccionado.UseVisualStyleBackColor = false;
             this.BT_ElimiarSeleccionado.Click += new System.EventHandler(this.BT_ElimiarSeleccionado_Click);
             // 
@@ -90,7 +90,7 @@
             this.BT_ModificarNombre.Name = "BT_ModificarNombre";
             this.BT_ModificarNombre.Size = new System.Drawing.Size(215, 52);
             this.BT_ModificarNombre.TabIndex = 2;
-            this.BT_ModificarNombre.Text = "ModificarNombre_TD";
+            this.BT_ModificarNombre.Text = "TD_ModificarNombre";
             this.BT_ModificarNombre.UseVisualStyleBackColor = false;
             this.BT_ModificarNombre.Click += new System.EventHandler(this.BT_ModificarNombre_Click);
             // 
@@ -104,7 +104,7 @@
             this.BT_CrearRol.Name = "BT_CrearRol";
             this.BT_CrearRol.Size = new System.Drawing.Size(219, 52);
             this.BT_CrearRol.TabIndex = 3;
-            this.BT_CrearRol.Text = "CrearRol_TD";
+            this.BT_CrearRol.Text = "TD_CrearRol";
             this.BT_CrearRol.UseVisualStyleBackColor = false;
             this.BT_CrearRol.Click += new System.EventHandler(this.BT_CrearRol_Click);
             // 
@@ -118,7 +118,7 @@
             this.BT_CrearGrupoDePermisos.Name = "BT_CrearGrupoDePermisos";
             this.BT_CrearGrupoDePermisos.Size = new System.Drawing.Size(220, 52);
             this.BT_CrearGrupoDePermisos.TabIndex = 4;
-            this.BT_CrearGrupoDePermisos.Text = "CrearGrupoDePermisos_TD";
+            this.BT_CrearGrupoDePermisos.Text = "TD_CrearGrupoDePermisos";
             this.BT_CrearGrupoDePermisos.UseVisualStyleBackColor = false;
             this.BT_CrearGrupoDePermisos.Click += new System.EventHandler(this.BT_CrearGrupoDePermisos_Click);
             // 
@@ -132,7 +132,7 @@
             this.BT_GuardarCambios.Name = "BT_GuardarCambios";
             this.BT_GuardarCambios.Size = new System.Drawing.Size(220, 52);
             this.BT_GuardarCambios.TabIndex = 5;
-            this.BT_GuardarCambios.Text = "GuardarCambios_TD";
+            this.BT_GuardarCambios.Text = "TD_GuardarCambios";
             this.BT_GuardarCambios.UseVisualStyleBackColor = false;
             this.BT_GuardarCambios.Click += new System.EventHandler(this.BT_GuardarCambios_Click);
             // 
@@ -142,9 +142,9 @@
             this.TB_NuevoNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_NuevoNombre.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.TB_NuevoNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.TB_NuevoNombre.Location = new System.Drawing.Point(17, 262);
+            this.TB_NuevoNombre.Location = new System.Drawing.Point(12, 262);
             this.TB_NuevoNombre.Name = "TB_NuevoNombre";
-            this.TB_NuevoNombre.Size = new System.Drawing.Size(215, 27);
+            this.TB_NuevoNombre.Size = new System.Drawing.Size(220, 27);
             this.TB_NuevoNombre.TabIndex = 6;
             // 
             // listaPermisos
@@ -165,7 +165,7 @@
             this.vistaPermisosArbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.vistaPermisosArbol.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.vistaPermisosArbol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.vistaPermisosArbol.Location = new System.Drawing.Point(670, 35);
+            this.vistaPermisosArbol.Location = new System.Drawing.Point(657, 35);
             this.vistaPermisosArbol.Name = "vistaPermisosArbol";
             this.vistaPermisosArbol.Size = new System.Drawing.Size(367, 420);
             this.vistaPermisosArbol.TabIndex = 8;
@@ -179,7 +179,7 @@
             this.labelRolyGrupo.Name = "labelRolyGrupo";
             this.labelRolyGrupo.Size = new System.Drawing.Size(200, 20);
             this.labelRolyGrupo.TabIndex = 9;
-            this.labelRolyGrupo.Text = "labelRolesyGrupos_TD";
+            this.labelRolyGrupo.Text = "TD_labelRolesyGrupos";
             // 
             // labelNuevoNombre
             // 
@@ -190,7 +190,7 @@
             this.labelNuevoNombre.Name = "labelNuevoNombre";
             this.labelNuevoNombre.Size = new System.Drawing.Size(162, 20);
             this.labelNuevoNombre.TabIndex = 10;
-            this.labelNuevoNombre.Text = "NuevoNombre_TD";
+            this.labelNuevoNombre.Text = "TD_NuevoNombre";
             // 
             // labelPermisosAsignados
             // 
@@ -201,29 +201,29 @@
             this.labelPermisosAsignados.Name = "labelPermisosAsignados";
             this.labelPermisosAsignados.Size = new System.Drawing.Size(212, 20);
             this.labelPermisosAsignados.TabIndex = 11;
-            this.labelPermisosAsignados.Text = "PermisosAsignados_TD";
+            this.labelPermisosAsignados.Text = "TD_PermisosAsignados";
             // 
             // labelVista
             // 
             this.labelVista.AutoSize = true;
             this.labelVista.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.labelVista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelVista.Location = new System.Drawing.Point(666, 12);
+            this.labelVista.Location = new System.Drawing.Point(653, 12);
             this.labelVista.Name = "labelVista";
             this.labelVista.Size = new System.Drawing.Size(85, 20);
             this.labelVista.TabIndex = 12;
-            this.labelVista.Text = "Vista_TD";
+            this.labelVista.Text = "TD_Vista";
             // 
             // labelErrorRolSesion
             // 
             this.labelErrorRolSesion.AutoSize = true;
             this.labelErrorRolSesion.Font = new System.Drawing.Font("Roboto", 8.164948F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErrorRolSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelErrorRolSesion.Location = new System.Drawing.Point(704, 458);
+            this.labelErrorRolSesion.Location = new System.Drawing.Point(325, 458);
             this.labelErrorRolSesion.Name = "labelErrorRolSesion";
             this.labelErrorRolSesion.Size = new System.Drawing.Size(117, 13);
             this.labelErrorRolSesion.TabIndex = 13;
-            this.labelErrorRolSesion.Text = "ErrorRolSesion_TD";
+            this.labelErrorRolSesion.Text = "TD_ErrorRolSesion";
             this.labelErrorRolSesion.Visible = false;
             // 
             // labelErrorPermisoDuplicado
@@ -231,11 +231,11 @@
             this.labelErrorPermisoDuplicado.AutoSize = true;
             this.labelErrorPermisoDuplicado.Font = new System.Drawing.Font("Roboto", 8.164948F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErrorPermisoDuplicado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelErrorPermisoDuplicado.Location = new System.Drawing.Point(641, 471);
+            this.labelErrorPermisoDuplicado.Location = new System.Drawing.Point(780, 463);
             this.labelErrorPermisoDuplicado.Name = "labelErrorPermisoDuplicado";
             this.labelErrorPermisoDuplicado.Size = new System.Drawing.Size(165, 13);
             this.labelErrorPermisoDuplicado.TabIndex = 14;
-            this.labelErrorPermisoDuplicado.Text = "ErrorPermisoDuplicado_TD";
+            this.labelErrorPermisoDuplicado.Text = "TD_ErrorPermisoDuplicado";
             this.labelErrorPermisoDuplicado.Visible = false;
             // 
             // labelPermisoCreado
@@ -243,11 +243,11 @@
             this.labelPermisoCreado.AutoSize = true;
             this.labelPermisoCreado.Font = new System.Drawing.Font("Roboto", 8.164948F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPermisoCreado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelPermisoCreado.Location = new System.Drawing.Point(687, 458);
+            this.labelPermisoCreado.Location = new System.Drawing.Point(323, 458);
             this.labelPermisoCreado.Name = "labelPermisoCreado";
             this.labelPermisoCreado.Size = new System.Drawing.Size(119, 13);
             this.labelPermisoCreado.TabIndex = 15;
-            this.labelPermisoCreado.Text = "PermisoCreado_TD";
+            this.labelPermisoCreado.Text = "TD_PermisoCreado";
             this.labelPermisoCreado.Visible = false;
             // 
             // labelNoSePuedeSeleccionarElRolAdmin
@@ -255,11 +255,11 @@
             this.labelNoSePuedeSeleccionarElRolAdmin.AutoSize = true;
             this.labelNoSePuedeSeleccionarElRolAdmin.Font = new System.Drawing.Font("Roboto", 8.164948F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNoSePuedeSeleccionarElRolAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelNoSePuedeSeleccionarElRolAdmin.Location = new System.Drawing.Point(588, 458);
+            this.labelNoSePuedeSeleccionarElRolAdmin.Location = new System.Drawing.Point(310, 458);
             this.labelNoSePuedeSeleccionarElRolAdmin.Name = "labelNoSePuedeSeleccionarElRolAdmin";
             this.labelNoSePuedeSeleccionarElRolAdmin.Size = new System.Drawing.Size(233, 13);
             this.labelNoSePuedeSeleccionarElRolAdmin.TabIndex = 16;
-            this.labelNoSePuedeSeleccionarElRolAdmin.Text = "NoSePuedeSeleccionarElRolAdmin_TD";
+            this.labelNoSePuedeSeleccionarElRolAdmin.Text = "TD_NoSePuedeSeleccionarElRolAdmin";
             this.labelNoSePuedeSeleccionarElRolAdmin.Visible = false;
             // 
             // labelDeseaBorrarLaFamilia
@@ -267,11 +267,11 @@
             this.labelDeseaBorrarLaFamilia.AutoSize = true;
             this.labelDeseaBorrarLaFamilia.Font = new System.Drawing.Font("Roboto", 8.164948F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDeseaBorrarLaFamilia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelDeseaBorrarLaFamilia.Location = new System.Drawing.Point(450, 458);
+            this.labelDeseaBorrarLaFamilia.Location = new System.Drawing.Point(268, 458);
             this.labelDeseaBorrarLaFamilia.Name = "labelDeseaBorrarLaFamilia";
             this.labelDeseaBorrarLaFamilia.Size = new System.Drawing.Size(160, 13);
             this.labelDeseaBorrarLaFamilia.TabIndex = 17;
-            this.labelDeseaBorrarLaFamilia.Text = "DeseaBorrarLaFamilia_TD";
+            this.labelDeseaBorrarLaFamilia.Text = "TD_DeseaBorrarLaFamilia";
             this.labelDeseaBorrarLaFamilia.Visible = false;
             // 
             // labelIngreseElNuevoNombre
@@ -279,11 +279,11 @@
             this.labelIngreseElNuevoNombre.AutoSize = true;
             this.labelIngreseElNuevoNombre.Font = new System.Drawing.Font("Roboto", 8.164948F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIngreseElNuevoNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelIngreseElNuevoNombre.Location = new System.Drawing.Point(532, 471);
+            this.labelIngreseElNuevoNombre.Location = new System.Drawing.Point(472, 458);
             this.labelIngreseElNuevoNombre.Name = "labelIngreseElNuevoNombre";
             this.labelIngreseElNuevoNombre.Size = new System.Drawing.Size(166, 13);
             this.labelIngreseElNuevoNombre.TabIndex = 18;
-            this.labelIngreseElNuevoNombre.Text = "IngreseElNuevoNombre_TD";
+            this.labelIngreseElNuevoNombre.Text = "TD_IngreseElNuevoNombre";
             this.labelIngreseElNuevoNombre.Visible = false;
             // 
             // FormPermisos
