@@ -249,6 +249,7 @@ namespace gui
                 CrearPermisoCompuesto(TB_NuevoNombre.Text,true);
                 RecargarTodasLasVistas();
             }
+            TB_NuevoNombre.Clear();
         }
 
         private void BT_CrearGrupoDePermisos_Click(object sender, EventArgs e)
