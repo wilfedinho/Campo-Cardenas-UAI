@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SERVICIOS
 {
-    public class Traductor
+    public class Traductor : ISujeto
     {
         public static Traductor Instance;
         public static Traductor TraductorSG
@@ -65,7 +65,7 @@ namespace SERVICIOS
         }
         public string Traducir(string TextoATraducir) //Funcion Principal
         {
-            try
+           try
             {
                 if (Lenguaje.Count == 0) CargarTraducciones(SesionManager.GestorSesion.UsuarioSesion.IdiomaUsuario);
                 string translation = "";

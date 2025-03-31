@@ -25,6 +25,7 @@ namespace gui
             BT_CANCELAR.Enabled = false;
             BT_APLICAR.Enabled = false;
             menu = menuOrigen;
+            RellenarCombobox();
         }
 
         public void MostrarUsuarioPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
@@ -145,6 +146,13 @@ namespace gui
                 BitacoraBLL GestorBitacora = new BitacoraBLL();
                 GestorBitacora.AltaEvento("Gestion de Usuario", "Modificacion de Usuario", 5);
                 VaciarTextBox(this);
+                BT_ALTA_USUARIO.Enabled = true;
+                BT_BAJA_USUARIO.Enabled = true;
+                BT_MODIFICAR_USUARIO.Enabled = true;
+                BT_DESBLOQUEAR_USUARIO.Enabled = true;
+                BT_SALIR.Enabled = true;
+                BT_APLICAR.Enabled = false;
+                BT_CANCELAR.Enabled = false;
             }
             catch { MessageBox.Show(labelDebeSeleccionar.Text); }
         }
@@ -210,22 +218,38 @@ namespace gui
         {
             foreach (Control c in control.Controls)
             {
-                // Aquí puedes hacer lo que quieras con cada control.
-                c.Text = Traductor.TraductorSG.Traducir(c.Name);
+                if((c is TextBox tb) == false) 
+                {
+                   // Aquí puedes hacer lo que quieras con cada control.
+                   c.Text = Traductor.TraductorSG.Traducir(c.Name);
 
-                // Llamada recursiva para recorrer controles hijos (anidados).
-                if (c.HasChildren)
-                {
-                    RecorrerControles(c);
-                }
-                if(c is DataGridView dgv) 
-                {
-                    foreach (DataGridViewColumn columna in dgv.Columns)
+                   // Llamada recursiva para recorrer controles hijos (anidados).
+                   if (c.HasChildren)
+                   {
+                      RecorrerControles(c);
+                   }
+                    if(c is DataGridView dgv) 
                     {
-                        columna.HeaderText = Traductor.TraductorSG.Traducir(columna.Name);
+                       foreach (DataGridViewColumn columna in dgv.Columns)
+                       {
+                           columna.HeaderText = Traductor.TraductorSG.Traducir(columna.Name);
+                       }
                     }
+                
                 }
             }
         }
+
+        public void RellenarCombobox() 
+        {
+            CB_ROL.Items.Clear();
+            PermisoBLL GestorPermiso = new PermisoBLL();
+            foreach (var rol in GestorPermiso.ObtenerRoles()) 
+            {
+                CB_ROL.Items.Add(rol.obtenerPermisoNombre());
+            
+            }
+        }
+
     }
 }

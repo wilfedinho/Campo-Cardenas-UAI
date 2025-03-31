@@ -40,11 +40,15 @@ namespace gui
 
         private void BT_CambiarIdioma_Click(object sender, EventArgs e)
         {
-            UsuarioBLL GestorUsuario = new UsuarioBLL();
-            GestorUsuario.CambiarIdioma(CB_IdiomasDisponibles.SelectedItem.ToString());
-            ActualizarLenguaje();
-            CB_IdiomasDisponibles.SelectedIndex = -1;
-            LlenarComboBox();
+            try
+            {
+                UsuarioBLL GestorUsuario = new UsuarioBLL();
+                GestorUsuario.CambiarIdioma(CB_IdiomasDisponibles.SelectedItem.ToString());
+                ActualizarLenguaje();
+                CB_IdiomasDisponibles.SelectedIndex = -1;
+                LlenarComboBox();
+            }
+            catch { }
         }
 
         public void ActualizarLenguaje()

@@ -13,6 +13,7 @@ namespace BLL
 {
     public class UsuarioBLL : Iabm<Usuario>
     {
+        #region Verificadores
         public bool VerificarDNI(string DNI)
         {
             Regex rgx = new Regex("^[0-9]{2}[.]{1}[0-9]{3}[.]{1}[0-9]{3}$");
@@ -95,6 +96,7 @@ namespace BLL
                 return false;
             }
         }
+        #endregion
         public void CambiarIdioma(string nuevoIdioma)
         {
             SesionManager.GestorSesion.UsuarioSesion.IdiomaUsuario = nuevoIdioma;
