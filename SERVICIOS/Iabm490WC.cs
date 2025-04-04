@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SERVICIOS
+{
+    public interface Iabm490WC<T> where T : class
+    {
+        void Alta(T Entidad);
+        void Baja(T Entidad);
+        void Modificar(T Entidad);
+
+    }
+}

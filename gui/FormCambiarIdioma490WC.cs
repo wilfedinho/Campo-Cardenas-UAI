@@ -1,0 +1,85 @@
+﻿using BLL;
+using SERVICIOS;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace gui
+{
+    public partial class FormCambiarIdioma490WC : Form, iObserverLenguaje490WC
+    {
+        public FormCambiarIdioma490WC()
+        {
+            InitializeComponent();
+            LlenarComboBox();
+            ActualizarLenguaje();
+            string a = labelIdiomaActual.Text;
+            a = a.Replace("{SesionManager.GestorSesion.UsuarioSesion.IdiomaUsuario}", $"{SesionManager490WC.GestorSesion.UsuarioSesion.IdiomaUsuario}");
+            labelIdiomaActual.Text = a;
+
+        }
+
+
+        public void LlenarComboBox()
+        { 
+            foreach(string idioma in Traductor490WC.TraductorSG.DevolverIdiomasDisponibles())
+            {
+
+                if(!(CB_IdiomasDisponibles.Items.Contains(idioma)) && SesionManager490WC.GestorSesion.UsuarioSesion.IdiomaUsuario != idioma)
+                {
+                    CB_IdiomasDisponibles.Items.Add(idioma);
+                }
+            }
+        }
+
+        private void BT_CambiarIdioma_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UsuarioBLL490WC GestorUsuario = new UsuarioBLL490WC();
+                GestorUsuario.CambiarIdioma(CB_IdiomasDisponibles.SelectedItem.ToString());
+                ActualizarLenguaje();
+                CB_IdiomasDisponibles.SelectedIndex = -1;
+                LlenarComboBox();
+            }
+            catch { }
+        }
+
+        public void ActualizarLenguaje()
+        {
+            RecorrerControles(this);
+            string a = labelIdiomaActual.Text;
+            a = a.Replace("{SesionManager.GestorSesion.UsuarioSesion.IdiomaUsuario}", $"{SesionManager490WC.GestorSesion.UsuarioSesion.IdiomaUsuario}");
+            labelIdiomaActual.Text = a;
+        }
+
+        public void RecorrerControles(Control control)
+        {
+            foreach (Control c in control.Controls)
+            {
+              
+                if(!(c is ComboBox))
+                {
+                   c.Text = Traductor490WC.TraductorSG.Traducir(c.Name);
+                }
+              
+                if (c.HasChildren)
+                {
+                    RecorrerControles(c);
+                }
+            }
+        }
+
+
+        private void FormCambiarIdioma_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+    }
+}
