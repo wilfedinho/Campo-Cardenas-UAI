@@ -8,7 +8,7 @@ namespace BE
 {
     public class PermisoSimple490WC : Permiso490WC
     {
-        public PermisoSimple490WC(string nNombre) : base(nNombre)
+        public PermisoSimple490WC(string nNombre490WC) : base(nNombre490WC)
         {
         }
     }

@@ -8,44 +8,44 @@ namespace BE
 {
     public class PermisoCompuesto490WC : Permiso490WC
     {
-        public PermisoCompuesto490WC(string nNombre) : base(nNombre)
+        public PermisoCompuesto490WC(string nNombre490WC) : base(nNombre490WC)
         {
 
         }
-        protected List<Permiso490WC> permisos = new List<Permiso490WC>();
+        protected List<Permiso490WC> permisos490WC = new List<Permiso490WC>();
 
-        public override void Agregar(Permiso490WC nPermiso)
+        public override void Agregar490WC(Permiso490WC nPermiso490WC)
         {
-            this.permisos.Add(nPermiso);
+            this.permisos490WC.Add(nPermiso490WC);
         }
 
-        public override void Borrar(Permiso490WC nPermiso)
+        public override void Borrar490WC(Permiso490WC nPermiso490WC)
         {
-            this.permisos.Remove(nPermiso);
+            this.permisos490WC.Remove(nPermiso490WC);
         }
 
-        public override bool esCompuesto()
+        public override bool esCompuesto490WC()
         {
             return true;
         }
 
-        public Permiso490WC BuscarPermiso(Permiso490WC raiz, Permiso490WC permiso) 
+        public Permiso490WC BuscarPermiso490WC(Permiso490WC raiz490WC, Permiso490WC permiso490WC) 
         {
-            if(raiz == permiso)
+            if(raiz490WC == permiso490WC)
             {
-                return raiz;
+                return raiz490WC;
             }
             else 
             {
-                if (raiz.esCompuesto()) 
+                if (raiz490WC.esCompuesto490WC()) 
                 {
 
-                    foreach(Permiso490WC permi in (raiz as PermisoCompuesto490WC).permisos) 
+                    foreach(Permiso490WC permi490WC in (raiz490WC as PermisoCompuesto490WC).permisos490WC) 
                     {
-                        Permiso490WC permisoEncontrado = BuscarPermiso(permi, permiso);
-                        if(permisoEncontrado != null)
+                        Permiso490WC permisoEncontrado490WC = BuscarPermiso490WC(permi490WC, permiso490WC);
+                        if(permisoEncontrado490WC != null)
                         {
-                            return permisoEncontrado;
+                            return permisoEncontrado490WC;
                         }
                     }
 
@@ -54,19 +54,19 @@ namespace BE
             return null;
         }
 
-        public bool VerificarPermisoIncluido(Permiso490WC raiz, string permiso) 
+        public bool VerificarPermisoIncluido490WC(Permiso490WC raiz490WC, string permiso490WC) 
         {
-            if(raiz.obtenerPermisoNombre() == permiso) 
+            if(raiz490WC.obtenerPermisoNombre490WC() == permiso490WC) 
             {
                 return true;
             }
             else 
             {
-                if(raiz.esCompuesto())
+                if(raiz490WC.esCompuesto490WC())
                 {
-                    foreach(Permiso490WC permi in (raiz as PermisoCompuesto490WC).permisos) 
+                    foreach(Permiso490WC permi490WC in (raiz490WC as PermisoCompuesto490WC).permisos490WC) 
                     {
-                        if(VerificarPermisoIncluido(permi, permiso)) 
+                        if(VerificarPermisoIncluido490WC(permi490WC, permiso490WC)) 
                         {
                             return true;
                         }
@@ -76,9 +76,9 @@ namespace BE
             return false;
         }
 
-        public List<Permiso490WC> PermisosIncluidos() 
+        public List<Permiso490WC> PermisosIncluidos490WC() 
         {
-            return permisos;
+            return permisos490WC;
         }
 
     }

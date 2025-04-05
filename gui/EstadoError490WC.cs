@@ -8,16 +8,16 @@ namespace gui
 {
     public class EstadoError490WC : Estado490WC
     {
-        FormError490WC Error;
-        public override void CerrarEstado()
+        FormError490WC Error490WC;
+        public override void CerrarEstado490WC()
         {
-            Error?.Dispose();
+            Error490WC?.Dispose();
         }
 
-        public override void EjecutarEstado()
+        public override void EjecutarEstado490WC()
         {
-            Error = new FormError490WC();
-            Error.ShowDialog();
+            Error490WC = new FormError490WC();
+            Error490WC.ShowDialog();
         }
     }
 }

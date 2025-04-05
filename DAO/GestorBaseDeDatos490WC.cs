@@ -10,81 +10,81 @@ namespace DAO
 {
     public class GestorBaseDeDatos490WC
     {
-        private static GestorBaseDeDatos490WC Instancia;
-        public static GestorBaseDeDatos490WC GestorBaseDeDatosSG 
+        private static GestorBaseDeDatos490WC Instancia490WC;
+        public static GestorBaseDeDatos490WC GestorBaseDeDatosSG490WC 
         {
             get
             {
-                if(Instancia == null)
+                if(Instancia490WC == null)
                 {
-                    Instancia = new GestorBaseDeDatos490WC();
+                    Instancia490WC = new GestorBaseDeDatos490WC();
                 }
-                return Instancia;
+                return Instancia490WC;
             }
         }
-        private DataSet BaseDeDatosEnMemoria;
-        private SqlConnection cone;
-        private Dictionary<string, SqlDataAdapter> DiccionarioDeAdaptadores = new Dictionary<string, SqlDataAdapter>();
+        private DataSet BaseDeDatosEnMemoria490WC;
+        private SqlConnection cone490WC;
+        private Dictionary<string, SqlDataAdapter> DiccionarioDeAdaptadores490WC = new Dictionary<string, SqlDataAdapter>();
         public GestorBaseDeDatos490WC()
         {
-                BaseDeDatosEnMemoria = new DataSet();
-                cone = new SqlConnection("Data Source=.;Initial Catalog=BD_PROYECTO_2025490WC;Integrated Security=True");
-                string query = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'";
-                SqlDataAdapter Adaptador = new SqlDataAdapter(query, cone);
-                DataTable TablaNombreDeLasTablas = new DataTable();
-                Adaptador.Fill(TablaNombreDeLasTablas);
-                foreach (DataRow Row in TablaNombreDeLasTablas.Rows)
+                BaseDeDatosEnMemoria490WC = new DataSet();
+                cone490WC = new SqlConnection("Data Source=.;Initial Catalog=BD_PROYECTO_2025490WC;Integrated Security=True");
+                string query490WC = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'";
+                SqlDataAdapter Adaptador490WC = new SqlDataAdapter(query490WC, cone490WC);
+                DataTable TablaNombreDeLasTablas490WC = new DataTable();
+                Adaptador490WC.Fill(TablaNombreDeLasTablas490WC);
+                foreach (DataRow Row490WC in TablaNombreDeLasTablas490WC.Rows)
                 {
-                    string queryDiccionario = $"SELECT * FROM {Row["TABLE_NAME"]}";
-                    SqlDataAdapter adapter = new SqlDataAdapter(queryDiccionario, cone);
-                    SqlCommandBuilder ConstructorDeComando = new SqlCommandBuilder(adapter);
-                    adapter.InsertCommand = ConstructorDeComando.GetInsertCommand();
-                    adapter.DeleteCommand = ConstructorDeComando.GetDeleteCommand();
-                    adapter.UpdateCommand = ConstructorDeComando.GetUpdateCommand();
-                    adapter.Fill(BaseDeDatosEnMemoria, $"{Row["TABLE_NAME"]}");
-                    int CantidadColumna = BaseDeDatosEnMemoria.Tables[$"{Row["TABLE_NAME"]}"].Columns.Count;
-                    if (CantidadColumna == 2)
+                    string queryDiccionario490WC = $"SELECT * FROM {Row490WC["TABLE_NAME"]}";
+                    SqlDataAdapter adapter490WC = new SqlDataAdapter(queryDiccionario490WC, cone490WC);
+                    SqlCommandBuilder ConstructorDeComando490WC = new SqlCommandBuilder(adapter490WC);
+                    adapter490WC.InsertCommand = ConstructorDeComando490WC.GetInsertCommand();
+                    adapter490WC.DeleteCommand = ConstructorDeComando490WC.GetDeleteCommand();
+                    adapter490WC.UpdateCommand = ConstructorDeComando490WC.GetUpdateCommand();
+                    adapter490WC.Fill(BaseDeDatosEnMemoria490WC, $"{Row490WC["TABLE_NAME"]}");
+                    int CantidadColumna490WC = BaseDeDatosEnMemoria490WC.Tables[$"{Row490WC["TABLE_NAME"]}"].Columns.Count;
+                    if (CantidadColumna490WC == 2)
                     {
-                        BaseDeDatosEnMemoria.Tables[$"{Row["TABLE_NAME"]}"].PrimaryKey = new DataColumn[] { BaseDeDatosEnMemoria.Tables[$"{Row["TABLE_NAME"]}"].Columns[0], BaseDeDatosEnMemoria.Tables[$"{Row["TABLE_NAME"]}"].Columns[1] };
+                        BaseDeDatosEnMemoria490WC.Tables[$"{Row490WC["TABLE_NAME"]}"].PrimaryKey = new DataColumn[] { BaseDeDatosEnMemoria490WC.Tables[$"{Row490WC["TABLE_NAME"]}"].Columns[0], BaseDeDatosEnMemoria490WC.Tables[$"{Row490WC["TABLE_NAME"]}"].Columns[1] };
                     }
                     else
                     {
-                        BaseDeDatosEnMemoria.Tables[$"{Row["TABLE_NAME"]}"].PrimaryKey = new DataColumn[] { BaseDeDatosEnMemoria.Tables[$"{Row["TABLE_NAME"]}"].Columns[0] };
+                        BaseDeDatosEnMemoria490WC.Tables[$"{Row490WC["TABLE_NAME"]}"].PrimaryKey = new DataColumn[] { BaseDeDatosEnMemoria490WC.Tables[$"{Row490WC["TABLE_NAME"]}"].Columns[0] };
                     }
-                    DiccionarioDeAdaptadores.Add((Row["TABLE_NAME"] as string), adapter);
+                    DiccionarioDeAdaptadores490WC.Add((Row490WC["TABLE_NAME"] as string), adapter490WC);
                 }
         }
-        public DataTable DevolverTabla(string NombreTabla)
+        public DataTable DevolverTabla490WC(string NombreTabla490WC)
         {
-            return BaseDeDatosEnMemoria.Tables[NombreTabla];
+            return BaseDeDatosEnMemoria490WC.Tables[NombreTabla490WC];
         }
-        public void ActualizarGeneral()
+        public void ActualizarGeneral490WC()
         {
-           foreach (KeyValuePair<string, SqlDataAdapter> ClaveValor in DiccionarioDeAdaptadores)
+           foreach (KeyValuePair<string, SqlDataAdapter> ClaveValor490WC in DiccionarioDeAdaptadores490WC)
            {
-              ClaveValor.Value.SelectCommand.Connection = cone;
-              ClaveValor.Value.Update(BaseDeDatosEnMemoria, ClaveValor.Key);
-              BaseDeDatosEnMemoria.Tables[ClaveValor.Key].Clear();
-              DiccionarioDeAdaptadores[ClaveValor.Key].Fill(BaseDeDatosEnMemoria, ClaveValor.Key);  
+              ClaveValor490WC.Value.SelectCommand.Connection = cone490WC;
+              ClaveValor490WC.Value.Update(BaseDeDatosEnMemoria490WC, ClaveValor490WC.Key);
+              BaseDeDatosEnMemoria490WC.Tables[ClaveValor490WC.Key].Clear();
+              DiccionarioDeAdaptadores490WC[ClaveValor490WC.Key].Fill(BaseDeDatosEnMemoria490WC, ClaveValor490WC.Key);  
            }
         }
-        public void ActualizarPorTabla(string NombreTabla)
+        public void ActualizarPorTabla490WC(string NombreTabla490WC)
         {
-            DiccionarioDeAdaptadores[NombreTabla].Update(BaseDeDatosEnMemoria, NombreTabla);
-            BaseDeDatosEnMemoria.Tables[NombreTabla].Clear();
-            DiccionarioDeAdaptadores[NombreTabla].Fill(BaseDeDatosEnMemoria, NombreTabla);
+            DiccionarioDeAdaptadores490WC[NombreTabla490WC].Update(BaseDeDatosEnMemoria490WC, NombreTabla490WC);
+            BaseDeDatosEnMemoria490WC.Tables[NombreTabla490WC].Clear();
+            DiccionarioDeAdaptadores490WC[NombreTabla490WC].Fill(BaseDeDatosEnMemoria490WC, NombreTabla490WC);
         }
-        public void RechazarGeneral()
+        public void RechazarGeneral490WC()
         {
-            BaseDeDatosEnMemoria.RejectChanges();
+            BaseDeDatosEnMemoria490WC.RejectChanges();
         }
-        public void RechazarPorTabla(string NombreTabla)
+        public void RechazarPorTabla490WC(string NombreTabla490WC)
         {
-            BaseDeDatosEnMemoria.Tables[NombreTabla].RejectChanges();
+            BaseDeDatosEnMemoria490WC.Tables[NombreTabla490WC].RejectChanges();
         }
-        public void RechazarPorRegistro(DataRow Registro)
+        public void RechazarPorRegistro490WC(DataRow Registro490WC)
         {
-            Registro.RejectChanges();
+            Registro490WC.RejectChanges();
         }
     }
 }

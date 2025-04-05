@@ -16,7 +16,7 @@ namespace gui
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            GestorForm490WC.gestorFormSG.DefinirEstado(new EstadoIniciarSesion490WC());
+            GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoIniciarSesion490WC());
         }
     }
 }

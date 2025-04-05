@@ -12,163 +12,163 @@ namespace ORM
 {
     public class PermisoORM490WC
     {
-        private static PermisoORM490WC Instancia;
-        public static PermisoORM490WC GestorPermisoORM
+        private static PermisoORM490WC Instancia490WC;
+        public static PermisoORM490WC GestorPermisoORM490WC
         {
             get
             {
-                if (Instancia == null)
+                if (Instancia490WC == null)
                 {
-                    Instancia = new PermisoORM490WC();
+                    Instancia490WC = new PermisoORM490WC();
                 }
-                return Instancia;
+                return Instancia490WC;
             }
         }
-        public List<Permiso490WC> LeerPermisosEnArbol() 
+        public List<Permiso490WC> LeerPermisosEnArbol490WC() 
         {
-          List<Permiso490WC> ListaPermiso = new List<Permiso490WC>();
-          List<Permiso490WC> PermisosCompuestos = new List<Permiso490WC>();
+          List<Permiso490WC> ListaPermiso490WC = new List<Permiso490WC>();
+          List<Permiso490WC> PermisosCompuestos490WC = new List<Permiso490WC>();
             try
             {
-                DataTable tablaPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso");
-                DataTable tablaRelacionPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("RelacionPermiso");
-                DataView dvPermiso = new DataView(tablaPermiso);
-                foreach(DataRowView drv in dvPermiso) 
+                DataTable tablaPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC");
+                DataTable tablaRelacionPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("RelacionPermiso490WC");
+                DataView dvPermiso490WC = new DataView(tablaPermiso490WC);
+                foreach(DataRowView drv490WC in dvPermiso490WC) 
                 {
-                    if (drv["tipoPermiso"].ToString() == "Compuesto") 
+                    if (drv490WC["tipoPermiso490WC"].ToString() == "Compuesto") 
                     {
-                      PermisoCompuesto490WC compuesto = new PermisoCompuesto490WC(drv["nombrePermiso"].ToString());
-                      PermisosCompuestos.Add(compuesto);
-                      ListaPermiso.Add(compuesto);
+                      PermisoCompuesto490WC compuesto490WC = new PermisoCompuesto490WC(drv490WC["nombrePermiso490WC"].ToString());
+                      PermisosCompuestos490WC.Add(compuesto490WC);
+                      ListaPermiso490WC.Add(compuesto490WC);
                     }
                     else 
                     {
-                        PermisoSimple490WC permisoS = new PermisoSimple490WC(drv["nombrePermiso"].ToString());
-                        ListaPermiso.Add(permisoS);
+                        PermisoSimple490WC permisoS490WC = new PermisoSimple490WC(drv490WC["nombrePermiso490WC"].ToString());
+                        ListaPermiso490WC.Add(permisoS490WC);
                     }
                 }
-                DataView dvRelacionPermiso = new DataView(tablaRelacionPermiso);
-                PermisoCompuesto490WC permisoCompuestoLeido;
-                Permiso490WC permisoLeido;
-                foreach (DataRowView drv in dvRelacionPermiso) 
+                DataView dvRelacionPermiso490WC = new DataView(tablaRelacionPermiso490WC);
+                PermisoCompuesto490WC permisoCompuestoLeido490WC;
+                Permiso490WC permisoLeido490WC;
+                foreach (DataRowView drv490WC in dvRelacionPermiso490WC) 
                 {
-                    permisoCompuestoLeido = (PermisoCompuesto490WC)PermisosCompuestos.Find(x => x.obtenerPermisoNombre() == drv["permisoCompuestoNombre"].ToString());
-                    permisoLeido = ListaPermiso.Find(x => x.obtenerPermisoNombre() == drv["permisoIncluidoNombre"].ToString());
-                    permisoCompuestoLeido.Agregar(permisoLeido);
+                    permisoCompuestoLeido490WC = (PermisoCompuesto490WC)PermisosCompuestos490WC.Find(x => x.obtenerPermisoNombre490WC() == drv490WC["permisoCompuestoNombre490WC"].ToString());
+                    permisoLeido490WC = ListaPermiso490WC.Find(x => x.obtenerPermisoNombre490WC() == drv490WC["permisoIncluidoNombre490WC"].ToString());
+                    permisoCompuestoLeido490WC.Agregar490WC(permisoLeido490WC);
                 }
-                return PermisosCompuestos;
+                return PermisosCompuestos490WC;
             }
-            catch { PermisosCompuestos.Clear(); return ListaPermiso; }
+            catch { PermisosCompuestos490WC.Clear(); return ListaPermiso490WC; }
         }
 
-        public PermisoCompuesto490WC LeerPermisoCompuesto(string PermisoLeer)
+        public PermisoCompuesto490WC LeerPermisoCompuesto490WC(string PermisoLeer490WC)
         {
-            PermisoCompuesto490WC PermisoLeidoGlobal;
-            List<Permiso490WC> listaPermiso = new List<Permiso490WC>();
-            List<Permiso490WC> permisosCompuestos = new List<Permiso490WC>();
+            PermisoCompuesto490WC PermisoLeidoGlobal490WC;
+            List<Permiso490WC> listaPermiso490WC = new List<Permiso490WC>();
+            List<Permiso490WC> permisosCompuestos490WC = new List<Permiso490WC>();
             try 
             {
-                DataTable tablaPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso");
-                DataView dvPermiso = new DataView(tablaPermiso);
-                foreach(DataRowView drv in dvPermiso) 
+                DataTable tablaPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC");
+                DataView dvPermiso490WC = new DataView(tablaPermiso490WC);
+                foreach(DataRowView drv490WC in dvPermiso490WC) 
                 {
-                    if (drv["tipoPermiso"].ToString() == "Compuesto") 
+                    if (drv490WC["tipoPermiso490WC"].ToString() == "Compuesto") 
                     {
-                        PermisoCompuesto490WC compuesto = new PermisoCompuesto490WC(drv["nombrePermiso"].ToString());
-                        permisosCompuestos.Add(compuesto);
-                        listaPermiso.Add(compuesto);
+                        PermisoCompuesto490WC compuesto = new PermisoCompuesto490WC(drv490WC["nombrePermiso490WC"].ToString());
+                        permisosCompuestos490WC.Add(compuesto);
+                        listaPermiso490WC.Add(compuesto);
                     }
                     else 
                     {
-                        PermisoSimple490WC permisoS = new PermisoSimple490WC(drv["nombrePermiso"].ToString());
-                        listaPermiso.Add(permisoS);
+                        PermisoSimple490WC permisoS490WC = new PermisoSimple490WC(drv490WC["nombrePermiso490WC"].ToString());
+                        listaPermiso490WC.Add(permisoS490WC);
                     }
                 }
-                DataTable tablaRelacionPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("RelacionPermiso");
-                DataView dvRelacionPermiso = new DataView(tablaRelacionPermiso);
-                PermisoCompuesto490WC compuestoLeido;
-                Permiso490WC permisoLeido;
-                foreach(DataRowView drv in dvRelacionPermiso) 
+                DataTable tablaRelacionPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("RelacionPermiso490WC");
+                DataView dvRelacionPermiso490WC = new DataView(tablaRelacionPermiso490WC);
+                PermisoCompuesto490WC compuestoLeido490WC;
+                Permiso490WC permisoLeido490WC;
+                foreach(DataRowView drv490WC in dvRelacionPermiso490WC) 
                 {
-                    compuestoLeido = (PermisoCompuesto490WC)permisosCompuestos.Find(x => x.obtenerPermisoNombre() == drv["permisoCompuestoNombre"].ToString());
-                    permisoLeido = listaPermiso.Find(x => x.obtenerPermisoNombre() == drv["permisoIncluidoNombre"].ToString());
-                    compuestoLeido.Agregar(permisoLeido);
+                    compuestoLeido490WC = (PermisoCompuesto490WC)permisosCompuestos490WC.Find(x => x.obtenerPermisoNombre490WC() == drv490WC["permisoCompuestoNombre490WC"].ToString());
+                    permisoLeido490WC = listaPermiso490WC.Find(x => x.obtenerPermisoNombre490WC() == drv490WC["permisoIncluidoNombre490WC"].ToString());
+                    compuestoLeido490WC.Agregar490WC(permisoLeido490WC);
                 }
-                PermisoLeidoGlobal = (PermisoCompuesto490WC)permisosCompuestos.Find(x => x.obtenerPermisoNombre() == PermisoLeer);
-                return PermisoLeidoGlobal;
+                PermisoLeidoGlobal490WC = (PermisoCompuesto490WC)permisosCompuestos490WC.Find(x => x.obtenerPermisoNombre490WC() == PermisoLeer490WC);
+                return PermisoLeidoGlobal490WC;
             }
-            catch { permisosCompuestos.Clear(); return null; }
+            catch { permisosCompuestos490WC.Clear(); return null; }
         }
-        public bool InsertarPermiso(Permiso490WC permisoNuevo, bool esRol) 
+        public bool InsertarPermiso490WC(Permiso490WC permisoNuevo490WC, bool esRol490WC) 
         {
             try 
             {
-                DataRow dr = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso").NewRow();
-                dr["nombrePermiso"] = permisoNuevo.obtenerPermisoNombre();
-                dr["tipoPermiso"] = permisoNuevo.esCompuesto() == true ? "Compuesto" : "Simple";
-                dr["esRolPermiso"] = esRol == true ? "True" : "False";
-                GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso").Rows.Add(dr);
-                GestorBaseDeDatos490WC.GestorBaseDeDatosSG.ActualizarPorTabla("Permiso");
+                DataRow dr490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC").NewRow();
+                dr490WC["nombrePermiso490WC"] = permisoNuevo490WC.obtenerPermisoNombre490WC();
+                dr490WC["tipoPermiso490WC"] = permisoNuevo490WC.esCompuesto490WC() == true ? "Compuesto" : "Simple";
+                dr490WC["esRolPermiso490WC"] = esRol490WC == true ? "True" : "False";
+                GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC").Rows.Add(dr490WC);
+                GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.ActualizarPorTabla490WC("Permiso490WC");
                 return true;
             }
             catch { return false; }
         }
 
-        public bool InsertarRelacion(string Compuesto, string Incluido) 
+        public bool InsertarRelacion490WC(string Compuesto490WC, string Incluido490WC) 
         {
             try
             {
-                DataRow dr = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("RelacionPermiso").NewRow();
-                dr["permisoCompuestoNombre"] = Compuesto;
-                dr["permisoIncluidoNombre"] = Incluido;
-                GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("RelacionPermiso").Rows.Add(dr);
-                GestorBaseDeDatos490WC.GestorBaseDeDatosSG.ActualizarPorTabla("RelacionPermiso");
+                DataRow dr490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("RelacionPermiso490WC").NewRow();
+                dr490WC["permisoCompuestoNombre490WC"] = Compuesto490WC;
+                dr490WC["permisoIncluidoNombre490WC"] = Incluido490WC;
+                GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("RelacionPermiso490WC").Rows.Add(dr490WC);
+                GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.ActualizarPorTabla490WC("RelacionPermiso490WC");
                 return true;
             }
             catch { return false; }
         }
 
-        public bool BorrarPermiso(string NombrePermiso)
+        public bool BorrarPermiso490WC(string NombrePermiso490WC)
         {
             try
             {
-                Usuario490WC usuarioConPermisoBorrar = UsuarioORM490WC.GestorUsuarioORM.ObtenerUsuariosPorConsulta("Simple", "Rol", NombrePermiso)[0];
-                if (usuarioConPermisoBorrar != null)
+                Usuario490WC usuarioConPermisoBorrar490WC = UsuarioORM490WC.GestorUsuarioORM490WC.ObtenerUsuariosPorConsulta490WC("Simple", "Rol", NombrePermiso490WC)[0];
+                if (usuarioConPermisoBorrar490WC != null)
                 {
-                    throw new Exception();
+                    
                 }
-                DataRow drEliminar = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso").Rows.Find(NombrePermiso);
-                if (drEliminar != null)
+                DataRow drEliminar490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC").Rows.Find(NombrePermiso490WC);
+                if (drEliminar490WC != null)
                 {
-                    drEliminar.Delete();
+                    drEliminar490WC.Delete();
                 }
-                DataTable dtRelacionPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("RelacionPermiso");
-                DataView dv = new DataView(dtRelacionPermiso);
-                foreach (DataRowView drv in dv)
+                DataTable dtRelacionPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("RelacionPermiso490WC");
+                DataView dv490WC = new DataView(dtRelacionPermiso490WC);
+                foreach (DataRowView drv490WC in dv490WC)
                 {
-                    if (NombrePermiso == drv["permisoCompuestoNombre"].ToString() || NombrePermiso == drv["permisoIncluidoNombre"].ToString())
+                    if (NombrePermiso490WC == drv490WC["permisoCompuestoNombre490WC"].ToString() || NombrePermiso490WC == drv490WC["permisoIncluidoNombre490WC"].ToString())
                     {
-                        drv.Delete();
+                        drv490WC.Delete();
                     }
                 }
-                GestorBaseDeDatos490WC.GestorBaseDeDatosSG.ActualizarPorTabla("Permiso");
+                GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.ActualizarPorTabla490WC("Permiso490WC");
                 return true;
             }
             catch { return false; }
         }
 
-        public bool BorrarRelacion(string nombrePermisoCompuesto) 
+        public bool BorrarRelacion490WC(string nombrePermisoCompuesto490WC) 
         {
             try
             {
-                DataTable dtRelacionPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("RelacionPermiso");
-                DataView dv = new DataView(dtRelacionPermiso);
-                foreach (DataRowView drv in dv)
+                DataTable dtRelacionPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("RelacionPermiso490WC");
+                DataView dv490WC = new DataView(dtRelacionPermiso490WC);
+                foreach (DataRowView drv490WC in dv490WC)
                 {
-                    if (drv["permisoCompuestoNombre"].ToString() == nombrePermisoCompuesto)
+                    if (drv490WC["permisoCompuestoNombre490WC"].ToString() == nombrePermisoCompuesto490WC)
                     {
-                        drv.Delete();
-                        GestorBaseDeDatos490WC.GestorBaseDeDatosSG.ActualizarPorTabla("Permiso");
+                        drv490WC.Delete();
+                        GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.ActualizarPorTabla490WC("Permiso490WC");
                     }
                 }
                 return true;
@@ -176,41 +176,41 @@ namespace ORM
             catch { return false; }
         }
 
-        public bool ModificarPermiso(string nombrePermiso,string nuevoNombrePermiso) 
+        public bool ModificarPermiso490WC(string nombrePermiso490WC,string nuevoNombrePermiso490WC) 
         {
             try
             {
-                DataRow drPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso").Rows.Find(nombrePermiso);
-                if (drPermiso != null)
+                DataRow drPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC").Rows.Find(nombrePermiso490WC);
+                if (drPermiso490WC != null)
                 {
-                    drPermiso["nombrePermiso"] = nuevoNombrePermiso;
+                    drPermiso490WC["nombrePermiso490WC"] = nuevoNombrePermiso490WC;
                 }
-                DataTable dtRelacionPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("RelacionPermiso");
-                DataView dv = new DataView(dtRelacionPermiso);
-                foreach (DataRowView drv in dv)
+                DataTable dtRelacionPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("RelacionPermiso490WC");
+                DataView dv490WC = new DataView(dtRelacionPermiso490WC);
+                foreach (DataRowView drv490WC in dv490WC)
                 {
-                    if (drv["permisoCompuestoNombre"].ToString() == nombrePermiso)
+                    if (drv490WC["permisoCompuestoNombre490WC"].ToString() == nombrePermiso490WC)
                     {
-                        drv["permisoCompuestoNombre"] = nuevoNombrePermiso;
+                        drv490WC["permisoCompuestoNombre490WC"] = nuevoNombrePermiso490WC;
                     }
-                    if (drv["permisoIncluidoNombre"].ToString() == nombrePermiso)
+                    if (drv490WC["permisoIncluidoNombre490WC"].ToString() == nombrePermiso490WC)
                     {
-                        drv["permisoIncluidoNombre"] = nuevoNombrePermiso;
+                        drv490WC["permisoIncluidoNombre490WC"] = nuevoNombrePermiso490WC;
                     }
                 }
-                GestorBaseDeDatos490WC.GestorBaseDeDatosSG.ActualizarPorTabla("Permiso");
-                GestorBaseDeDatos490WC.GestorBaseDeDatosSG.ActualizarPorTabla("RelacionPermiso");
+                GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.ActualizarPorTabla490WC("Permiso490WC");
+                GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.ActualizarPorTabla490WC("RelacionPermiso490WC");
                 return true;
             }
             catch { return false; }
         }
 
-        public bool esRol(string nombrePermiso) 
+        public bool esRol490WC(string nombrePermiso490WC) 
         {
             try 
             {
-               DataRow drPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso").Rows.Find(nombrePermiso);
-               if (drPermiso["esRolPermiso"].ToString() == "True") 
+               DataRow drPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC").Rows.Find(nombrePermiso490WC);
+               if (drPermiso490WC["esRolPermiso490WC"].ToString() == "True") 
                {
                    return true;
                }
@@ -222,12 +222,12 @@ namespace ORM
             catch { return false; }
         }
 
-        public bool permisoExiste(string nombrePermiso) 
+        public bool permisoExiste490WC(string nombrePermiso490WC) 
         {
             try 
             {
-               DataRow drPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso").Rows.Find(nombrePermiso);
-               if(drPermiso != null) 
+               DataRow drPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC").Rows.Find(nombrePermiso490WC);
+               if(drPermiso490WC != null) 
                {
                   return true;
                }
@@ -240,115 +240,115 @@ namespace ORM
         }
         #region Funciones para el Mapeo de Permisos
 
-        public List<Permiso490WC> ObtenerPermisos() 
+        public List<Permiso490WC> ObtenerPermisos490WC() 
         {
-            List<Permiso490WC> ListaPermisos = new List<Permiso490WC>();
-            DataTable dtPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso");
-            DataView dvPermiso = new DataView(dtPermiso);
-            foreach(DataRowView drv in dvPermiso) 
+            List<Permiso490WC> ListaPermisos490WC = new List<Permiso490WC>();
+            DataTable dtPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC");
+            DataView dvPermiso490WC = new DataView(dtPermiso490WC);
+            foreach(DataRowView drv490WC in dvPermiso490WC) 
             {
-                Permiso490WC permiso; 
-                string nombrePermiso = drv["nombrePermiso"].ToString();
-                string tipoPermiso = drv["tipoPermiso"].ToString();
-                if(tipoPermiso == "Compuesto") 
+                Permiso490WC permiso490WC; 
+                string nombrePermiso490WC = drv490WC["nombrePermiso490WC"].ToString();
+                string tipoPermiso490WC = drv490WC["tipoPermiso490WC"].ToString();
+                if(tipoPermiso490WC == "Compuesto") 
                 {
-                    permiso = new PermisoCompuesto490WC(nombrePermiso);
-                    ListaPermisos.Add(permiso);
+                    permiso490WC = new PermisoCompuesto490WC(nombrePermiso490WC);
+                    ListaPermisos490WC.Add(permiso490WC);
                 }
                 else 
                 {
-                    permiso = new PermisoSimple490WC(nombrePermiso);
-                    ListaPermisos.Add(permiso);
+                    permiso490WC = new PermisoSimple490WC(nombrePermiso490WC);
+                    ListaPermisos490WC.Add(permiso490WC);
                 }
             }
-            return ListaPermisos;
+            return ListaPermisos490WC;
         }
 
-        public List<Permiso490WC> ObtenerPermisosSimples() 
+        public List<Permiso490WC> ObtenerPermisosSimples490WC() 
         {
-            List<Permiso490WC> ListaPermisos = new List<Permiso490WC>();
-            DataTable dtPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso");
-            DataView dvPermiso = new DataView(dtPermiso);
-            foreach (DataRowView drv in dvPermiso)
+            List<Permiso490WC> ListaPermisos490WC = new List<Permiso490WC>();
+            DataTable dtPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC");
+            DataView dvPermiso490WC = new DataView(dtPermiso490WC);
+            foreach (DataRowView drv490WC in dvPermiso490WC)
             {
-                string tipoPermiso = drv["tipoPermiso"].ToString();
-                if (tipoPermiso == "Simple")
+                string tipoPermiso490WC = drv490WC["tipoPermiso490WC"].ToString();
+                if (tipoPermiso490WC == "Simple")
                 {
-                    Permiso490WC permiso;
-                    string nombrePermiso = drv["nombrePermiso"].ToString();
-                    permiso = new PermisoSimple490WC(nombrePermiso);
-                    ListaPermisos.Add(permiso);
+                    Permiso490WC permiso490WC;
+                    string nombrePermiso490WC = drv490WC["nombrePermiso490WC"].ToString();
+                    permiso490WC = new PermisoSimple490WC(nombrePermiso490WC);
+                    ListaPermisos490WC.Add(permiso490WC);
                 }
             }
-            return ListaPermisos;
+            return ListaPermisos490WC;
         }
 
-        public List<Permiso490WC> ObtenerPermisosCompuestos() 
+        public List<Permiso490WC> ObtenerPermisosCompuestos490WC() 
         {
-            List<Permiso490WC> ListaPermisos = new List<Permiso490WC>();
-            DataTable dtPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso");
-            DataView dvPermiso = new DataView(dtPermiso);
-            foreach (DataRowView drv in dvPermiso)
+            List<Permiso490WC> ListaPermisos490WC = new List<Permiso490WC>();
+            DataTable dtPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC");
+            DataView dvPermiso490WC = new DataView(dtPermiso490WC);
+            foreach (DataRowView drv490WC in dvPermiso490WC)
             {
-                string tipoPermiso = drv["tipoPermiso"].ToString();
-                if (tipoPermiso == "Compuesto")
+                string tipoPermiso490WC = drv490WC["tipoPermiso490WC"].ToString();
+                if (tipoPermiso490WC == "Compuesto")
                 {
-                    Permiso490WC permiso;
-                    string nombrePermiso = drv["nombrePermiso"].ToString();
-                    permiso = new PermisoCompuesto490WC(nombrePermiso);
-                    ListaPermisos.Add(permiso);
+                    Permiso490WC permiso490WC;
+                    string nombrePermiso490WC = drv490WC["nombrePermiso490WC"].ToString();
+                    permiso490WC = new PermisoCompuesto490WC(nombrePermiso490WC);
+                    ListaPermisos490WC.Add(permiso490WC);
                 }
             }
-            return ListaPermisos;
+            return ListaPermisos490WC;
         }
 
-        public List<Permiso490WC> ObtenerRoles() 
+        public List<Permiso490WC> ObtenerRoles490WC() 
         {
-            List<Permiso490WC> ListaPermisos = new List<Permiso490WC>();
-            DataTable dtPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso");
-            DataView dvPermiso = new DataView(dtPermiso);
-            foreach (DataRowView drv in dvPermiso)
+            List<Permiso490WC> ListaPermisos490WC = new List<Permiso490WC>();
+            DataTable dtPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC");
+            DataView dvPermiso490WC = new DataView(dtPermiso490WC);
+            foreach (DataRowView drv in dvPermiso490WC)
             {
-                string nombrePermiso = drv["nombrePermiso"].ToString();
-                if(esRol(nombrePermiso)== true) 
+                string nombrePermiso490WC = drv["nombrePermiso490WC"].ToString();
+                if(esRol490WC(nombrePermiso490WC)== true) 
                 {
-                  string tipoPermiso = drv["tipoPermiso"].ToString();
-                  if (tipoPermiso == "Compuesto")
+                  string tipoPermiso490WC = drv["tipoPermiso490WC"].ToString();
+                  if (tipoPermiso490WC == "Compuesto")
                   {
-                    Permiso490WC permiso;
-                    permiso = new PermisoCompuesto490WC(nombrePermiso);
-                    ListaPermisos.Add(permiso);
+                    Permiso490WC permiso490WC;
+                    permiso490WC = new PermisoCompuesto490WC(nombrePermiso490WC);
+                    ListaPermisos490WC.Add(permiso490WC);
                   }
                 }
             }
-            return ListaPermisos;
+            return ListaPermisos490WC;
         }
-        public List<Permiso490WC> ObtenerTodoSinRoles() 
+        public List<Permiso490WC> ObtenerTodoSinRoles490WC() 
         {
-            List<Permiso490WC> ListaPermisos = new List<Permiso490WC>();
-            DataTable dtPermiso = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Permiso");
-            DataView dvPermiso = new DataView(dtPermiso);
-            foreach (DataRowView drv in dvPermiso)
+            List<Permiso490WC> ListaPermisos490WC = new List<Permiso490WC>();
+            DataTable dtPermiso490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Permiso490WC");
+            DataView dvPermiso490WC = new DataView(dtPermiso490WC);
+            foreach (DataRowView drv490WC in dvPermiso490WC)
             {
-                string nombrePermiso = drv["nombrePermiso"].ToString();
-                if (esRol(nombrePermiso) == false)
+                string nombrePermiso490WC = drv490WC["nombrePermiso490WC"].ToString();
+                if (esRol490WC(nombrePermiso490WC) == false)
                 {
-                    string tipoPermiso = drv["tipoPermiso"].ToString();
-                    if (tipoPermiso == "Compuesto")
+                    string tipoPermiso490WC = drv490WC["tipoPermiso490WC"].ToString();
+                    if (tipoPermiso490WC == "Compuesto")
                     {
-                        Permiso490WC permiso;
-                        permiso = new PermisoCompuesto490WC(nombrePermiso);
-                        ListaPermisos.Add(permiso);
+                        Permiso490WC permiso490WC;
+                        permiso490WC = new PermisoCompuesto490WC(nombrePermiso490WC);
+                        ListaPermisos490WC.Add(permiso490WC);
                     }
                     else 
                     {
-                        Permiso490WC permiso;
-                        permiso = new PermisoSimple490WC(nombrePermiso);
-                        ListaPermisos.Add(permiso);
+                        Permiso490WC permiso490WC;
+                        permiso490WC = new PermisoSimple490WC(nombrePermiso490WC);
+                        ListaPermisos490WC.Add(permiso490WC);
                     }
                 }
             }
-            return ListaPermisos;
+            return ListaPermisos490WC;
 
         }
 

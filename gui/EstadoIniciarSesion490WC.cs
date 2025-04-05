@@ -8,16 +8,16 @@ namespace gui
 {
     internal class EstadoIniciarSesion490WC : Estado490WC
     {
-        FormLogin490WC login;
-        public override void CerrarEstado()
+        FormLogin490WC login490WC;
+        public override void CerrarEstado490WC()
         {
-            login?.Dispose();
+            login490WC?.Dispose();
         }
 
-        public override void EjecutarEstado()
+        public override void EjecutarEstado490WC()
         {
-            login = new FormLogin490WC();
-            login.ShowDialog();
+            login490WC = new FormLogin490WC();
+            login490WC.ShowDialog();
         }
     }
 }

@@ -8,16 +8,16 @@ namespace gui
 {
     internal class EstadoMenu490WC : Estado490WC
     {
-        FormMenu490WC menu;
-        public override void CerrarEstado()
+        FormMenu490WC menu490WC;
+        public override void CerrarEstado490WC()
         {
-            menu?.Dispose();
+            menu490WC?.Dispose();
         }
 
-        public override void EjecutarEstado()
+        public override void EjecutarEstado490WC()
         {
-            menu = new FormMenu490WC();
-            menu.ShowDialog();
+            menu490WC = new FormMenu490WC();
+            menu490WC.ShowDialog();
         }
     }
 }

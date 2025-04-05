@@ -15,76 +15,76 @@ namespace gui
 {
     public partial class FormABMUsuario490WC : Form, iObserverLenguaje490WC
     {
-        UsuarioBLL490WC GestorUsuario;
-        FormMenu490WC menu;
-        public FormABMUsuario490WC(FormMenu490WC menuOrigen)
+        UsuarioBLL490WC GestorUsuario490WC;
+        FormMenu490WC menu490WC;
+        public FormABMUsuario490WC(FormMenu490WC menuOrigen490WC)
         {
             InitializeComponent();
-            MostrarUsuarioPorConsulta();
-            GestorUsuario = new UsuarioBLL490WC();
+            MostrarUsuarioPorConsulta490WC();
+            GestorUsuario490WC = new UsuarioBLL490WC();
             BT_CANCELAR.Enabled = false;
             BT_APLICAR.Enabled = false;
-            menu = menuOrigen;
-            RellenarCombobox();
+            menu490WC = menuOrigen490WC;
+            RellenarCombobox490WC();
         }
 
-        public void MostrarUsuarioPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
+        public void MostrarUsuarioPorConsulta490WC(string tipoConsulta490WC = "", string itemSeleccionado490WC = "", string itemValor490WC = "", string itemValor2490WC = "")
         {
-            GestorUsuario = new UsuarioBLL490WC();
+            GestorUsuario490WC = new UsuarioBLL490WC();
             dgvUsuario.Rows.Clear();
-            int indiceRow = 0;
-            foreach (Usuario490WC usuario in GestorUsuario.DevolverUsuariosPorConsulta(tipoConsulta,itemSeleccionado,itemValor, itemValor2))
+            int indiceRow490WC = 0;
+            foreach (Usuario490WC usuario490WC in GestorUsuario490WC.DevolverUsuariosPorConsulta490WC(tipoConsulta490WC,itemSeleccionado490WC,itemValor490WC, itemValor2490WC))
             {
-                if(checkBoxMostrarBloqueados.Checked || usuario.IsBloqueado == false)
+                if(checkBoxMostrarBloqueados.Checked || usuario490WC.IsBloqueado490WC == false)
                 {
-                  indiceRow = dgvUsuario.Rows.Add(usuario.ID_Usuario,usuario.Username,usuario.Nombre,usuario.Apellido,usuario.DNI,usuario.Email,usuario.Rol,usuario.IsBloqueado);
+                  indiceRow490WC = dgvUsuario.Rows.Add(usuario490WC.ID_Usuario490WC,usuario490WC.Username490WC,usuario490WC.Nombre490WC,usuario490WC.Apellido490WC,usuario490WC.DNI490WC,usuario490WC.Email490WC,usuario490WC.Rol490WC,usuario490WC.IsBloqueado490WC);
                 }
-                if(usuario.IsBloqueado == true && dgvUsuario.Rows.Count > 0)
+                if(usuario490WC.IsBloqueado490WC == true && dgvUsuario.Rows.Count > 0)
                 {
-                    dgvUsuario.Rows[indiceRow].DefaultCellStyle.BackColor = Color.LightCoral;
+                    dgvUsuario.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.LightCoral;
                 }
             }
         }
-        public void VaciarTextBox(Control contenedor)
+        public void VaciarTextBox490WC(Control contenedor490WC)
         {
-            foreach (Control control in contenedor.Controls)
+            foreach (Control control490WC in contenedor490WC.Controls)
             {
-              if (control is TextBox textBox)
+              if (control490WC is TextBox textBox490WC)
               {
-                textBox.Clear();
+                textBox490WC.Clear();
               }
-              else if(control is ComboBox cb)
+              else if(control490WC is ComboBox cb490WC)
               {
-                cb.SelectedIndex = -1;
+                cb490WC.SelectedIndex = -1;
               }
-              else if (control.HasChildren)
+              else if (control490WC.HasChildren)
               {
-                VaciarTextBox(control);                
+                VaciarTextBox490WC(control490WC);                
               }
             }  
         }
         private void BT_ALTA_USUARIO_Click(object sender, EventArgs e)
         {
-            string nombre = TB_NOMBRE.Text;
-            string username = TB_Usuario.Text;
-            string apellido = TB_APELLIDO.Text;
-            string dni = TB_DNI.Text;
-            string contraseña = dni+apellido;
-            string email = TB_EMAIL.Text;
-            string rol = CB_ROL.SelectedItem.ToString();
-            string idioma = "Español";
-            if (GestorUsuario.VerificarDNI(dni) == true && GestorUsuario.VerificarDNIDuplicado(dni) == false && GestorUsuario.VerificarEmail(email) == true && GestorUsuario.VerificarEmailDuplicado(email) == false)
+            string nombre490WC = TB_NOMBRE.Text;
+            string username490WC = TB_Usuario.Text;
+            string apellido490WC = TB_APELLIDO.Text;
+            string dni490WC = TB_DNI.Text;
+            string contraseña490WC = dni490WC+apellido490WC;
+            string email490WC = TB_EMAIL.Text;
+            string rol490WC = CB_ROL.SelectedItem.ToString();
+            string idioma490WC = "Español";
+            if (GestorUsuario490WC.VerificarDNI490WC(dni490WC) == true && GestorUsuario490WC.VerificarDNIDuplicado490WC(dni490WC) == false && GestorUsuario490WC.VerificarEmail490WC(email490WC) == true && GestorUsuario490WC.VerificarEmailDuplicado490WC(email490WC) == false)
             {
-                Usuario490WC usuario = new Usuario490WC(0,username,nombre,apellido,dni,contraseña,email,rol,idioma);
-                GestorUsuario.Alta(usuario);
-                MostrarUsuarioPorConsulta();
-                BitacoraBLL490WC GestorBitacora = new BitacoraBLL490WC();
-                GestorBitacora.AltaEvento("Gestion de Usuario", "Alta de Usuario", 5);
-                VaciarTextBox(this);
+                Usuario490WC usuario490WC = new Usuario490WC(0,username490WC,nombre490WC,apellido490WC,dni490WC,contraseña490WC,email490WC,rol490WC,idioma490WC);
+                GestorUsuario490WC.Alta490WC(usuario490WC);
+                MostrarUsuarioPorConsulta490WC();
+                BitacoraBLL490WC GestorBitacora490WC = new BitacoraBLL490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestion de Usuario", "Alta de Usuario", 5);
+                VaciarTextBox490WC(this);
             }
             else
             {
-                VaciarTextBox(this);
+                VaciarTextBox490WC(this);
               
             }
         }
@@ -92,12 +92,12 @@ namespace gui
         {
             try
             {
-                Usuario490WC UsuarioEliminar = GestorUsuario.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
-                GestorUsuario.Baja(UsuarioEliminar);
-                MostrarUsuarioPorConsulta();
-                BitacoraBLL490WC GestorBitacora = new BitacoraBLL490WC();
-                GestorBitacora.AltaEvento("Gestion de Usuario", "Baja de Usuario", 5);
-                VaciarTextBox(this);
+                Usuario490WC UsuarioEliminar490WC = GestorUsuario490WC.DevolverUsuariosPorConsulta490WC().Find(x => x.ID_Usuario490WC == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
+                GestorUsuario490WC.Baja490WC(UsuarioEliminar490WC);
+                MostrarUsuarioPorConsulta490WC();
+                BitacoraBLL490WC GestorBitacora490WC = new BitacoraBLL490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestion de Usuario", "Baja de Usuario", 5);
+                VaciarTextBox490WC(this);
 
             }
             catch { MessageBox.Show(labelDebeborrar.Text); }
@@ -123,29 +123,29 @@ namespace gui
             if (dgvUsuario.SelectedRows[0].Cells[7].Value.ToString() == "True")
             {
                 BT_DESBLOQUEAR_USUARIO.Name = "BT_DESBLOQUEAR_USUARIO";
-                ActualizarLenguaje();
+                ActualizarLenguaje490WC();
             }
             else
             {
                 BT_DESBLOQUEAR_USUARIO.Name = "BT_BLOQUEAR_USUARIO";
-                ActualizarLenguaje();
+                ActualizarLenguaje490WC();
             }
         }
         private void BT_APLICAR_Click(object sender, EventArgs e)
         {
             try
             {
-                Usuario490WC UsuarioModificar = GestorUsuario.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
-                UsuarioModificar.Nombre = TB_NOMBRE.Text;
-                UsuarioModificar.Username = TB_Usuario.Text;
-                UsuarioModificar.Apellido = TB_APELLIDO.Text;
-                UsuarioModificar.Email = TB_EMAIL.Text;
-                UsuarioModificar.Rol = CB_ROL.SelectedItem.ToString();
-                GestorUsuario.Modificar(UsuarioModificar);
-                MostrarUsuarioPorConsulta();
-                BitacoraBLL490WC GestorBitacora = new BitacoraBLL490WC();
-                GestorBitacora.AltaEvento("Gestion de Usuario", "Modificacion de Usuario", 5);
-                VaciarTextBox(this);
+                Usuario490WC UsuarioModificar490WC = GestorUsuario490WC.DevolverUsuariosPorConsulta490WC().Find(x => x.ID_Usuario490WC == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
+                UsuarioModificar490WC.Nombre490WC = TB_NOMBRE.Text;
+                UsuarioModificar490WC.Username490WC = TB_Usuario.Text;
+                UsuarioModificar490WC.Apellido490WC = TB_APELLIDO.Text;
+                UsuarioModificar490WC.Email490WC = TB_EMAIL.Text;
+                UsuarioModificar490WC.Rol490WC = CB_ROL.SelectedItem.ToString();
+                GestorUsuario490WC.Modificar490WC(UsuarioModificar490WC);
+                MostrarUsuarioPorConsulta490WC();
+                BitacoraBLL490WC GestorBitacora490WC = new BitacoraBLL490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestion de Usuario", "Modificacion de Usuario", 5);
+                VaciarTextBox490WC(this);
                 BT_ALTA_USUARIO.Enabled = true;
                 BT_BAJA_USUARIO.Enabled = true;
                 BT_MODIFICAR_USUARIO.Enabled = true;
@@ -165,37 +165,37 @@ namespace gui
             BT_SALIR.Enabled = true;
             BT_APLICAR.Enabled = false;
             BT_CANCELAR.Enabled = false;
-            VaciarTextBox(this);
+            VaciarTextBox490WC(this);
         }
 
         private void BT_DESBLOQUEAR_USUARIO_Click(object sender, EventArgs e)
         {
-            Usuario490WC UsuarioModificar = GestorUsuario.DevolverUsuariosPorConsulta().Find(x => x.ID_Usuario == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
+            Usuario490WC UsuarioModificar490WC = GestorUsuario490WC.DevolverUsuariosPorConsulta490WC().Find(x => x.ID_Usuario490WC == (int.Parse(dgvUsuario.SelectedRows[0].Cells[0].Value.ToString())));
            
             if (dgvUsuario.SelectedRows[0].Cells[7].Value.ToString() == "True")
             {
-                UsuarioModificar.IsBloqueado = false;
-                GestorUsuario.Modificar(UsuarioModificar);
+                UsuarioModificar490WC.IsBloqueado490WC = false;
+                GestorUsuario490WC.Modificar490WC(UsuarioModificar490WC);
                 BT_DESBLOQUEAR_USUARIO.Text = "TD_Bloquear";
-                BitacoraBLL490WC GestorBitacora = new BitacoraBLL490WC();
-                GestorBitacora.AltaEvento("Gestion de Usuario", "Desbloqueo de Usuario", 5);
-                ActualizarLenguaje();
+                BitacoraBLL490WC GestorBitacora490WC = new BitacoraBLL490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestion de Usuario", "Desbloqueo de Usuario", 5);
+                ActualizarLenguaje490WC();
             }
             else
             {
-                UsuarioModificar.IsBloqueado = true;
-                GestorUsuario.Modificar(UsuarioModificar);
+                UsuarioModificar490WC.IsBloqueado490WC = true;
+                GestorUsuario490WC.Modificar490WC(UsuarioModificar490WC);
                 BT_DESBLOQUEAR_USUARIO.Text = "TD_Desbloquear";
-                BitacoraBLL490WC GestorBitacora = new BitacoraBLL490WC();
-                GestorBitacora.AltaEvento("Gestion de Usuario", "Bloqueo de Usuario", 5);
-                ActualizarLenguaje();
+                BitacoraBLL490WC GestorBitacora490WC = new BitacoraBLL490WC();
+                GestorBitacora490WC.AltaEvento490WC("Gestion de Usuario", "Bloqueo de Usuario", 5);
+                ActualizarLenguaje490WC();
             }
-            MostrarUsuarioPorConsulta();
+            MostrarUsuarioPorConsulta490WC();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            MostrarUsuarioPorConsulta();
+            MostrarUsuarioPorConsulta490WC();
         }
 
         private void BT_SALIR_Click(object sender, EventArgs e)
@@ -209,30 +209,30 @@ namespace gui
         }
 
 
-        public void ActualizarLenguaje()
+        public void ActualizarLenguaje490WC()
         {
-            RecorrerControles(this);
+            RecorrerControles490WC(this);
         }
 
-        public void RecorrerControles(Control control)
+        public void RecorrerControles490WC(Control control490WC)
         {
-            foreach (Control c in control.Controls)
+            foreach (Control c490WC in control490WC.Controls)
             {
-                if((c is TextBox tb) == false) 
+                if((c490WC is TextBox tb490WC) == false) 
                 {
                  
-                   c.Text = Traductor490WC.TraductorSG.Traducir(c.Name);
+                   c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
 
                   
-                   if (c.HasChildren)
+                   if (c490WC.HasChildren)
                    {
-                      RecorrerControles(c);
+                      RecorrerControles490WC(c490WC);
                    }
-                    if(c is DataGridView dgv) 
+                    if(c490WC is DataGridView dgv490WC) 
                     {
-                       foreach (DataGridViewColumn columna in dgv.Columns)
+                       foreach (DataGridViewColumn columna490WC in dgv490WC.Columns)
                        {
-                           columna.HeaderText = Traductor490WC.TraductorSG.Traducir(columna.Name);
+                           columna490WC.HeaderText = Traductor490WC.TraductorSG490WC.Traducir490WC(columna490WC.Name);
                        }
                     }
                 
@@ -240,13 +240,13 @@ namespace gui
             }
         }
 
-        public void RellenarCombobox() 
+        public void RellenarCombobox490WC() 
         {
             CB_ROL.Items.Clear();
-            PermisoBLL490WC GestorPermiso = new PermisoBLL490WC();
-            foreach (var rol in GestorPermiso.ObtenerRoles()) 
+            PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
+            foreach (var rol490WC in GestorPermiso490WC.ObtenerRoles490WC()) 
             {
-                CB_ROL.Items.Add(rol.obtenerPermisoNombre());
+                CB_ROL.Items.Add(rol490WC.obtenerPermisoNombre490WC());
             
             }
         }

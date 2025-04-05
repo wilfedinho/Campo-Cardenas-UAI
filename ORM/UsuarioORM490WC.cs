@@ -12,97 +12,97 @@ namespace ORM
 {
     public class UsuarioORM490WC
     {
-        private static UsuarioORM490WC Instancia;
-        public static UsuarioORM490WC GestorUsuarioORM 
+        private static UsuarioORM490WC Instancia490WC;
+        public static UsuarioORM490WC GestorUsuarioORM490WC 
         {
             get 
             {
-                if(Instancia== null)
+                if(Instancia490WC== null)
                 {
-                    Instancia = new UsuarioORM490WC();
+                    Instancia490WC = new UsuarioORM490WC();
                 }
-                return Instancia;
+                return Instancia490WC;
             }
         }
-        public void Alta(Usuario490WC UsuarioAlta)
+        public void Alta490WC(Usuario490WC UsuarioAlta490WC)
         {
-            DataRow nuevaFila = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Usuario").NewRow();
-            nuevaFila["ID"] = UsuarioAlta.ID_Usuario;
-            nuevaFila["Username"] = UsuarioAlta.Username;
-            nuevaFila["Nombre"] = UsuarioAlta.Nombre;
-            nuevaFila["Apellido"] = UsuarioAlta.Apellido;
-            nuevaFila["DNI"] = UsuarioAlta.DNI;
-            nuevaFila["Contraseña"] = UsuarioAlta.Contraseña;
-            nuevaFila["Email"] = UsuarioAlta.Email;
-            nuevaFila["Rol"] = UsuarioAlta.Rol;
-            nuevaFila["IdiomaUsuario"] = UsuarioAlta.IdiomaUsuario;
-            nuevaFila["Intentos"] = UsuarioAlta.Intentos;
-            nuevaFila["IsBloqueado"] = UsuarioAlta.IsBloqueado;
-            GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Usuario").Rows.Add(nuevaFila);
-            ActualizarGeneral();
+            DataRow nuevaFila490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Usuario490WC").NewRow();
+            nuevaFila490WC["ID490WC"] = UsuarioAlta490WC.ID_Usuario490WC;
+            nuevaFila490WC["Username490WC"] = UsuarioAlta490WC.Username490WC;
+            nuevaFila490WC["Nombre490WC"] = UsuarioAlta490WC.Nombre490WC;
+            nuevaFila490WC["Apellido490WC"] = UsuarioAlta490WC.Apellido490WC;
+            nuevaFila490WC["DNI490WC"] = UsuarioAlta490WC.DNI490WC;
+            nuevaFila490WC["Contraseña490WC"] = UsuarioAlta490WC.Contraseña490WC;
+            nuevaFila490WC["Email490WC"] = UsuarioAlta490WC.Email490WC;
+            nuevaFila490WC["Rol490WC"] = UsuarioAlta490WC.Rol490WC;
+            nuevaFila490WC["IdiomaUsuario490WC"] = UsuarioAlta490WC.IdiomaUsuario490WC;
+            nuevaFila490WC["Intentos490WC"] = UsuarioAlta490WC.Intentos490WC;
+            nuevaFila490WC["IsBloqueado490WC"] = UsuarioAlta490WC.IsBloqueado490WC;
+            GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Usuario490WC").Rows.Add(nuevaFila490WC);
+            ActualizarGeneral490WC();
         }
-        public void Baja(Usuario490WC UsuarioEliminar)
+        public void Baja490WC(Usuario490WC UsuarioEliminar490WC)
         {
-            GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Usuario").Rows.Find(UsuarioEliminar.ID_Usuario).Delete();
-            ActualizarGeneral();
+            GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Usuario490WC").Rows.Find(UsuarioEliminar490WC.ID_Usuario490WC).Delete();
+            ActualizarGeneral490WC();
         }
-        public void Modificar(Usuario490WC UsuarioModdificado)
+        public void Modificar490WC(Usuario490WC UsuarioModdificado490WC)
         {
-            GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Usuario").Rows.Find(UsuarioModdificado.ID_Usuario).ItemArray = new object[] 
+            GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Usuario490WC").Rows.Find(UsuarioModdificado490WC.ID_Usuario490WC).ItemArray = new object[] 
             {
-                UsuarioModdificado.ID_Usuario,
-                UsuarioModdificado.Username,
-                UsuarioModdificado.Nombre,
-                UsuarioModdificado.Apellido,
-                UsuarioModdificado.DNI,
-                UsuarioModdificado.Contraseña,
-                UsuarioModdificado.Email,
-                UsuarioModdificado.Rol,
-                UsuarioModdificado.IdiomaUsuario,
-                UsuarioModdificado.Intentos,
-                UsuarioModdificado.IsBloqueado,
+                UsuarioModdificado490WC.ID_Usuario490WC,
+                UsuarioModdificado490WC.Username490WC,
+                UsuarioModdificado490WC.Nombre490WC,
+                UsuarioModdificado490WC.Apellido490WC,
+                UsuarioModdificado490WC.DNI490WC,
+                UsuarioModdificado490WC.Contraseña490WC,
+                UsuarioModdificado490WC.Email490WC,
+                UsuarioModdificado490WC.Rol490WC,
+                UsuarioModdificado490WC.IdiomaUsuario490WC,
+                UsuarioModdificado490WC.Intentos490WC,
+                UsuarioModdificado490WC.IsBloqueado490WC,
             };
-            ActualizarGeneral();
+            ActualizarGeneral490WC();
         }
-        public List<Usuario490WC> ObtenerUsuariosPorConsulta(string tipoConsulta = "", string itemSeleccionado = "", string itemValor = "", string itemValor2 = "")
+        public List<Usuario490WC> ObtenerUsuariosPorConsulta490WC(string tipoConsulta490WC = "", string itemSeleccionado490WC = "", string itemValor490WC = "", string itemValor2490WC = "")
         {
-            List<Usuario490WC> ListaUsuario = new List<Usuario490WC>();
-            DataView dv;
-            string query = "";
-            switch (tipoConsulta)
+            List<Usuario490WC> ListaUsuario490WC = new List<Usuario490WC>();
+            DataView dv490WC;
+            string query490WC = "";
+            switch (tipoConsulta490WC)
             {
-                case "Simple":
-                    query = $"{itemSeleccionado} = '{itemValor}'";
+                case "Simple490WC":
+                    query490WC = $"{itemSeleccionado490WC} = '{itemValor490WC}'";
                     break;
-                case "D-H":
-                    query = $"{itemSeleccionado} >= '{itemValor}' AND {itemSeleccionado} <= '{itemValor2}'";
+                case "D-H490WC":
+                    query490WC = $"{itemSeleccionado490WC} >= '{itemValor490WC}' AND {itemSeleccionado490WC} <= '{itemValor2490WC}'";
                     break;
-                case "Incremental":
-                    query = $"{itemSeleccionado} LIKE '{itemValor}%'";
+                case "Incremental490WC":
+                    query490WC = $"{itemSeleccionado490WC} LIKE '{itemValor490WC}%'";
                     break;
             }
-            dv = new DataView(GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Usuario"),query,"",DataViewRowState.Unchanged);
-            foreach(DataRowView drv in dv)
+            dv490WC = new DataView(GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Usuario490WC"),query490WC,"",DataViewRowState.Unchanged);
+            foreach(DataRowView drv490WC in dv490WC)
             {
-              int id = int.Parse(drv[0].ToString());
-              string username = drv[1].ToString();
-              string nombre = drv[2].ToString();
-              string apellido = drv[3].ToString();
-              string dni = drv[4].ToString();
-              string contrasena = drv[5].ToString();
-              string email = drv[6].ToString();
-              string rol = drv[7].ToString(); 
-              string idioma = drv[8].ToString(); 
-              int intentos = int.Parse(drv[9].ToString());
-              bool isbloqueado = bool.Parse(drv[10].ToString());
-              Usuario490WC usuario = new Usuario490WC(id,username, nombre,apellido,dni,contrasena,email,rol,idioma,intentos,isbloqueado);
-              ListaUsuario.Add(usuario);
+              int id490WC = int.Parse(drv490WC[0].ToString());
+              string username490WC = drv490WC[1].ToString();
+              string nombre490WC = drv490WC[2].ToString();
+              string apellido490WC = drv490WC[3].ToString();
+              string dni490WC = drv490WC[4].ToString();
+              string contrasena490WC = drv490WC[5].ToString();
+              string email490WC = drv490WC[6].ToString();
+              string rol490WC = drv490WC[7].ToString(); 
+              string idioma490WC = drv490WC[8].ToString(); 
+              int intentos490WC = int.Parse(drv490WC[9].ToString());
+              bool isbloqueado490WC = bool.Parse(drv490WC[10].ToString());
+              Usuario490WC usuario490WC = new Usuario490WC(id490WC,username490WC, nombre490WC,apellido490WC,dni490WC,contrasena490WC,email490WC,rol490WC,idioma490WC,intentos490WC,isbloqueado490WC);
+              ListaUsuario490WC.Add(usuario490WC);
             }
-            return ListaUsuario;
+            return ListaUsuario490WC;
         }
-        public void ActualizarGeneral()
+        public void ActualizarGeneral490WC()
         {
-            GestorBaseDeDatos490WC.GestorBaseDeDatosSG.ActualizarGeneral();
+            GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.ActualizarGeneral490WC();
         }
     }
 }

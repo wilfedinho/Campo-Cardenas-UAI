@@ -16,17 +16,17 @@ namespace gui
 {
     public partial class FormBitacoraDeEventos490WC : Form, iObserverLenguaje490WC
     {
-        BitacoraBLL490WC GestorBitacora;
-        UsuarioBLL490WC GestorUsuario;
-        List<Usuario490WC> ListaUsuario;
+        BitacoraBLL490WC GestorBitacora490WC;
+        UsuarioBLL490WC GestorUsuario490WC;
+        List<Usuario490WC> ListaUsuario490WC;
         public FormBitacoraDeEventos490WC()
         {
             InitializeComponent();
-            GestorBitacora = new BitacoraBLL490WC();
-            GestorUsuario = new UsuarioBLL490WC();
-            ListaUsuario = GestorUsuario.DevolverUsuariosPorConsulta();
-            Mostrar();
-            LLenarCB();
+            GestorBitacora490WC = new BitacoraBLL490WC();
+            GestorUsuario490WC = new UsuarioBLL490WC();
+            ListaUsuario490WC = GestorUsuario490WC.DevolverUsuariosPorConsulta490WC();
+            Mostrar490WC();
+            LLenarCB490WC();
             monthCalendarFechaInicio.Enabled = false;
             monthCalendarFechaFin.Enabled = false;
             labelUsuario.Text = $"Usuario: ";
@@ -34,58 +34,58 @@ namespace gui
             labelApellido.Text = $"Apellido: ";
             labelDNI.Text = $"DNI: ";
         }
-        public void Mostrar(string usuarioFiltrar = "", string moduloFiltrar = "", string descripcionFiltrar = "", string criticidadFiltrar = "", DateTime? fechaInicioFiltrar = null, DateTime? fechaFinFiltrar = null)
+        public void Mostrar490WC(string usuarioFiltrar490WC = "", string moduloFiltrar490WC = "", string descripcionFiltrar490WC = "", string criticidadFiltrar490WC = "", DateTime? fechaInicioFiltrar490WC = null, DateTime? fechaFinFiltrar490WC = null)
         {
-            int indiceRow = 0;
-            int criticidad = 0;
+            int indiceRow490WC = 0;
+            int criticidad490WC = 0;
             dgvBitacora.Rows.Clear();
-            foreach(BitacoraBE490WC bitacora in GestorBitacora.ObtenerBitacoraPorConsulta(usuarioFiltrar,moduloFiltrar, descripcionFiltrar, criticidadFiltrar, fechaInicioFiltrar, fechaFinFiltrar))
+            foreach(BitacoraBE490WC bitacora490WC in GestorBitacora490WC.ObtenerBitacoraPorConsulta490WC(usuarioFiltrar490WC,moduloFiltrar490WC, descripcionFiltrar490WC, criticidadFiltrar490WC, fechaInicioFiltrar490WC, fechaFinFiltrar490WC))
             {
-               indiceRow = dgvBitacora.Rows.Add(bitacora.Username,bitacora.Fecha,bitacora.Hora,bitacora.Modulo, bitacora.Descripcion, bitacora.Criticidad);
-                criticidad = bitacora.Criticidad;
+               indiceRow490WC = dgvBitacora.Rows.Add(bitacora490WC.Username490WC,bitacora490WC.Fecha490WC,bitacora490WC.Hora490WC,bitacora490WC.Modulo490WC, bitacora490WC.Descripcion490WC, bitacora490WC.Criticidad490WC);
+                criticidad490WC = bitacora490WC.Criticidad490WC;
                 if (dgvBitacora.Rows.Count > 0)
                 {
-                    switch (criticidad)
+                    switch (criticidad490WC)
                     {
                         case 1:
-                            dgvBitacora.Rows[indiceRow].DefaultCellStyle.BackColor = Color.GreenYellow;
+                            dgvBitacora.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.GreenYellow;
                             break;
                         case 2:
-                            dgvBitacora.Rows[indiceRow].DefaultCellStyle.BackColor = Color.Coral;
+                            dgvBitacora.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.Coral;
                             break;
                         case 3:
-                            dgvBitacora.Rows[indiceRow].DefaultCellStyle.BackColor = Color.Orange;
+                            dgvBitacora.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.Orange;
                             break;
                         case 4:
-                            dgvBitacora.Rows[indiceRow].DefaultCellStyle.BackColor = Color.OrangeRed;
+                            dgvBitacora.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.OrangeRed;
                             break;
                         case 5:
-                            dgvBitacora.Rows[indiceRow].DefaultCellStyle.BackColor = Color.Firebrick;
+                            dgvBitacora.Rows[indiceRow490WC].DefaultCellStyle.BackColor = Color.Firebrick;
                             break;
                     }
                 }
             }
         }
-        public void LLenarCB()
+        public void LLenarCB490WC()
         {
-            foreach (BitacoraBE490WC bitacora in GestorBitacora.ObtenerBitacoraPorConsulta())
+            foreach (BitacoraBE490WC bitacora490WC in GestorBitacora490WC.ObtenerBitacoraPorConsulta490WC())
             {
                 
-                if (CB_Usuario.Items.Count == 0 || !CB_Usuario.Items.Contains(bitacora.Username))
-                    CB_Usuario.Items.Add(bitacora.Username);
+                if (CB_Usuario.Items.Count == 0 || !CB_Usuario.Items.Contains(bitacora490WC.Username490WC))
+                    CB_Usuario.Items.Add(bitacora490WC.Username490WC);
 
-                if (CB_Modulo.Items.Count == 0 || !CB_Modulo.Items.Contains(bitacora.Modulo))
-                    CB_Modulo.Items.Add(bitacora.Modulo);
+                if (CB_Modulo.Items.Count == 0 || !CB_Modulo.Items.Contains(bitacora490WC.Modulo490WC))
+                    CB_Modulo.Items.Add(bitacora490WC.Modulo490WC);
 
-                if (CB_Descripcion.Items.Count == 0 || !CB_Descripcion.Items.Contains(bitacora.Descripcion))
-                    CB_Descripcion.Items.Add(bitacora.Descripcion);
+                if (CB_Descripcion.Items.Count == 0 || !CB_Descripcion.Items.Contains(bitacora490WC.Descripcion490WC))
+                    CB_Descripcion.Items.Add(bitacora490WC.Descripcion490WC);
 
-                if (CB_Criticidad.Items.Count == 0 || !CB_Criticidad.Items.Contains(bitacora.Criticidad.ToString()))
-                    CB_Criticidad.Items.Add(bitacora.Criticidad.ToString());
+                if (CB_Criticidad.Items.Count == 0 || !CB_Criticidad.Items.Contains(bitacora490WC.Criticidad490WC.ToString()))
+                    CB_Criticidad.Items.Add(bitacora490WC.Criticidad490WC.ToString());
             }
         }
 
-        public void LimpiarCB()
+        public void LimpiarCB490WC()
         {
             CB_Usuario.SelectedIndex = -1;
             CB_Modulo.SelectedIndex = -1;
@@ -96,48 +96,48 @@ namespace gui
         }
         private void BT_Filtrar_Click(object sender, EventArgs e)
         {
-            string usuarioFiltrar = "";
-            string moduloFiltrar = "";
-            string descripcionFiltrar = "";
-            string criticidadFiltrar = "";
+            string usuarioFiltrar490WC = "";
+            string moduloFiltrar490WC = "";
+            string descripcionFiltrar490WC = "";
+            string criticidadFiltrar490WC = "";
 
           
             if (CB_Usuario.SelectedIndex >= 0)
-                usuarioFiltrar = CB_Usuario.SelectedItem.ToString();
+                usuarioFiltrar490WC = CB_Usuario.SelectedItem.ToString();
             if (CB_Modulo.SelectedIndex >= 0)
-                moduloFiltrar = CB_Modulo.SelectedItem.ToString();
+                moduloFiltrar490WC = CB_Modulo.SelectedItem.ToString();
             if (CB_Descripcion.SelectedIndex >= 0)
-                descripcionFiltrar = CB_Descripcion.SelectedItem.ToString();
+                descripcionFiltrar490WC = CB_Descripcion.SelectedItem.ToString();
             if (CB_Criticidad.SelectedIndex >= 0)
-                criticidadFiltrar = CB_Criticidad.SelectedItem.ToString();
+                criticidadFiltrar490WC = CB_Criticidad.SelectedItem.ToString();
 
           
             if (checkBoxFecha.Checked == false)
             {
-                Mostrar(usuarioFiltrar, moduloFiltrar, descripcionFiltrar, criticidadFiltrar, DateTime.MinValue, DateTime.MaxValue);
+                Mostrar490WC(usuarioFiltrar490WC, moduloFiltrar490WC, descripcionFiltrar490WC, criticidadFiltrar490WC, DateTime.MinValue, DateTime.MaxValue);
             }
             else
             {
-                DateTime fechaInicioFiltrar = monthCalendarFechaInicio.SelectionStart;
-                DateTime fechaFinFiltrar = monthCalendarFechaFin.SelectionStart;
-                if (fechaInicioFiltrar != fechaFinFiltrar)
+                DateTime fechaInicioFiltrar490WC = monthCalendarFechaInicio.SelectionStart;
+                DateTime fechaFinFiltrar490WC = monthCalendarFechaFin.SelectionStart;
+                if (fechaInicioFiltrar490WC != fechaFinFiltrar490WC)
                 {
-                    Mostrar(usuarioFiltrar, moduloFiltrar, descripcionFiltrar, criticidadFiltrar, fechaInicioFiltrar, fechaFinFiltrar);
+                    Mostrar490WC(usuarioFiltrar490WC, moduloFiltrar490WC, descripcionFiltrar490WC, criticidadFiltrar490WC, fechaInicioFiltrar490WC, fechaFinFiltrar490WC);
                 }
             }
-            LimpiarCB();
+            LimpiarCB490WC();
         }
 
 
         private void dgvBitacora_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            Usuario490WC usuario = ListaUsuario.Find(x => x.Username == dgvBitacora.SelectedRows[0].Cells[0].Value.ToString());
-            if(usuario != null)
+            Usuario490WC usuario490WC = ListaUsuario490WC.Find(x => x.Username490WC == dgvBitacora.SelectedRows[0].Cells[0].Value.ToString());
+            if(usuario490WC != null)
             {
-              labelUsuario.Text = $"Usuario: {usuario.Username}";
-              labelNombre.Text = $"Nombre: {usuario.Nombre}";
-              labelApellido.Text = $"Apellido: {usuario.Apellido}";
-              labelDNI.Text = $"DNI: {usuario.DNI}";
+              labelUsuario.Text = $"Usuario: {usuario490WC.Username490WC}";
+              labelNombre.Text = $"Nombre: {usuario490WC.Nombre490WC}";
+              labelApellido.Text = $"Apellido: {usuario490WC.Apellido490WC}";
+              labelDNI.Text = $"DNI: {usuario490WC.DNI490WC}";
             }
             else
             {
@@ -150,8 +150,8 @@ namespace gui
 
         private void BT_LimpiarFiltros_Click(object sender, EventArgs e)
         {
-            LimpiarCB();
-            Mostrar();
+            LimpiarCB490WC();
+            Mostrar490WC();
             labelUsuario.Text = $"Usuario: ";
             labelNombre.Text = $"Nombre: ";
             labelApellido.Text = $"Apellido: ";
@@ -187,7 +187,7 @@ namespace gui
 
         }
 
-        public void ActualizarLenguaje()
+        public void ActualizarLenguaje490WC()
         {
             
         }

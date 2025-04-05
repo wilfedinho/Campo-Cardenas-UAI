@@ -9,9 +9,9 @@ namespace SERVICIOS
     public interface ISujeto490WC
     {
 
-        void Suscribir(iObserverLenguaje490WC observer);
-        void Desuscribir(iObserverLenguaje490WC observer);
-        void Notificar();
+        void Suscribir490WC(iObserverLenguaje490WC observer);
+        void Desuscribir490WC(iObserverLenguaje490WC observer);
+        void Notificar490WC();
 
 
     }

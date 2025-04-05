@@ -9,24 +9,24 @@ namespace gui
 {
     public class GestorForm490WC
     {
-        private static GestorForm490WC instance;
-        private Estado490WC estadoGestor = new EstadoIniciarSesion490WC();
-        public static GestorForm490WC gestorFormSG
+        private static GestorForm490WC instance490WC;
+        private Estado490WC estadoGestor490WC = new EstadoIniciarSesion490WC();
+        public static GestorForm490WC gestorFormSG490WC
         {
             get
             {
-                if (instance == null) 
+                if (instance490WC == null) 
                 {
-                    instance = new GestorForm490WC(); 
+                    instance490WC = new GestorForm490WC(); 
                 }
-                return instance;
+                return instance490WC;
             }
         }
-        public void DefinirEstado(Estado490WC estadoNuevo)
+        public void DefinirEstado490WC(Estado490WC estadoNuevo490WC)
         {
-            estadoGestor?.CerrarEstado();
-            estadoGestor = estadoNuevo;
-            estadoGestor.EjecutarEstado();
+            estadoGestor490WC?.CerrarEstado490WC();
+            estadoGestor490WC = estadoNuevo490WC;
+            estadoGestor490WC.EjecutarEstado490WC();
         }
     }
 }

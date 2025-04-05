@@ -8,6 +8,6 @@ namespace SERVICIOS
 {
     public interface iObserverLenguaje490WC
     {
-        void ActualizarLenguaje();
+        void ActualizarLenguaje490WC();
     }
 }

@@ -9,8 +9,8 @@ namespace gui
 {
     public abstract class Estado490WC
     {
-        public abstract void CerrarEstado(); 
+        public abstract void CerrarEstado490WC(); 
 
-        public abstract void EjecutarEstado();
+        public abstract void EjecutarEstado490WC();
     }
 }

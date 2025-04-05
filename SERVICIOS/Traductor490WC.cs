@@ -10,84 +10,84 @@ namespace SERVICIOS
 {
     public class Traductor490WC : ISujeto490WC
     {
-        public static Traductor490WC Instance;
-        public static Traductor490WC TraductorSG
+        public static Traductor490WC Instance490WC;
+        public static Traductor490WC TraductorSG490WC
         {
             get 
             {
-                if(Instance == null)
+                if(Instance490WC == null)
                 {
-                    Instance = new Traductor490WC();
+                    Instance490WC = new Traductor490WC();
                 }
-                return Instance;
+                return Instance490WC;
             }
         }
-        List<iObserverLenguaje490WC> ListaFormularios = new List<iObserverLenguaje490WC>();
-        Dictionary<string, string> Lenguaje = new Dictionary<string, string>();
+        List<iObserverLenguaje490WC> ListaFormularios490WC = new List<iObserverLenguaje490WC>();
+        Dictionary<string, string> Lenguaje490WC = new Dictionary<string, string>();
        
-        string jsonFilePath;
-        public void CargarTraducciones(string nuevoLenguaje)
+        string jsonFilePath490WC;
+        public void CargarTraducciones490WC(string nuevoLenguaje490WC)
         {
             
-            if (File.Exists(Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lenguajes", $"{nuevoLenguaje}.json"))))
+            if (File.Exists(Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lenguajes", $"{nuevoLenguaje490WC}.json"))))
             {
-                jsonFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lenguajes", $"{nuevoLenguaje}.json"));
-                string jsonContent = File.ReadAllText(jsonFilePath);
-                Lenguaje.Clear();
-                Lenguaje = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonContent);
+                jsonFilePath490WC = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lenguajes", $"{nuevoLenguaje490WC}.json"));
+                string jsonContent490WC = File.ReadAllText(jsonFilePath490WC);
+                Lenguaje490WC.Clear();
+                Lenguaje490WC = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonContent490WC);
             }
         }
 
-        public List<string> DevolverIdiomasDisponibles()
+        public List<string> DevolverIdiomasDisponibles490WC()
         {
-            List<string> ListaIdiomas = new List<string>();
+            List<string> ListaIdiomas490WC = new List<string>();
           
-            string[] archivos = Directory.GetFiles("C:\\Users\\William Càrdenas\\Desktop\\TESIS 2025\\Campo-Cardenas-UAI\\gui\\bin\\Debug\\Lenguajes", "*.json");
+            string[] archivos490WC = Directory.GetFiles("C:\\Users\\William Càrdenas\\Desktop\\TESIS 2025\\Campo-Cardenas-UAI\\gui\\bin\\Debug\\Lenguajes", "*.json");
 
           
-            List<string> nombresDeIdiomas = archivos
+            List<string> nombresDeIdiomas490WC = archivos490WC
                 .Select(archivo => Path.GetFileNameWithoutExtension(archivo))
                 .ToList();
 
-            return nombresDeIdiomas;
+            return nombresDeIdiomas490WC;
 
         }
 
-        public void Actualizar(string lenguajeActual)
+        public void Actualizar490WC(string lenguajeActual490WC)
         {
-            CargarTraducciones(lenguajeActual);
-            Notificar();
-            Lenguaje.Clear();
+            CargarTraducciones490WC(lenguajeActual490WC);
+            Notificar490WC();
+            Lenguaje490WC.Clear();
         }
-        public string Traducir(string TextoATraducir) 
+        public string Traducir490WC(string TextoATraducir490WC) 
         {
            try
             {
-                if (Lenguaje.Count == 0) CargarTraducciones(SesionManager490WC.GestorSesion.UsuarioSesion.IdiomaUsuario);
-                string translation = "";
-                return translation = Lenguaje[TextoATraducir];
+                if (Lenguaje490WC.Count == 0) CargarTraducciones490WC(SesionManager490WC.GestorSesion490WC.UsuarioSesion490WC.IdiomaUsuario490WC);
+                string translation490WC = "";
+                return translation490WC = Lenguaje490WC[TextoATraducir490WC];
             }
-            catch (Exception ex) { return TextoATraducir; }
+            catch (Exception ex) { return TextoATraducir490WC; }
         }
 
-        public void Notificar()
+        public void Notificar490WC()
         {
-            foreach(iObserverLenguaje490WC Iob in ListaFormularios)
+            foreach(iObserverLenguaje490WC Iob490WC in ListaFormularios490WC)
             {
-                Iob.ActualizarLenguaje();
+                Iob490WC.ActualizarLenguaje490WC();
             }
         }
 
-        public void Suscribir(iObserverLenguaje490WC nNuevoObserver)
+        public void Suscribir490WC(iObserverLenguaje490WC nNuevoObserver490WC)
         {
-            this.ListaFormularios.Add(nNuevoObserver);
+            this.ListaFormularios490WC.Add(nNuevoObserver490WC);
         }
 
-        public void Desuscribir(iObserverLenguaje490WC nObserverBorrar)
+        public void Desuscribir490WC(iObserverLenguaje490WC nObserverBorrar490WC)
         {
-            if(this.ListaFormularios.Contains(nObserverBorrar))
+            if(this.ListaFormularios490WC.Contains(nObserverBorrar490WC))
             {
-              this.ListaFormularios.Remove(nObserverBorrar);
+              this.ListaFormularios490WC.Remove(nObserverBorrar490WC);
             }
         }
 

@@ -8,9 +8,9 @@ namespace SERVICIOS
 {
     public interface Iabm490WC<T> where T : class
     {
-        void Alta(T Entidad);
-        void Baja(T Entidad);
-        void Modificar(T Entidad);
+        void Alta490WC(T Entidad);
+        void Baja490WC(T Entidad);
+        void Modificar490WC(T Entidad);
 
     }
 }

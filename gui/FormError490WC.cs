@@ -19,7 +19,7 @@ namespace gui
 
         private void FormError_FormClosed(object sender, FormClosedEventArgs e)
         {
-            GestorForm490WC.gestorFormSG.DefinirEstado(new EstadoCerrarAplicacion490WC());
+            GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
         }
     }
 }

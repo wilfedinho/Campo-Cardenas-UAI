@@ -10,87 +10,87 @@ namespace SERVICIOS
 {
     public class Cifrador490WC
     {
-          private static Cifrador490WC Instancia;
-          public static Cifrador490WC GestorCifrador
+          private static Cifrador490WC Instancia490WC;
+          public static Cifrador490WC GestorCifrador490WC
           {
             get
              {
-              if (Instancia == null)
+              if (Instancia490WC == null)
               {
-               Instancia = new Cifrador490WC();
+               Instancia490WC = new Cifrador490WC();
               }
-              return Instancia;
+              return Instancia490WC;
             }
           }
-           private readonly byte[] key;
-           private readonly byte[] iv;
+           private readonly byte[] key490WC;
+           private readonly byte[] iv490WC;
           private Cifrador490WC()
           {
-            using (Aes aesAlg = Aes.Create())
+            using (Aes aesAlg490WC = Aes.Create())
             {
 
-              aesAlg.GenerateKey();
-              aesAlg.GenerateIV();
-              key = aesAlg.Key;
-              iv = aesAlg.IV;
+              aesAlg490WC.GenerateKey();
+              aesAlg490WC.GenerateIV();
+              key490WC = aesAlg490WC.Key;
+              iv490WC = aesAlg490WC.IV;
             }
           }
-          public string EncriptarIrreversible(string textoEncriptar)
+          public string EncriptarIrreversible490WC(string textoEncriptar490WC)
           {
-            using (SHA256 sha256 = SHA256.Create())
+            using (SHA256 sha256490WC = SHA256.Create())
             {
            
-               byte[] bytes = Encoding.UTF8.GetBytes(textoEncriptar);
+               byte[] bytes490WC = Encoding.UTF8.GetBytes(textoEncriptar490WC);
 
       
-               byte[] hashBytes = sha256.ComputeHash(bytes);
+               byte[] hashBytes490WC = sha256490WC.ComputeHash(bytes490WC);
 
            
-               StringBuilder stringBuilder = new StringBuilder();
-               for (int i = 0; i < hashBytes.Length; i++)
+               StringBuilder stringBuilder490WC = new StringBuilder();
+               for (int i = 0; i < hashBytes490WC.Length; i++)
                {
-                 stringBuilder.Append(hashBytes[i].ToString("x2"));
+                 stringBuilder490WC.Append(hashBytes490WC[i].ToString("x2"));
                }
-                return stringBuilder.ToString();
+                return stringBuilder490WC.ToString();
             }
           }
 
-          public string EncriptarReversible(string textoEncriptar)
+          public string EncriptarReversible490WC(string textoEncriptar490WC)
           {
-             using (Aes aesAlg = Aes.Create())
+             using (Aes aesAlg490WC = Aes.Create())
              {
-                aesAlg.Key = key;
-                aesAlg.IV = iv;
+                aesAlg490WC.Key = key490WC;
+                aesAlg490WC.IV = iv490WC;
 
-                ICryptoTransform Encriptador = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+                ICryptoTransform Encriptador490WC = aesAlg490WC.CreateEncryptor(aesAlg490WC.Key, aesAlg490WC.IV);
 
-                using (MemoryStream msEncrypt = new MemoryStream())
+                using (MemoryStream msEncrypt490WC = new MemoryStream())
                 {
-                   using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, Encriptador, CryptoStreamMode.Write))
-                   using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                   using (CryptoStream csEncrypt490WC = new CryptoStream(msEncrypt490WC, Encriptador490WC, CryptoStreamMode.Write))
+                   using (StreamWriter swEncrypt490WC = new StreamWriter(csEncrypt490WC))
                    {
-                     swEncrypt.Write(textoEncriptar);
+                     swEncrypt490WC.Write(textoEncriptar490WC);
                    }
-                   return Convert.ToBase64String(msEncrypt.ToArray());
+                   return Convert.ToBase64String(msEncrypt490WC.ToArray());
                 }
              }
           }
 
-          public string DesencriptarReversible(string textoEncriptar)
+          public string DesencriptarReversible490WC(string textoEncriptar)
           {
-             using (Aes aesAlg = Aes.Create())
+             using (Aes aesAlg490WC = Aes.Create())
              {
-               aesAlg.Key = key;
-               aesAlg.IV = iv;
+               aesAlg490WC.Key = key490WC;
+               aesAlg490WC.IV = iv490WC;
 
-               ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+               ICryptoTransform decryptor490WC = aesAlg490WC.CreateDecryptor(aesAlg490WC.Key, aesAlg490WC.IV);
 
-                using (MemoryStream msDecrypt = new MemoryStream(Convert.FromBase64String(textoEncriptar)))
+                using (MemoryStream msDecrypt490WC = new MemoryStream(Convert.FromBase64String(textoEncriptar)))
                 {
-                  using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
-                  using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                  using (CryptoStream csDecrypt490WC = new CryptoStream(msDecrypt490WC, decryptor490WC, CryptoStreamMode.Read))
+                  using (StreamReader srDecrypt490WC = new StreamReader(csDecrypt490WC))
                   {
-                            return srDecrypt.ReadToEnd();
+                            return srDecrypt490WC.ReadToEnd();
                   }
                 }
              }

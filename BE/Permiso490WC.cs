@@ -9,29 +9,29 @@ namespace BE
     public abstract class Permiso490WC
     {
 
-        private string Nombre;
-        protected Permiso490WC(string nNombre) 
+        private string Nombre490WC;
+        protected Permiso490WC(string nNombre490WC) 
         {
-          Nombre = nNombre;
+          Nombre490WC = nNombre490WC;
         }
-        public virtual void Agregar(Permiso490WC nPermiso) 
+        public virtual void Agregar490WC(Permiso490WC nPermiso490WC) 
         {
         
         }
 
-        public virtual void Borrar(Permiso490WC nPermiso) 
+        public virtual void Borrar490WC(Permiso490WC nPermiso490WC) 
         {
          
         }
 
-        public virtual bool esCompuesto() 
+        public virtual bool esCompuesto490WC() 
         {
           return false;
         }
 
-        public string obtenerPermisoNombre()
+        public string obtenerPermisoNombre490WC()
         {
-            return Nombre;
+            return Nombre490WC;
         }
 
     }

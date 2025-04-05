@@ -15,51 +15,51 @@ namespace gui
 {
     public partial class FormLogin490WC : Form
     {
-        List<Usuario490WC> ListaUsuario;
-        UsuarioBLL490WC GestorUsuario;
+        List<Usuario490WC> ListaUsuario490WC;
+        UsuarioBLL490WC GestorUsuario490WC;
         public FormLogin490WC()
         {
             InitializeComponent();
-            GestorUsuario = new UsuarioBLL490WC();
-            ListaUsuario = GestorUsuario.DevolverUsuariosPorConsulta();
+            GestorUsuario490WC = new UsuarioBLL490WC();
+            ListaUsuario490WC = GestorUsuario490WC.DevolverUsuariosPorConsulta490WC();
         }
 
         private void BT_LOGIN_Click(object sender, EventArgs e)
         {
-            Usuario490WC usuarioIniciarSesion = ListaUsuario.Find(x => x.Username == TB_Username.Text);
-            if (usuarioIniciarSesion != null)
+            Usuario490WC usuarioIniciarSesion490WC = ListaUsuario490WC.Find(x => x.Username490WC == TB_Username.Text);
+            if (usuarioIniciarSesion490WC != null)
             {
-                if(usuarioIniciarSesion.IsBloqueado == false)
+                if(usuarioIniciarSesion490WC.IsBloqueado490WC == false)
                 {
-                   if(usuarioIniciarSesion.Contraseña == Cifrador490WC.GestorCifrador.EncriptarIrreversible(TB_Contrasena.Text))
+                   if(usuarioIniciarSesion490WC.Contraseña490WC == Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(TB_Contrasena.Text))
                    {
-                        SesionManager490WC.GestorSesion.Login(usuarioIniciarSesion);
-                        PermisoBLL490WC GestorPermiso = new PermisoBLL490WC();
-                        GestorPermiso.AsignarRolSesion(SesionManager490WC.GestorSesion.UsuarioSesion.Rol);
-                        BitacoraBLL490WC GestorBitacora = new BitacoraBLL490WC();
-                        GestorBitacora.AltaEvento("Inicio de Sesion", "Entrada al Sistema", 4);
-                        GestorForm490WC.gestorFormSG.DefinirEstado(new EstadoMenu490WC());
-                        usuarioIniciarSesion.Intentos = 0;
-                        GestorUsuario.Modificar(usuarioIniciarSesion);
+                        SesionManager490WC.GestorSesion490WC.Login490WC(usuarioIniciarSesion490WC);
+                        PermisoBLL490WC GestorPermiso490WC = new PermisoBLL490WC();
+                        GestorPermiso490WC.AsignarRolSesion490WC(SesionManager490WC.GestorSesion490WC.UsuarioSesion490WC.Rol490WC);
+                        BitacoraBLL490WC GestorBitacora490WC = new BitacoraBLL490WC();
+                        GestorBitacora490WC.AltaEvento490WC("Inicio de Sesion", "Entrada al Sistema", 4);
+                        GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoMenu490WC());
+                        usuarioIniciarSesion490WC.Intentos490WC = 0;
+                        GestorUsuario490WC.Modificar490WC(usuarioIniciarSesion490WC);
                    }
                    else
                    {
                         
-                        if(usuarioIniciarSesion.Intentos >= 3 && usuarioIniciarSesion.Rol != "Admin")
+                        if(usuarioIniciarSesion490WC.Intentos490WC >= 3 && usuarioIniciarSesion490WC.Rol490WC != "Admin")
                         {
-                            usuarioIniciarSesion.IsBloqueado = true;
+                            usuarioIniciarSesion490WC.IsBloqueado490WC = true;
                         }
                         else
                         {
-                            usuarioIniciarSesion.Intentos += 1;
+                            usuarioIniciarSesion490WC.Intentos490WC += 1;
                         }
-                        GestorUsuario.Modificar(usuarioIniciarSesion);
+                        GestorUsuario490WC.Modificar490WC(usuarioIniciarSesion490WC);
                         MessageBox.Show($"Datos Ingresados Incorrectos!!!");
                    }
                 }
                 else
                 {
-                  MessageBox.Show($"El Usuario {usuarioIniciarSesion.Nombre} está Bloqueado!!!");
+                  MessageBox.Show($"El Usuario {usuarioIniciarSesion490WC.Nombre490WC} está Bloqueado!!!");
                 }
             }
             else
@@ -69,7 +69,7 @@ namespace gui
         }
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            GestorForm490WC.gestorFormSG.DefinirEstado(new EstadoCerrarAplicacion490WC());
+            GestorForm490WC.gestorFormSG490WC.DefinirEstado490WC(new EstadoCerrarAplicacion490WC());
         }
     }
 }

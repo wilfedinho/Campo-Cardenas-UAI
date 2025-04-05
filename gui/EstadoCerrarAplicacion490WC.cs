@@ -9,12 +9,12 @@ namespace gui
 {
     internal class EstadoCerrarAplicacion490WC : Estado490WC
     {
-        public override void CerrarEstado()
+        public override void CerrarEstado490WC()
         {
             
         }
 
-        public override void EjecutarEstado()
+        public override void EjecutarEstado490WC()
         {
             Environment.Exit(0);
         }

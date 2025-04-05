@@ -35,7 +35,7 @@
             this.BT_CrearGrupoDePermisos = new System.Windows.Forms.Button();
             this.BT_GuardarCambios = new System.Windows.Forms.Button();
             this.TB_NuevoNombre = new System.Windows.Forms.TextBox();
-            this.listaPermisos = new System.Windows.Forms.CheckedListBox();
+            this.listaPermisos490WC = new System.Windows.Forms.CheckedListBox();
             this.vistaPermisosArbol = new System.Windows.Forms.TreeView();
             this.labelRolyGrupo = new System.Windows.Forms.Label();
             this.labelNuevoNombre = new System.Windows.Forms.Label();
@@ -149,15 +149,15 @@
             // 
             // listaPermisos
             // 
-            this.listaPermisos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
-            this.listaPermisos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listaPermisos.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
-            this.listaPermisos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.listaPermisos.FormattingEnabled = true;
-            this.listaPermisos.Location = new System.Drawing.Point(271, 35);
-            this.listaPermisos.Name = "listaPermisos";
-            this.listaPermisos.Size = new System.Drawing.Size(367, 420);
-            this.listaPermisos.TabIndex = 7;
+            this.listaPermisos490WC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.listaPermisos490WC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listaPermisos490WC.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.listaPermisos490WC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.listaPermisos490WC.FormattingEnabled = true;
+            this.listaPermisos490WC.Location = new System.Drawing.Point(271, 35);
+            this.listaPermisos490WC.Name = "listaPermisos";
+            this.listaPermisos490WC.Size = new System.Drawing.Size(367, 420);
+            this.listaPermisos490WC.TabIndex = 7;
             // 
             // vistaPermisosArbol
             // 
@@ -303,7 +303,7 @@
             this.Controls.Add(this.labelNuevoNombre);
             this.Controls.Add(this.labelRolyGrupo);
             this.Controls.Add(this.vistaPermisosArbol);
-            this.Controls.Add(this.listaPermisos);
+            this.Controls.Add(this.listaPermisos490WC);
             this.Controls.Add(this.TB_NuevoNombre);
             this.Controls.Add(this.BT_GuardarCambios);
             this.Controls.Add(this.BT_CrearGrupoDePermisos);
@@ -327,7 +327,7 @@
         private System.Windows.Forms.Button BT_CrearGrupoDePermisos;
         private System.Windows.Forms.Button BT_GuardarCambios;
         private System.Windows.Forms.TextBox TB_NuevoNombre;
-        private System.Windows.Forms.CheckedListBox listaPermisos;
+        private System.Windows.Forms.CheckedListBox listaPermisos490WC;
         private System.Windows.Forms.TreeView vistaPermisosArbol;
         private System.Windows.Forms.Label labelRolyGrupo;
         private System.Windows.Forms.Label labelNuevoNombre;

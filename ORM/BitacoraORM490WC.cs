@@ -12,52 +12,52 @@ namespace ORM
 {
     public class BitacoraORM490WC
     {
-        public void Alta(BitacoraBE490WC BitacoraAlta)
+        public void Alta490WC(BitacoraBE490WC BitacoraAlta490WC)
         {
-            DataRow drBitacora = GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Bitacora").NewRow();
-            drBitacora["IdBitacora"] = BitacoraAlta.IdBitacora;
-            drBitacora["Username"] = BitacoraAlta.Username;
-            drBitacora["Fecha"] = BitacoraAlta.Fecha;
-            drBitacora["Hora"] = BitacoraAlta.Hora;
-            drBitacora["Modulo"] = BitacoraAlta.Modulo;
-            drBitacora["Descripcion"] = BitacoraAlta.Descripcion;
-            drBitacora["Criticidad"] = BitacoraAlta.Criticidad;
-            GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Bitacora").Rows.Add(drBitacora);
-            GestorBaseDeDatos490WC.GestorBaseDeDatosSG.ActualizarGeneral();
+            DataRow drBitacora490WC = GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Bitacora490WC").NewRow();
+            drBitacora490WC["IdBitacora490WC"] = BitacoraAlta490WC.IdBitacora490WC;
+            drBitacora490WC["Username490WC"] = BitacoraAlta490WC.Username490WC;
+            drBitacora490WC["Fecha490WC"] = BitacoraAlta490WC.Fecha490WC;
+            drBitacora490WC["Hora490WC"] = BitacoraAlta490WC.Hora490WC;
+            drBitacora490WC["Modulo490WC"] = BitacoraAlta490WC.Modulo490WC;
+            drBitacora490WC["Descripcion490WC"] = BitacoraAlta490WC.Descripcion490WC;
+            drBitacora490WC["Criticidad490WC"] = BitacoraAlta490WC.Criticidad490WC;
+            GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Bitacora490WC").Rows.Add(drBitacora490WC);
+            GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.ActualizarGeneral490WC();
         }
 
-        public List<BitacoraBE490WC> ObtenerEventosPorConsulta(string usuarioFiltrar = "", string moduloFiltrar = "", string descripcionFiltrar = "", string criticidadFiltrar = "", DateTime? fechaInicioFiltrar = null, DateTime? fechaFinFiltrar = null)
+        public List<BitacoraBE490WC> ObtenerEventosPorConsulta490WC(string usuarioFiltrar490WC = "", string moduloFiltrar490WC = "", string descripcionFiltrar490WC = "", string criticidadFiltrar490WC = "", DateTime? fechaInicioFiltrar490WC = null, DateTime? fechaFinFiltrar490WC = null)
         {
-            List<BitacoraBE490WC> ListaBitacora = new List<BitacoraBE490WC>();
-            List<string> filtros = new List<string>();
-            DataView dv = new DataView(GestorBaseDeDatos490WC.GestorBaseDeDatosSG.DevolverTabla("Bitacora"), "", "", DataViewRowState.Unchanged);
+            List<BitacoraBE490WC> ListaBitacora490WC = new List<BitacoraBE490WC>();
+            List<string> filtros490WC = new List<string>();
+            DataView dv490WC = new DataView(GestorBaseDeDatos490WC.GestorBaseDeDatosSG490WC.DevolverTabla490WC("Bitacora490WC"), "", "", DataViewRowState.Unchanged);
 
-            if (!string.IsNullOrEmpty(usuarioFiltrar))
-                filtros.Add($"Username = '{usuarioFiltrar}'");
-            if (!string.IsNullOrEmpty(moduloFiltrar))
-                filtros.Add($"Modulo = '{moduloFiltrar}'");
-            if (!string.IsNullOrEmpty(descripcionFiltrar))
-                filtros.Add($"Descripcion = '{descripcionFiltrar}'");
-            if (!string.IsNullOrEmpty(criticidadFiltrar))
-                filtros.Add($"Criticidad = '{criticidadFiltrar}'");
-            if (fechaInicioFiltrar.HasValue)
-                filtros.Add($"Fecha >= '{fechaInicioFiltrar.Value}'");
-            if (fechaFinFiltrar.HasValue)
-                filtros.Add($"Fecha <= '{fechaFinFiltrar.Value}'");
-            dv.RowFilter = string.Join(" AND ", filtros);
-            foreach (DataRowView drv in dv)
+            if (!string.IsNullOrEmpty(usuarioFiltrar490WC))
+                filtros490WC.Add($"Username = '{usuarioFiltrar490WC}'");
+            if (!string.IsNullOrEmpty(moduloFiltrar490WC))
+                filtros490WC.Add($"Modulo = '{moduloFiltrar490WC}'");
+            if (!string.IsNullOrEmpty(descripcionFiltrar490WC))
+                filtros490WC.Add($"Descripcion = '{descripcionFiltrar490WC}'");
+            if (!string.IsNullOrEmpty(criticidadFiltrar490WC))
+                filtros490WC.Add($"Criticidad = '{criticidadFiltrar490WC}'");
+            if (fechaInicioFiltrar490WC.HasValue)
+                filtros490WC.Add($"Fecha >= '{fechaInicioFiltrar490WC.Value}'");
+            if (fechaFinFiltrar490WC.HasValue)
+                filtros490WC.Add($"Fecha <= '{fechaFinFiltrar490WC.Value}'");
+            dv490WC.RowFilter = string.Join(" AND ", filtros490WC);
+            foreach (DataRowView drv490WC in dv490WC)
             {
-                int idBitacora = int.Parse(drv[0].ToString());
-                string username = drv[1].ToString();
-                DateTime fecha = DateTime.Parse(drv[2].ToString()).Date;
-                TimeSpan hora = TimeSpan.Parse(drv[3].ToString());
-                string Modulo = drv[4].ToString();
-                string Descripcion = drv[5].ToString();
-                int Criticidad = int.Parse(drv[6].ToString());
-                BitacoraBE490WC bitacora = new BitacoraBE490WC(username,fecha,hora,Modulo,Descripcion,Criticidad,idBitacora);
-                ListaBitacora.Add(bitacora);
+                int idBitacora490WC = int.Parse(drv490WC[0].ToString());
+                string username490WC = drv490WC[1].ToString();
+                DateTime fecha490WC = DateTime.Parse(drv490WC[2].ToString()).Date;
+                TimeSpan hora490WC = TimeSpan.Parse(drv490WC[3].ToString());
+                string Modulo490WC = drv490WC[4].ToString();
+                string Descripcion490WC = drv490WC[5].ToString();
+                int Criticidad490WC = int.Parse(drv490WC[6].ToString());
+                BitacoraBE490WC bitacora490WC = new BitacoraBE490WC(username490WC,fecha490WC,hora490WC,Modulo490WC,Descripcion490WC,Criticidad490WC,idBitacora490WC);
+                ListaBitacora490WC.Add(bitacora490WC);
             }
-            return ListaBitacora;
+            return ListaBitacora490WC;
         }
 
     }

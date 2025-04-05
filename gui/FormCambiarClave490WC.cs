@@ -14,39 +14,39 @@ namespace gui
 {
     public partial class FormCambiarClave490WC : Form ,  iObserverLenguaje490WC
     {
-        UsuarioBLL490WC GestorUsuario;
+        UsuarioBLL490WC GestorUsuario490WC;
         public FormCambiarClave490WC()
         {
             InitializeComponent();
-            GestorUsuario = new UsuarioBLL490WC();
-            ActualizarLenguaje();
+            GestorUsuario490WC = new UsuarioBLL490WC();
+            ActualizarLenguaje490WC();
         }
 
 
-        public void ActualizarLenguaje()
+        public void ActualizarLenguaje490WC()
         {
-            RecorrerControles(this);
+            RecorrerControles490WC(this);
         }
 
-        public void RecorrerControles(Control control)
+        public void RecorrerControles490WC(Control control490WC)
         {
-            foreach (Control c in control.Controls)
+            foreach (Control c490WC in control490WC.Controls)
             {
-                 if((c is TextBox) == false) 
+                 if((c490WC is TextBox) == false) 
               
-                 c.Text = Traductor490WC.TraductorSG.Traducir(c.Name);
+                 c490WC.Text = Traductor490WC.TraductorSG490WC.Traducir490WC(c490WC.Name);
 
              
-                 if (c.HasChildren)
+                 if (c490WC.HasChildren)
                  {
-                     RecorrerControles(c);
+                     RecorrerControles490WC(c490WC);
                  }
             }
         }
 
         private void BT_ADMINISTRAR_Click(object sender, EventArgs e)
         {
-            if (GestorUsuario.VerificarCambioClave(TB_ClaveNueva.Text,TB_ConfirmarClave.Text))
+            if (GestorUsuario490WC.VerificarCambioClave490WC(TB_ClaveNueva.Text,TB_ConfirmarClave.Text))
             {
                 MessageBox.Show(labelCambioExitoso.Text);
             }
