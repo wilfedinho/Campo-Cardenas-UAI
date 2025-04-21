@@ -43,10 +43,16 @@ namespace gui
             try
             {
                 UsuarioBLL490WC GestorUsuario490WC = new UsuarioBLL490WC();
-                GestorUsuario490WC.CambiarIdioma490WC(CB_IdiomasDisponibles.SelectedItem.ToString());
-                ActualizarLenguaje490WC();
-                CB_IdiomasDisponibles.SelectedIndex = -1;
-                LlenarComboBox490WC();
+                if(CB_IdiomasDisponibles.SelectedItem != null) 
+                {
+                   GestorUsuario490WC.CambiarIdioma490WC(CB_IdiomasDisponibles.SelectedItem.ToString());
+                   ActualizarLenguaje490WC();
+                    BitacoraBLL490WC Gestorbitacora = new BitacoraBLL490WC();
+                    Gestorbitacora.AltaEvento490WC("Cambio de Idioma", "Usuario cambio de idioma",1);
+                   CB_IdiomasDisponibles.SelectedIndex = -1;
+                   LlenarComboBox490WC();
+                
+                }
             }
             catch { }
         }

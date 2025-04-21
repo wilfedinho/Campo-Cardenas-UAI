@@ -108,22 +108,16 @@ namespace BLL
         {
             UsuarioAlta490WC.Contraseña490WC = Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(UsuarioAlta490WC.Contraseña490WC);
             UsuarioORM490WC.GestorUsuarioORM490WC.Alta490WC(UsuarioAlta490WC);
-            BitacoraBLL490WC GestorBitacora490WC = new BitacoraBLL490WC();
-            GestorBitacora490WC.AltaEvento490WC("Gestion de Usuario","Alta de Usuario",3);
         }
 
         public void Baja490WC(Usuario490WC UsuarioBaja490WC)
         {
             UsuarioORM490WC.GestorUsuarioORM490WC.Baja490WC(UsuarioBaja490WC);
-            BitacoraBLL490WC GestorBitacora490WC = new BitacoraBLL490WC();
-            GestorBitacora490WC.AltaEvento490WC("Gestion de Usuario", "Baja de Usuario", 5);
         }
 
         public void Modificar490WC(Usuario490WC UsuarioModificado490WC)
         {
             UsuarioORM490WC.GestorUsuarioORM490WC.Modificar490WC(UsuarioModificado490WC);
-            BitacoraBLL490WC GestorBitacora490WC = new BitacoraBLL490WC();
-            GestorBitacora490WC.AltaEvento490WC("Gestion de Usuario", "Modificacion de Usuario", 3);
         }
         public List<Usuario490WC> DevolverUsuariosPorConsulta490WC(string tipoConsulta490WC = "", string itemSeleccionado490WC = "", string itemValor490WC = "", string itemValor2490WC = "")
         {
