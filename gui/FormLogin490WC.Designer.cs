@@ -52,17 +52,25 @@
             // 
             // TB_Username
             // 
+            this.TB_Username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_Username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Username.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_Username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.TB_Username.Location = new System.Drawing.Point(145, 142);
             this.TB_Username.Name = "TB_Username";
-            this.TB_Username.Size = new System.Drawing.Size(171, 20);
+            this.TB_Username.Size = new System.Drawing.Size(171, 27);
             this.TB_Username.TabIndex = 3;
             // 
             // TB_Contrasena
             // 
+            this.TB_Contrasena.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_Contrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Contrasena.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_Contrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
             this.TB_Contrasena.Location = new System.Drawing.Point(145, 216);
             this.TB_Contrasena.Name = "TB_Contrasena";
             this.TB_Contrasena.PasswordChar = '*';
-            this.TB_Contrasena.Size = new System.Drawing.Size(171, 20);
+            this.TB_Contrasena.Size = new System.Drawing.Size(171, 27);
             this.TB_Contrasena.TabIndex = 4;
             // 
             // LabelNombreUsuarioa
@@ -95,7 +103,7 @@
             this.label2.TabIndex = 57;
             this.label2.Text = "Usuario";
             // 
-            // FormLogin
+            // FormLogin490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,7 +115,7 @@
             this.Controls.Add(this.TB_Contrasena);
             this.Controls.Add(this.TB_Username);
             this.Controls.Add(this.BT_LOGIN);
-            this.Name = "FormLogin";
+            this.Name = "FormLogin490WC";
             this.Text = "Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
             this.ResumeLayout(false);
