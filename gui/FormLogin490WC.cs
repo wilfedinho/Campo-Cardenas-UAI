@@ -29,7 +29,7 @@ namespace gui
             Usuario490WC usuarioIniciarSesion490WC = ListaUsuario490WC.Find(x => x.Username490WC == TB_Username.Text);
             if (usuarioIniciarSesion490WC != null)
             {
-                if(usuarioIniciarSesion490WC.IsBloqueado490WC == false)
+                if(usuarioIniciarSesion490WC.IsBloqueado490WC == false && usuarioIniciarSesion490WC.IsHabilitado490WC == true)
                 {
                    if(usuarioIniciarSesion490WC.Contraseña490WC == Cifrador490WC.GestorCifrador490WC.EncriptarIrreversible490WC(TB_Contrasena.Text))
                    {
@@ -59,7 +59,7 @@ namespace gui
                 }
                 else
                 {
-                  MessageBox.Show($"El Usuario {usuarioIniciarSesion490WC.Nombre490WC} está Bloqueado!!!");
+                  MessageBox.Show($"El Usuario {usuarioIniciarSesion490WC.Nombre490WC} está Bloqueado o Desactivado!!!");
                 }
             }
             else
