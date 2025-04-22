@@ -104,16 +104,6 @@ namespace gui
             }
             catch { MessageBox.Show(labelDebeborrar.Text); }
         }
-        private void BT_USUARIO_MODIFICAR_Click(object sender, EventArgs e)
-        {
-            BT_ALTA_USUARIO.Enabled = false;
-            BT_BAJA_USUARIO.Enabled = false;
-            BT_MODIFICAR_USUARIO.Enabled = false;
-            BT_DESBLOQUEAR_USUARIO.Enabled = false;
-            BT_SALIR.Enabled = false;
-            BT_APLICAR.Enabled = true;
-            BT_CANCELAR.Enabled = true;
-        }
         private void dgvUsuario_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             TB_Usuario.Text = dgvUsuario.SelectedRows[0].Cells[0].Value.ToString();
@@ -141,6 +131,17 @@ namespace gui
              BT_DESBLOQUEAR_USUARIO.Enabled = false;
             }
         }
+        private void BT_USUARIO_MODIFICAR_Click(object sender, EventArgs e)
+        {
+            BT_ALTA_USUARIO.Enabled = false;
+            BT_BAJA_USUARIO.Enabled = false;
+            BT_MODIFICAR_USUARIO.Enabled = false;
+            BT_DESBLOQUEAR_USUARIO.Enabled = false;
+            BT_SALIR.Enabled = false;
+            BT_ACTIVAR_USUARIO.Enabled = false;
+            BT_APLICAR.Enabled = true;
+            BT_CANCELAR.Enabled = true;
+        }
         private void BT_APLICAR_Click(object sender, EventArgs e)
         {
             try
@@ -161,6 +162,7 @@ namespace gui
                 BT_MODIFICAR_USUARIO.Enabled = true;
                 BT_DESBLOQUEAR_USUARIO.Enabled = true;
                 BT_SALIR.Enabled = true;
+                BT_ACTIVAR_USUARIO.Enabled = true;
                 BT_APLICAR.Enabled = false;
                 BT_CANCELAR.Enabled = false;
             }
