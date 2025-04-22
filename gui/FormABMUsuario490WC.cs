@@ -141,6 +141,7 @@ namespace gui
             BT_ACTIVAR_USUARIO.Enabled = false;
             BT_APLICAR.Enabled = true;
             BT_CANCELAR.Enabled = true;
+            TB_Usuario.Enabled = false;
         }
         private void BT_APLICAR_Click(object sender, EventArgs e)
         {
@@ -148,7 +149,7 @@ namespace gui
             {
                 Usuario490WC UsuarioModificar490WC = GestorUsuario490WC.DevolverUsuariosPorConsulta490WC().Find(x => x.Username490WC == (dgvUsuario.SelectedRows[0].Cells[0].Value.ToString()));
                 UsuarioModificar490WC.Nombre490WC = TB_NOMBRE.Text;
-                UsuarioModificar490WC.Username490WC = TB_Usuario.Text;
+                //UsuarioModificar490WC.Username490WC = TB_Usuario.Text;
                 UsuarioModificar490WC.Apellido490WC = TB_APELLIDO.Text;
                 UsuarioModificar490WC.Email490WC = TB_EMAIL.Text;
                 UsuarioModificar490WC.Rol490WC = CB_ROL.SelectedItem.ToString();
@@ -165,6 +166,7 @@ namespace gui
                 BT_ACTIVAR_USUARIO.Enabled = true;
                 BT_APLICAR.Enabled = false;
                 BT_CANCELAR.Enabled = false;
+                TB_Usuario.Enabled = true;
             }
             catch { MessageBox.Show(labelDebeSeleccionar.Text); }
         }
@@ -175,6 +177,8 @@ namespace gui
             BT_MODIFICAR_USUARIO.Enabled = true;
             BT_DESBLOQUEAR_USUARIO.Enabled = true;
             BT_SALIR.Enabled = true;
+            BT_ACTIVAR_USUARIO.Enabled=true;
+            TB_Usuario.Enabled = true;
             BT_APLICAR.Enabled = false;
             BT_CANCELAR.Enabled = false;
             VaciarTextBox490WC(this);
