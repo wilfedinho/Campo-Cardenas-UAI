@@ -39,25 +39,33 @@
             // 
             // TB_ClaveNueva
             // 
-            this.TB_ClaveNueva.Location = new System.Drawing.Point(122, 100);
+            this.TB_ClaveNueva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_ClaveNueva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_ClaveNueva.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_ClaveNueva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TB_ClaveNueva.Location = new System.Drawing.Point(108, 101);
             this.TB_ClaveNueva.Name = "TB_ClaveNueva";
             this.TB_ClaveNueva.PasswordChar = '*';
-            this.TB_ClaveNueva.Size = new System.Drawing.Size(189, 20);
+            this.TB_ClaveNueva.Size = new System.Drawing.Size(189, 27);
             this.TB_ClaveNueva.TabIndex = 0;
             // 
             // TB_ConfirmarClave
             // 
-            this.TB_ConfirmarClave.Location = new System.Drawing.Point(122, 190);
+            this.TB_ConfirmarClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(13)))));
+            this.TB_ConfirmarClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_ConfirmarClave.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
+            this.TB_ConfirmarClave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
+            this.TB_ConfirmarClave.Location = new System.Drawing.Point(108, 191);
             this.TB_ConfirmarClave.Name = "TB_ConfirmarClave";
             this.TB_ConfirmarClave.PasswordChar = '*';
-            this.TB_ConfirmarClave.Size = new System.Drawing.Size(189, 20);
+            this.TB_ConfirmarClave.Size = new System.Drawing.Size(189, 27);
             this.TB_ConfirmarClave.TabIndex = 1;
             // 
             // LabelClaveNueva
             // 
             this.LabelClaveNueva.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.LabelClaveNueva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.LabelClaveNueva.Location = new System.Drawing.Point(149, 51);
+            this.LabelClaveNueva.Location = new System.Drawing.Point(135, 52);
             this.LabelClaveNueva.Name = "LabelClaveNueva";
             this.LabelClaveNueva.Size = new System.Drawing.Size(147, 29);
             this.LabelClaveNueva.TabIndex = 53;
@@ -67,7 +75,7 @@
             // 
             this.labelTD_ConfirmarClave.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.labelTD_ConfirmarClave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelTD_ConfirmarClave.Location = new System.Drawing.Point(122, 147);
+            this.labelTD_ConfirmarClave.Location = new System.Drawing.Point(108, 148);
             this.labelTD_ConfirmarClave.Name = "labelTD_ConfirmarClave";
             this.labelTD_ConfirmarClave.Size = new System.Drawing.Size(189, 29);
             this.labelTD_ConfirmarClave.TabIndex = 54;
@@ -80,7 +88,7 @@
             this.BT_CambiarClave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BT_CambiarClave.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BT_CambiarClave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.BT_CambiarClave.Location = new System.Drawing.Point(121, 243);
+            this.BT_CambiarClave.Location = new System.Drawing.Point(107, 244);
             this.BT_CambiarClave.Name = "BT_CambiarClave";
             this.BT_CambiarClave.Size = new System.Drawing.Size(190, 50);
             this.BT_CambiarClave.TabIndex = 55;
@@ -92,9 +100,9 @@
             // 
             this.labelCambioErroneo.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.labelCambioErroneo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelCambioErroneo.Location = new System.Drawing.Point(319, 38);
+            this.labelCambioErroneo.Location = new System.Drawing.Point(12, 325);
             this.labelCambioErroneo.Name = "labelCambioErroneo";
-            this.labelCambioErroneo.Size = new System.Drawing.Size(147, 29);
+            this.labelCambioErroneo.Size = new System.Drawing.Size(123, 10);
             this.labelCambioErroneo.TabIndex = 56;
             this.labelCambioErroneo.Text = "TD_ClaveNueva";
             this.labelCambioErroneo.Visible = false;
@@ -103,19 +111,19 @@
             // 
             this.labelCambioExitoso.Font = new System.Drawing.Font("Roboto", 11.87629F, System.Drawing.FontStyle.Bold);
             this.labelCambioExitoso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(110)))), ((int)(((byte)(242)))));
-            this.labelCambioExitoso.Location = new System.Drawing.Point(319, 9);
+            this.labelCambioExitoso.Location = new System.Drawing.Point(12, 296);
             this.labelCambioExitoso.Name = "labelCambioExitoso";
-            this.labelCambioExitoso.Size = new System.Drawing.Size(147, 29);
+            this.labelCambioExitoso.Size = new System.Drawing.Size(123, 10);
             this.labelCambioExitoso.TabIndex = 57;
             this.labelCambioExitoso.Text = "TD_ClaveNueva";
             this.labelCambioExitoso.Visible = false;
             // 
-            // FormCambiarClave
+            // FormCambiarClave490WC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(469, 348);
+            this.ClientSize = new System.Drawing.Size(417, 348);
             this.Controls.Add(this.labelCambioExitoso);
             this.Controls.Add(this.labelCambioErroneo);
             this.Controls.Add(this.BT_CambiarClave);
@@ -123,7 +131,7 @@
             this.Controls.Add(this.LabelClaveNueva);
             this.Controls.Add(this.TB_ConfirmarClave);
             this.Controls.Add(this.TB_ClaveNueva);
-            this.Name = "FormCambiarClave";
+            this.Name = "FormCambiarClave490WC";
             this.Text = "FormCambiarClave";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCambiarClave_FormClosed);
             this.ResumeLayout(false);

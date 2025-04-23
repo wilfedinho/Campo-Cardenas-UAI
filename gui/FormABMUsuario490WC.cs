@@ -198,7 +198,7 @@ namespace gui
 
         private void FormABMUsuario_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            VaciarTextBox490WC(this);
         }
 
 
